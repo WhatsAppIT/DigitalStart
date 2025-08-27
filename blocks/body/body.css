@@ -1,0 +1,24 @@
+.body { 
+    padding: 0; 
+    margin: 0 auto; 
+    min-width: 320px; 
+    font-family: 'Inter', Arial, sans-serif; 
+    font-style: normal; 
+    color: #FFFFFF; 
+    background-color: #2A2C2F; 
+} 
+@media (min-width: 768px) { 
+    .body { 
+        min-width: 768px; 
+    } 
+} 
+@media (min-width: 1024px) { 
+    .body { 
+        min-width: 1024px; 
+    } 
+} 
+@media (min-width: 1280px) { 
+    .body { 
+        max-width: 1280px; 
+    } 
+}
