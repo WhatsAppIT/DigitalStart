@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+h<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -7,46 +7,50 @@
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
     />
-    <link rel="stylesheet" href="index.css" />
-    <!-- <link rel="icon" href="./favicon/favicon.ico" sizes="any" /> -->
+    <link rel="stylesheet" href="./styles/index.css" />
     <link rel="icon" href="./favicon/favicon.jpg" />
-    <link rel="icon" href="./favicon/icon.svg" type="image/svg+xml" />
+    <!-- // сделаать favcon в svg и ico !!!!!!!!!!
+    <link rel="icon" href="./favicon/favicon.ico" sizes="any" />
+    <link rel="icon" href="./favicon/icon.svg" type="image/svg+xml" /> -->
     <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
-    <meta property="og:title" content="DigitalStart" />
-    <meta property="og:url" content="/" />
+    <meta property="og:title" content="Сайты Реклама Продвижение" />
+    <!-- // вставить адресс когда будет -->
+    <meta property="og:url" content="/" /> 
     <meta property="og:image" content="./favicon/og.jpg" />
     <meta property="twitter:card" content="summary_large_image" />
     <title>Сайты Реклама Продвижение</title>
     <meta
       name="description"
-      content="Создание и продвижение сайтов интернет реклама"
+      content="Создание и продвижение сайтов, товаров, услуг; недорого и быстро контекстная, таргетинговая, интернет реклама и SMM"
     />
     <meta
       name="keywords"
-      content="DidiSell сделать быстро недорого сайт лендинг контекстная реклама таргетинговая реклама SMM продвижение  интернет продвижение"
+      content="DidiStart сделать быстро недорого сайт лендинг контекстная реклама таргетинговая SMM продвижение товаров и услуг интернет"
     />
     <meta name="author" content="Интернет маркетолог Криволапов" />
   </head>
 
   <body class="body">
     <header class="header">
-      <img class="header__logo" src="./image/Logo1280.png" alt="логотип" />
-      <nav class="header__nav">
-        <a class="header__nav_services" href="#services">Услуги</a>
-        <a class="header__nav_advantages" href="#advantages">Преимуества</a>
-        <a class="header__nav_about" href="#about">Обо мне</a>
-      </nav>
-      <button class="header__btn" href="#form">Заказать</button>
+      <div class="header-main">
+        <img class="header__logo" src="./image/Logo1280.png" alt="фирменный логотип" />
+        <nav class="header__nav">
+          <a class="header__nav_services" href="#services">Услуги</a>
+          <a class="header__nav_advantages" href="#advantages">Преимуества</a>
+          <a class="header__nav_about" href="#about">Обо мне</a>
+        </nav>
+        <a class="header__btn" href="#form">Обсудить задачу</a>
+      </div>
     </header>
 
     <main class="main">
       <section class="mainpage" id="landing">
         <div class="landing">
-          <h2 class="landing__description">
+          <h3 class="landing__description">
             Доступные цены — высокое качество
-          </h2>
+          </h3>
           <h1 class="landing__title">
-            Качественное продвижение по честным ценам
+            Сайт под ключ <br>Продвижение товаров и услуг
           </h1>
           <h2 class="landing__subtitle">по честным ценам</h2>
           <p class="landing__text">
@@ -77,12 +81,14 @@
           </div>
         </div>
 
-        <div class="images">
-          <img class="images__title" src="" alt="100% качество" />
-          <img class="images__main" src="" alt="Мое фото на рабочем месте" />
-          <img class="images__subtitle" src="" alt="Честные цены" />
-        </div>
+        <!-- <div class="images"> -->
+          <!-- <img class="images__title" src="./image/100-1280.png" alt="гарантия 100% качество" /> -->
+          <img class="images" src="./image/1280.png" alt="Мое фото на рабочем месте" />
+          <!-- <img class="images__subtitle" src="./image/good-price-1280.png" alt="Честные цены" /> -->
+        <!-- </div> -->
       </section>
+
+      <!-- Мои услуги -->
 
       <section class="services" id="services">
         <h2 class="services__title">Мои услуги</h2>
@@ -91,17 +97,110 @@
           доступным ценам
         </p>
         <div class="services__table">
-          <img src="" alt="иконка лендинга" />
-          <h3 class="services__table_landing">Создание лендингов</h3>
-          от 5000₽ Разрабатываю продающие лендинги с высокой конверсией.
-          Адаптивная верстка, быстрая загрузка, SEO-оптимизация. Адаптивный
-          дизайн под все устройства Интеграция форм и аналитики Оптимизация
-          скорости загрузки
+
+          <a href="#" class="services__all services__table_landing">
+            <div class="services__table_img services__table_img-landing">
+              <img class="services__table_logo services__table_logo-landing" src="./logo-svg/landing-icon.svg" alt="логотип доллара">
+            </div>
+            <h3 class="services__table_title-landing">Создание лендингов</h3>
+            <p class="services__table_description">
+              Разрабатываю продающие лендинги с высокой конверсией.
+              Адаптивная верстка, быстрая загрузка, SEO-оптимизация. 
+            </p>
+            <ul class="services__list">
+              <li class="services__list-content">Адаптивный дизайн под все устройства</li>
+              <li class="services__list-content">Интеграция форм и аналитики</li>
+              <li  class="services__list-content">Оптимизация скорости загрузки</li>
+            </ul>
+          </a>
+
+          <a href="#" class="services__all services__table_context">
+            <div class="services__table_img services__table_img-context">
+              <img class="services__table_logo services__table_logo-context" src="./logo-svg/context-icon.svg" alt="логотип доллара">
+            </div>
+            <h3 class="services__table_title-context">Контекстная реклама</h3>
+            <p class="services__table_description">
+              Настройка Google Ads и Яндекс.Директ с грамотным подбором ключевых слов и оптимизацией бюджета.
+            </p>
+            <ul class="services__list">
+              <li class="services__list-content">Семантическое ядро и минус-слова</li>
+              <li class="services__list-content">Настройка UTM-меток и целей</li>
+              <li  class="services__list-content">Еженедельные отчеты и оптимизация</li>
+            </ul>
+          </a>
+
+          <a href="#" class="services__all services__table_target">
+            <div class="services__table_img services__table_img-target">
+              <img class="services__table_logo services__table_logo-target" src="./logo-svg/target-icon.svg" alt="логотип доллара">
+            </div>
+            <h3 class="services__table_title-target">Таргетинговая реклама</h3>
+            <p class="services__table_description">
+              Настройка рекламы в ВКонтакте, Одноклассниках и Telegram с точным таргетингом на вашу аудиторию.
+            </p>
+            <ul class="services__list">
+              <li class="services__list-content">Анализ конкурентов  и ЦА</li>
+              <li class="services__list-content">Создание креативов и текстов</li>
+              <li  class="services__list-content">А/В тестирование объявлений</li>
+            </ul>
+          </a>
+
+          <a href="#" class="services__all services__table_smm">
+            <div class="services__table_img services__table_img-smm">
+              <img class="services__table_logo services__table_logo-smm" src="./logo-svg/smm-logo.svg" alt="логотип доллара">
+            </div>
+            <h3 class="services__table_title-smm">SMM продвижение</h3>
+            <p class="services__table_description">
+              Ведение соцсетей, создание контент-плана, оформление профилей и увеличение живой аудитории.
+            </p>
+            <ul class="services__list">
+              <li class="services__list-content">Контент-план на месяц</li>
+              <li class="services__list-content">Дизайн постов и Stories</li>
+              <li  class="services__list-content">Работа с подписчиками</li>
+            </ul>
+          </a>
         </div>
       </section>
 
+      <!-- Почему выирают меня -->
+
       <section class="advantages" id="advantages">
         <h2 class="advantages__title">Почему выбирают меня</h2>
+        <h3 class="advantages__subtitle">Профессиональный подход с фокусом на результат и доступные цены</h3>
+        <div class="advantages__table">
+
+          <div class="advantages__table-element advantages__table_price">
+            <div class="advantages__table_img advantages__table_img-price">
+              <img class="advantages__table_logo advantages__table_logo-price" src="./logo-svg/price-iconn.svg" alt="логотип доллара">
+            </div>
+            <h4 class="advantages__table_title advantages__table_price-title">Доступные цены</h4>
+            <p class="advantages__table_subtitle advantages__table_price-subtitle">Оптималные тарифы без переплат</p>
+          </div>
+
+          <div class="advantages__table-element advantages__table_quality">
+            <div class="advantages__table_img advantages__table_img-quality">
+              <img class="advantages__table_logo advantages__table_logo-quality" src="./logo-svg/quality-icon.svg" alt="логотип качества">
+            </div>
+            <h4 class="advantages__table_title advantages__table_quality-title">Качественно</h4>
+            <p class="advantages__table_subtitle advantages__table_quality-subtitle">Индивидуальный подход к каждому проекту</p>
+          </div>
+
+          <div class="advantages__table-element advantages__table_fast">
+            <div class="advantages__table_img advantages__table_img-fast">
+              <img class="advantages__table_logo advantages__table_logo-fast" src="./logo-svg/clock-icon.svg" alt="логотип вашего времени">
+            </div>
+            <h4 class="advantages__table_title advantages__table_fast-title">Быстро</h4>
+            <p class="advantages__table_subtitle advantages__table_fast-subtitle">Соблюдение сроков без потери качества</p>
+          </div>
+
+          <div class="advantages__table-element advantages__table_support">
+            <div class="advantages__table_img advantages__table_img-support">
+              <img class="advantages__table_logo advantages__table_logo-support" src="./logo-svg/support-icon.svg" alt="логотип поддержки">
+            </div>
+            <h4 class="advantages__table_title advantages__table_support-title">Поддержка</h4>
+            <p class="advantages__table_subtitle advantages__table_support-subtitle">Всегда готов помочь и внести изменения</p>
+          </div>
+
+        </div>
       </section>
 
       <section class="about" id="about">
@@ -128,17 +227,17 @@
           <img
             class="footer__company_smm_tlg"
             src="./favicon/telegram.svg"
-            alt="логотип телеграм"
+            alt="логотип телеграм" style="width: 100px;"
           />
           <img
             class="footer__company_smm_vk"
             src="./favicon/vk.svg"
-            alt="логотип ВК"
+            alt="логотип ВК" style="width: 100px;"
           />
           <img
             class="footer__company_smm_inst"
             src="./favicon/inst.svg"
-            alt="логотип инстаграм"
+            alt="логотип инстаграм" style="width: 100px;"
           />
         </div>
       </div>

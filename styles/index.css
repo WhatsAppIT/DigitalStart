@@ -1,0 +1,65 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/Inter/InterWeb/inter.css);
+@import url(../blocks/body/body.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header-main/header-main.css);
+@import url(../blocks/main/main.css);
+@import url(../blocks/mainpage/mainpage.css);
+@import url(../blocks/mainpage/landing/landing.css);
+@import url(../blocks/mainpage/landing/__description/landing__description.css);
+@import url(../blocks/mainpage/images/images.css);
+@import url(../blocks/mainpage/images/__title/images__title.css);
+@import url(../blocks/mainpage/images/__subtitle/images__subtitle.css);
+@import url(../blocks/mainpage/landing/__info/landing__info.css);
+
+@import url(../blocks/services/services.css);
+@import url(../blocks/services/__title/services__title.css);
+@import url(../blocks/services/__table/services__table.css);
+@import url(../blocks/services/__subtitle/services__subtitle.css);
+@import url(../blocks/services/__table_title-landing/services__table_title-landing.css);
+@import url(../blocks/services/__table_title-context/services__table_title-context.css);
+@import url(../blocks/services/__table_title-target/services__table_title-target.css);
+@import url(../blocks/services/__table_title-smm/services__table_title-smm.css);
+
+
+@import url(../blocks/services/__table_landing/services__table_landing.css);
+@import url(../blocks/services/__table_context/services__table_context.css);
+@import url(../blocks/services/__table_smm/services__table_smm.css);
+@import url(../blocks/services/__table_target/services__table_target.css);
+@import url(../blocks/services/__all/services__all.css);
+@import url(../blocks/services/__icons/services__icons.css);
+@import url(../blocks/services/__table_img/services__table_img.css);
+@import url(../blocks/services/__table_img-landing/services__table_img-landing.css);
+@import url(../blocks/services/__table_logo/services__table_logo.css);
+@import url(../blocks/services/__table_description/services__table_description.css);
+@import url(../blocks/services/__table_img-context/services__table_img-context.css);
+@import url(../blocks/services/__table_img-target/services__table_img-target.css);
+@import url(../blocks/services/__table_img-smm/services__table_img-smm.css);
+@import url(../blocks/services/__list/services__list.css);
+@import url(../blocks/services/__list-content/services__list-content.css);
+
+
+
+@import url(../blocks/advantages/advantages.css);
+@import url(../blocks/advantages/__title/advantages__title.css);
+@import url(../blocks/advantages/__subtitle/advantages__subtitle.css);
+@import url(../blocks/advantages/__table/advantages__table.css);
+@import url(../blocks/advantages/__table-element/advantages__table-element.css);
+@import url(../blocks/advantages/__table_img/advantages__table_img.css);
+@import url(../blocks/advantages/__table_img-price/advantages__table_img-price.css);
+@import url(../blocks/advantages/__table_img-quality/advantages__table_img-quality.css);
+@import url(../blocks/advantages/__table_img-fast/advantages__table_img-fast.css);
+@import url(../blocks/advantages/__table_img-support/advantages__table_img-support.css);
+@import url(../blocks/advantages/__table_quality-title/advantages__table_quality-title.css);
+@import url(../blocks/advantages/__table_price-title/advantages__table_price-title.css);
+@import url(../blocks/advantages/__table_fast-title/advantages__table_fast-title.css);
+@import url(../blocks/advantages/__table_support-title/advantages__table_support-title.css);
+@import url(../blocks/advantages/__table_subtitle/advantages__table_subtitle.css);
+@import url(../blocks/advantages/__table_logo/advantages__table_logo.css);
+@import url(../blocks/advantages/__table_title/advantages__table_title.css);
+
+@import url(../blocks/about/about.css);
+
+@import url(../blocks/form/form.css);
+
+@import url(../blocks/footer/footer.css);

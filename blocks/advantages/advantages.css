@@ -1,0 +1,15 @@
+.advantages {
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 500px; 
+    background: linear-gradient(to right, #515dfc, #8a4acd);
+    border: 1px solid red;
+}
+
+/* @media (max-width: 1029px) {
+  .advantages {
+    min-height: 720px; 
+  }
+}  */

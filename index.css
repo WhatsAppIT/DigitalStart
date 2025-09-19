@@ -1,9 +1,0 @@
-@import url(./vendor/normalize.css);
-@import url(./vendor/Inter/InterWeb/inter.css);
-@import url(./blocks/body/body.css);
-@import url(./blocks/header/header.css);
-@import url(./blocks/main/main.css);
-@import url(./blocks/mainpage/mainpage.css);
-@import url(./blocks/mainpage/landing/landing.css);
-@import url(./blocks/mainpage/images/images.css);
-@import url(./blocks/mainpage/landing/__info/landing__info.css);

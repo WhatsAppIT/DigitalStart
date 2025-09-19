@@ -1,0 +1,8 @@
+.services {
+    padding: 96px 0 96px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid red;
+}

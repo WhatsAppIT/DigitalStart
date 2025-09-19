@@ -1,22 +1,30 @@
-.body {
+* {
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
+}
+
+.body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: auto;
   min-width: 320px;
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
-  color: #ffffff;
-  background-color: #2a2c2f;
+  color: #000000;
+  background-color: #f2f2f2;
 }
 @media (min-width: 768px) {
   .body {
-    min-width: 768px;
+    min-width: 320px;
   }
 }
 @media (min-width: 1024px) {
   .body {
     min-width: 1024px;
   }
-}
+} 
 @media (min-width: 1280px) {
   .body {
     max-width: 1280px;

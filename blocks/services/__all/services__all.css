@@ -1,0 +1,29 @@
+.services__all {
+    padding: 32px 32px 32px 120px;
+    text-decoration: none;
+    width: 350px;
+    min-height: 200px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.services__all:hover {
+    transform: scale(1.01);
+    box-shadow: 1px 1px 1px 1px rgba(0, 255, 255, .2);
+}
+
+@media (max-width: 1085px) {
+    .services__all {
+        padding: 32px 32px 32px 150px;
+        min-width: 520px;
+        min-height: 200px;
+}
+
+}
+@media (max-width: 768px) {
+    .services__all {
+        padding: 32px 32px 32px 150px;
+        min-width: 350px;
+        min-height: 200px;
+}
+}

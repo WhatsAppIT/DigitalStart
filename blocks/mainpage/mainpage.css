@@ -1,4 +1,8 @@
 .mainpage {
-  width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh; 
+  background-color: #e7eeff;
+  border: 1px solid red;
 }
