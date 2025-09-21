@@ -3,14 +3,44 @@
 @import url(../blocks/body/body.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/header-main/header-main.css);
+@import url(../blocks/header/__nav/header__nav.css);
+@import url(../blocks/header/__nav_menu/header__nav_menu.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__logo_img/header__logo_img.css);
+@import url(../blocks/header/__link/header__link.css);
+
+
+
+
+
 @import url(../blocks/main/main.css);
 @import url(../blocks/mainpage/mainpage.css);
 @import url(../blocks/mainpage/landing/landing.css);
+@import url(../blocks/mainpage/__title/landing__title.css);
+@import url(../blocks/mainpage/__text/landing__text.css);
 @import url(../blocks/mainpage/landing/__description/landing__description.css);
+@import url(../blocks/mainpage/__description_logo/landing__description_logo.css);
+@import url(../blocks/mainpage/landing__btn_project/landing__btn_project.css);
+@import url(../blocks/mainpage/landing__btn_price/landing__btn_price.css);
+@import url(../blocks/mainpage/landing__btn/landing__btn.css);
+@import url(../blocks/mainpage/landing__info_about/landing__info_about.css);
+@import url(../blocks/mainpage/landing__info_landing_price/landing__info_landing_price.css);
+@import url(../blocks/mainpage/landing__info_customization-price/landing__info_customization-price.css);
+@import url(../blocks/mainpage/landing__info_smm-price/landing__info_smm-price.css);
+
+
+
 @import url(../blocks/mainpage/images/images.css);
-@import url(../blocks/mainpage/images/__title/images__title.css);
-@import url(../blocks/mainpage/images/__subtitle/images__subtitle.css);
+@import url(../blocks/mainpage/images/__lowspan/images__lowspan.css);
+@import url(../blocks/mainpage/images/__picture/images__picture.css);
+@import url(../blocks/mainpage/images/__upspan/images__upspan.css);
+
+
+
 @import url(../blocks/mainpage/landing/__info/landing__info.css);
+
+
+
 
 @import url(../blocks/services/services.css);
 @import url(../blocks/services/__title/services__title.css);
@@ -58,7 +88,26 @@
 @import url(../blocks/advantages/__table_logo/advantages__table_logo.css);
 @import url(../blocks/advantages/__table_title/advantages__table_title.css);
 
+
+
 @import url(../blocks/about/about.css);
+@import url(../blocks/about/__foto/about__foto.css);
+@import url(../blocks/about/__me/about__me.css);
+@import url(../blocks/about/__title/about__title.css);
+@import url(../blocks/about/__text/about__text.css);
+@import url(../blocks/about/__table/about__table.css);
+@import url(../blocks/about/__table_logo/about__table_logo.css);
+@import url(../blocks/about/__table_title/about__table_title.css);
+@import url(../blocks/about/__table_text/about__table_text.css);
+@import url(../blocks/about/__me_mission/about__me_mission.css);
+@import url(../blocks/about/__me_title/about__me_title.css);
+@import url(../blocks/about/__me_text/about__me_text.css);
+@import url(../blocks/about/__btn_project/about__btn_project.css);
+
+
+
+
+
 
 @import url(../blocks/form/form.css);
 

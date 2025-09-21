@@ -1,0 +1,8 @@
+.about__me_mission {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #EFF6FF;
+    max-width: 600px;
+}

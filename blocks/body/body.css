@@ -16,17 +16,20 @@
   background-color: #f2f2f2;
 }
 @media (min-width: 768px) {
-  .body {
+  .body
+   {
     min-width: 320px;
   }
 }
 @media (min-width: 1024px) {
-  .body {
-    min-width: 1024px;
+  .body
+  {
+    min-width: 768px;
   }
 } 
 @media (min-width: 1280px) {
-  .body {
-    max-width: 1280px;
+  .body 
+  {
+    min-width: 1024px;
   }
 }

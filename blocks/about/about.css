@@ -1,5 +1,10 @@
 .about {
-    display: flex; 
+    margin: 0;
+    padding: 96px 160px 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
     min-height: 900px; 
     border: 1px solid red;
 }

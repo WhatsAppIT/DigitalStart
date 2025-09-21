@@ -1,0 +1,14 @@
+.landing__title {
+    margin: 0 0 24px;
+    font-weight: 600; 
+    font-size: 60px; 
+    line-height: 70px;
+    letter-spacing: -0,5em;
+}
+
+.landing__title::after {
+    content: "SEO продвижение SMM";
+    font-size: 50px;
+    color: #2563EB;
+    line-height: 70px; 
+}

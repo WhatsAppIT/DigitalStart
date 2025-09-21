@@ -1,0 +1,19 @@
+.about__foto {
+    width: 270px;
+    height: 327px;
+    border-radius: 20px;
+}
+
+/* @media(min-width: 768) {
+    .about__foto {
+        width: 255px;
+        height: 307px;
+}
+}
+
+@media(min-width: 320) {
+    .about__foto {
+        width: 292px;
+        height: 352px;
+}
+} */

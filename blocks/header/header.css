@@ -1,11 +1,14 @@
 .header {
-    margin: 0 auto;
+    padding: 5px 50px;
+    /* overflow: hidden; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
-    /* max-width: 1280px; */
+    gap: 350px;
+    top: 0;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid red;
 }

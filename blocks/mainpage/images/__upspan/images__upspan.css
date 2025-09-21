@@ -1,0 +1,23 @@
+.images__upspan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    padding: 16px;
+    font-weight: 600; 
+    font-size: 20px; 
+    line-height: 25px; 
+    color: white;
+    background: linear-gradient(to right, #56fb82, #575ffb);
+    border-radius: 12px;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+}
+
+.images__upspan::after {
+    content: "качество";
+    font-size: 14px; 
+}
