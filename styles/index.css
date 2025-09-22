@@ -110,5 +110,40 @@
 
 
 @import url(../blocks/form/form.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__text/form__text.css);
+@import url(../blocks/form/__table/form__table.css);
+@import url(../blocks/form/__table_data/form__table_data.css);
+@import url(../blocks/form/__table_data-left/form__table_data-left.css);
+@import url(../blocks/form/__table_data-right/form__table_data-right.css);
+@import url(../blocks/form/__table_data-label/form__table_data-label.css);
+@import url(../blocks/form/__table_data-checkbox-description/form__table_data-checkbox-description.css);
+@import url(../blocks/form/__table_input_about/form__table_input_about.css);
+@import url(../blocks/form/__table_data-input/form__table_data-input.css);
+@import url(../blocks/form/__table_data-checkbox-input/form__table_data-checkbox-input.css);
+@import url(../blocks/form/__table_data-checkbox/form__table_data-checkbox.css);
+@import url(../blocks/form/__table-checkbox/form__table-checkbox.css);
+@import url(../blocks/form/__table_label_about/form__table_label_about.css);
+@import url(../blocks/form/__table_textarea/form__table_textarea.css);
+@import url(../blocks/form/__table_label_warning/form__table_label_warning.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__table_label_warning-submit/form__table_label_warning-submit.css);
+
+
 
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__content/footer__content.css);
+@import url(../blocks/footer/__company/footer__company.css);
+@import url(../blocks/footer/__line/footer__line.css);
+@import url(../blocks/footer/__company_logotips/footer__company_logotips.css);
+@import url(../blocks/footer/__company_logo/footer__company_logo.css);
+@import url(../blocks/footer/__company_logo-social/footer__company_logo-social.css);
+@import url(../blocks/footer/__services/footer__services.css);
+@import url(../blocks/footer/__services_title/footer__services_title.css);
+@import url(../blocks/footer/__services_title-link/footer__services_title-link.css);
+@import url(../blocks/footer/__contacts/footer__contacts.css);
+@import url(../blocks/footer/__contacts_table/footer__contacts_table.css);
+@import url(../blocks/footer/__contacts_table-email/footer__contacts_table-email.css);
+@import url(../blocks/footer/__contacts_table-number/footer__contacts_table-number.css);
+@import url(../blocks/footer/__contacts_table-day/footer__contacts_table-day.css);
+@import url(../blocks/footer/__wots/footer__wots.css);

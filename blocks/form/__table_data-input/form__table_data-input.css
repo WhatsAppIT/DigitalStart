@@ -1,0 +1,22 @@
+.form__table_data-input {
+    display: flex;
+    border: 1px solid #000;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+    margin-top: 15px;
+    padding: 16px 24px;
+    width: 300px;
+    border-radius: 10px;
+    /* запрет на растягивание */
+    resize: none;
+}
+
+.form__table_data-input::placeholder {
+  color: rgb(0 0 0 / 0.6);
+}
+
+.form__table_data-input:focus {
+  outline: 2px solid #000;
+  outline-offset: 0;
+}

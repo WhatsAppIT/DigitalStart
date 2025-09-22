@@ -1,0 +1,8 @@
+.footer__company {
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 15px;
+    max-width: 400px;
+}

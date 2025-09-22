@@ -1,0 +1,11 @@
+.form__table_data-label {
+    padding: 0 0 12px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: 600; 
+    font-size: 14px; 
+    line-height: 25px; 
+    color: #374151;
+}

@@ -1,0 +1,15 @@
+.footer__contacts_table-number {
+    background-image: url(/DigitalStart/logo-svg/telegram-icon.svg);
+    background-size: cover;
+    width: 17px;
+    height: 17px;
+}
+
+.footer__contacts_table-number::after {
+    margin-left: 30px;
+    content: "+7_(999)_123_45_67";
+    font-weight: 400; 
+    font-size: 16px; 
+    line-height: 25px; 
+    color: #9CA3AF;
+}

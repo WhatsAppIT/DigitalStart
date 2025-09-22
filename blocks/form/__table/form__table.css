@@ -1,0 +1,9 @@
+.form__table {
+    padding: 48px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #eff6ff, #faf5ff);
+    border-radius: 20px;
+}

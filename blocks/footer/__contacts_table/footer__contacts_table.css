@@ -1,0 +1,9 @@
+.footer__contacts_table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    min-width: 240px;
+    list-style-type: none;
+}

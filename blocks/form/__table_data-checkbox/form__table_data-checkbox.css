@@ -1,0 +1,12 @@
+.form__table_data-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    text-align: left;
+}

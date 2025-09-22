@@ -253,57 +253,134 @@ h<!DOCTYPE html>
 
       <section class="form" id="form">
         <h2 class="form__title">Давайте работать вместе!</h2>
+        <p class="form__text">Расскажите о своем проекте и я предложу оптимальное решение</p>
+        <!-- атрибут action нужно указать адрес куда отправлять форму - путь до скрипта, который обработает введённые пользователем данные -->
+        <form class="form__table" action="">
+          <div class="form__table_data">
+
+            <fieldset class="form__table_data-left">
+              <!-- <legend>Контактные данные</legend> -->
+              <label class="form__table_data-label" for="profileName">Как вас зовут?
+                <input class="form__table_data-input" name="profile-Name" id="profileName" type="text" placeholder="Введите ваше имя" autocomplete="off" required>
+                <span class="form__error" id="error-profileName"></span>
+              </label>
+              <label class="form__table_data-label" for="profileNumber">Контакт для связи
+                <input class="form__table_data-input" name="profile-Number" id="profileNumber" type="tel" min="10" max="11" placeholder="Контакт для связи" autocomplete="off" inputmode="numeric" required>
+                <span class="form__error" id="error-profileNumber"></span>
+              </label>
+            </fieldset>
+            
+            <fieldset class="form__table_data-right">
+              <!-- legend для помощи скринридерам, вставляется в каждый fieldset -->
+              <!-- <legend>Информация об организации и бюджете на рекламу</legend> -->
+              <label class="form__table_data-label" for="profileCompany">Название компании
+                <input class="form__table_data-input" name="profile-Company" id="profileCompany" type="text" placeholder="Название компании" autocomplete="off" disabled>
+                <span class="form__error" id="error-profileCompany"></span>
+              </label>
+              <label class="form__table_data-label" for="profileMoney">Примерный бюджет
+                <select class="form__table_data-input" name="profile-Money" id="profileMoney" type="number" autocomplete="off" required>
+                  <option value="">Сумма</option>
+                  <option value="number5000">5000 рублей</option>
+                  <option value="number10000">10 000 рублей</option>
+                  <option value="number15000">15 000 рублей</option>
+                  <option value="number20000">20 000 рублей</option>
+                  <option value="number25000">25 000 рублей</option>
+                  <option value="number30000">30 000 рублей</option>
+                </select>
+                <span class="form__error" id="error-profileMoney"></span>
+              </label>
+            </fieldset>
+<!-- С чек боксами доразобраться по их объединению в группу -->
+            <fieldset class="form__table_data-checkbox">
+              <!-- <legend>Выбор одной или нескольких услуг</legend> -->
+              <p class="form__table_data-checkbox-description">Какие услуги нужны?</p>
+              <div class="form__table-checkbox">
+                <label class="form__table_data-checkbox form__table_data-checkbox-landing" for="profileLanding">SMM</label>
+                  <input class="form__table_data-checkbox-input form__table_data-input-landing" value="profile-Landing" name="profile-Landing" id="profileLanding" type="checkbox">
+                
+                <label class="form__table_data-checkbox form__table_data-checkbox-context" for="profileContext">Контекст</label>
+                  <input class="form__table_data-checkbox-input form__table_data-input-context" value="profile-Context" name="profile-Context" id="profileContext" type="checkbox">
+                
+                <label class="form__table_data-checkbox form__table_data-checkbox-target" for="profileTarget">Таргетинг</label>
+                  <input class="form__table_data-checkbox-input form__table_data-input-target" value="profile-Target" name="profile-Target" id="profileTarget" type="checkbox">
+                
+                <label class="form__table_data-checkbox form__table_data-checkbox-smm" for="profileSMM">Лендинг</label>
+                  <input class="form__table_data-checkbox-input form__table_data-input-smm" value="profile-SMM" name="profile-SMM" id="profileSMM" type="checkbox">
+                
+              </div>
+            </fieldset>
+
+            <label class="form__table_textarea" for="text">Расскажите о проекте
+              <textarea class="form__table_input_about" name="profile-AboutCompany" id="profileAboutCompany" name="conctips" id="profileInformation" cols="50" rows="10" minlength="1" maxlength="500" type="text" placeholder="Опишите ваш бизнес, цели, какой результат ожидаете. Чем подробнее - тем точнее смогу просчмтать стоимость!" autocomplete="off" required></textarea>
+              <span class="form__error" id="error-profileAboutCompany"></span>
+            </label>
+            <span class="form__table_label_warning">Максимум 500 символов</span>
+            <button class="form__button" type="submit">Отправить заявку</button>
+            <span class="form__table_label_warning form__table_label_warning-submit">Отвечаю в течение 2 часов в будни</span>
+          </div>
+        </form>
       </section>
     </main>
 
     <!-- 6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666 -->
 
     <footer class="footer">
-      <div class="footer__company">
-        <img
-          class="footer__company_logo"
-          src="./image/Logo1280.png"
-          alt="логотип"
-        />
-        <p class="footer__company_about">
-          Начинающий интернет-маркетолог, который поможет вашему бизнесу выйти в
-          онлайн по честным ценам.
-        </p>
-        <div class="footer__company_smm">
+      <div class="footer__content">
+        <div class="footer__company">
           <img
-            class="footer__company_smm_tlg"
-            src="./favicon/telegram.svg"
-            alt="логотип телеграм" style="width: 100px;"
+            class="footer__company_logo"
+            src="./image/footer-logotip.png"
+            alt="логотип"
           />
-          <img
-            class="footer__company_smm_vk"
-            src="./favicon/vk.svg"
-            alt="логотип ВК" style="width: 100px;"
-          />
-          <img
-            class="footer__company_smm_inst"
-            src="./favicon/inst.svg"
-            alt="логотип инстаграм" style="width: 100px;"
-          />
+          <p class="footer__company_about">
+            Начинающий интернет-маркетолог, который поможет вашему бизнесу выйти в
+            онлайн по честным ценам.
+          </p>
+          <div class="footer__company_logotips">
+            <a class="footer__company_logo-social" href="#">
+              <img
+                class="footer__company_logo-tlg"
+                src="./logo-svg/telegram_chat_icon.svg"
+                alt="логотип соцсети телеграм" style="width: 100px;"
+              />
+            </a>
+            <a class="footer__company_logo-social" href="#">
+              <img
+                class="footer__company_logo-vk"
+                src="./logo-svg/vk-main-icon.svg"
+                alt="логотип соцсети ВК" style="width: 100px;"
+              />
+            </a>
+            <a class="footer__company_logo-social" href="#">
+              <img
+                class="footer__company_logo-inst"
+                src="./logo-svg/instagram-main-icon.svg"
+                alt="логотип соцсети инстаграм" style="width: 100px;"
+              />
+            </a>
+          </div>
+        </div>
+  
+        <div class="footer__services">
+          <h3 class="footer__services_title">Услуги</h3>
+          <a class="footer__services_title-link footer__services_landing" href="#">Лендинги от 5000₽</a>
+          <a class="footer__services_title-link footer__services_context" href="#">Контекстная реклама</a>
+          <a class="footer__services_title-link footer__services_target" href="#">Таргетинг</a>
+          <a class="footer__services_title-link footer__services_smm" href="#">SMM продвижение</a>
+          <a class="footer__services_title-link footer__services_consalt" href="#">Консультации</a>
+        </div>
+  
+        <div class="footer__contacts">
+          <h3 class="footer__services_title">Контакты</h3>
+          <ul class="footer__contacts_table">
+            <li class="footer__contacts_table-email"></li>
+            <li class="footer__contacts_table-number"></li>
+            <li class="footer__contacts_table-day"></li>
+          </ul>
         </div>
       </div>
-
-      <div class="footer__services">
-        <h3 class="footer__services_title">Услуги</h3>
-        <a class="footer__services_landing" href="#">Лендинги от 5000₽</a>
-        <a class="footer__services_context" href="#">Контекстная реклама</a>
-        <a class="footer__services_target" href="#">Таргетинг</a>
-        <a class="footer__services_smm" href="#">SMM продвижение</a>
-        <a class="footer__services_consalt" href="#">Консультации</a>
-      </div>
-
-      <div class="footer__contacts">
-        <h3 class="footer__contacts_title">Контакты</h3>
-        <ul class="footer__contacts_table">
-          <li>@digistart_help</li>
-          <li>+7 (999) 123-45-67</li>
-          <li>Пн-Пт 9:00-20:00</li>
-        </ul>
+      <div class="footer__line">
+        <p class="footer__wots">2024 GigiStart. Все права защищены и т д</p>
       </div>
     </footer>
   </body>

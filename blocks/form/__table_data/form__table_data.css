@@ -1,9 +1,6 @@
-.form{
-    padding: 96px 0;
+.form__table_data {
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 900px;  
-    border: 1px solid red;
 }
