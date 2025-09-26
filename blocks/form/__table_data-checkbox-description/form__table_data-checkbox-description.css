@@ -6,3 +6,10 @@
     text-align: left;
     color: #374151;
 }
+
+@media (max-width: 600px) {
+    .form__table_data-checkbox-description {
+        margin-top: 15px;;
+        padding: 0;
+    }
+}

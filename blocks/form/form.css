@@ -1,9 +1,30 @@
 .form{
-    padding: 96px 0;
-    display: flex; 
+    margin: 0 auto;
+    padding: 80px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    min-height: 900px;  
+    justify-content: center;
+    background-color: #f6f4f4;
     border: 1px solid red;
+    max-width: 1440px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1279px) {
+    .form {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .form {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .form {
+        padding: 20px;
+    }
 }

@@ -1,14 +1,21 @@
 .header {
-    padding: 5px 50px;
-    /* overflow: hidden; */
+    padding: 5px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    position: fixed;
-    gap: 350px;
+    position: sticky;
+    /* gap: 600px; */
     top: 0;
-    width: 100%;
+    width: 99,7%;
     z-index: 1;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid red;
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding-left: 15px;
+        align-items: start;
+        justify-content: start;
+    }
 }

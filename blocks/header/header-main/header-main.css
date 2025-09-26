@@ -4,3 +4,10 @@
     align-items: center;
     gap: 100px;
 }
+
+@media (max-width: 767px) {
+    .header-main {
+        display: none;
+        align-items: start;
+    }
+}

@@ -1,6 +1,6 @@
 .images__picture {
       border-radius: 20px;
-      width: 432px;
-      height: 365px;
-      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+      max-width: 450px;
+      width: 100%;
+      max-height: auto;
 }

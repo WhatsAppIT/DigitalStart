@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+    .form__table_data-checkbox-target {
+        padding: 0;
+        margin: 0;
+    }
+}

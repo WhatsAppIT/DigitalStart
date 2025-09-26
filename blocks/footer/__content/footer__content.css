@@ -6,3 +6,11 @@
     width: 100%;
     gap: 30px;
 }
+
+@media (max-width: 1023px) {
+    .footer__content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

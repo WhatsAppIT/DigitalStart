@@ -2,10 +2,23 @@
     margin: 0;
     padding: 96px 160px 96px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 60px;
-    min-height: 900px; 
-    background: #e5e5e5;
+    background: #FFFFFF;
     border: 1px solid red;
+}
+
+@media (max-width: 1023px) {
+    .about {
+        padding: 32px 60px 32px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .about {
+        padding: 20px;
+    }
 }

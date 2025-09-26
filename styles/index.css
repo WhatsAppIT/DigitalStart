@@ -128,6 +128,10 @@
 @import url(../blocks/form/__table_label_warning/form__table_label_warning.css);
 @import url(../blocks/form/__button/form__button.css);
 @import url(../blocks/form/__table_label_warning-submit/form__table_label_warning-submit.css);
+@import url(../blocks/form/__table-checkbox-all/form__table-checkbox-all.css);
+@import url(../blocks/form/__table_data-checkbox-context/form__table_data-checkbox-context.css);
+@import url(../blocks/form/__table_data-checkbox-smm/form__table_data-checkbox-smm.css);
+@import url(../blocks/form/__table_data-checkbox-target/form__table_data-checkbox-target.css);
 
 
 

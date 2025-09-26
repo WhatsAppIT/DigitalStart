@@ -6,7 +6,7 @@
     font-size: inherit;
     background-color: white;
     margin-top: 3px;
-    /* margin-right: 30px; */
+    margin-left: 20px;
     padding: 16px 24px; 
     /* width: 20px; */
     border-radius: 10px;
@@ -21,4 +21,12 @@
 .form__table_data-checkbox-input:focus {
   /* outline: 2px solid #000; */
   outline-offset: 0;
+}
+
+@media (max-width: 600px) {
+    .form__table_data-checkbox-input {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
 }

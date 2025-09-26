@@ -1,0 +1,7 @@
+ @media (max-width: 600px) {
+    .form__table_data-checkbox-context {
+        padding: 0;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+}

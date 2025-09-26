@@ -4,3 +4,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 1023px) {
+    .form__table_data {
+        width: 100%;
+}
+}

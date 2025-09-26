@@ -1,4 +1,4 @@
-h<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -191,6 +191,9 @@ h<!DOCTYPE html>
           <div class="advantages__table-element advantages__table_fast">
             <div class="advantages__table_img advantages__table_img-fast">
               <img class="advantages__table_logo advantages__table_logo-fast" src="./logo-svg/clock-icon.svg" alt="логотип вашего времени">
+<!--               <svg viewBox="0 0 32 32">
+                <use href="#clock">
+              </svg> -->
             </div>
             <h4 class="advantages__table_title advantages__table_fast-title">Быстро</h4>
             <p class="advantages__table_subtitle advantages__table_fast-subtitle">Соблюдение сроков без потери качества</p>
@@ -294,24 +297,26 @@ h<!DOCTYPE html>
             <fieldset class="form__table_data-checkbox">
               <!-- <legend>Выбор одной или нескольких услуг</legend> -->
               <p class="form__table_data-checkbox-description">Какие услуги нужны?</p>
-              <div class="form__table-checkbox">
-                <label class="form__table_data-checkbox form__table_data-checkbox-landing" for="profileLanding">SMM</label>
-                  <input class="form__table_data-checkbox-input form__table_data-input-landing" value="profile-Landing" name="profile-Landing" id="profileLanding" type="checkbox">
-                
-                <label class="form__table_data-checkbox form__table_data-checkbox-context" for="profileContext">Контекст</label>
-                  <input class="form__table_data-checkbox-input form__table_data-input-context" value="profile-Context" name="profile-Context" id="profileContext" type="checkbox">
-                
-                <label class="form__table_data-checkbox form__table_data-checkbox-target" for="profileTarget">Таргетинг</label>
-                  <input class="form__table_data-checkbox-input form__table_data-input-target" value="profile-Target" name="profile-Target" id="profileTarget" type="checkbox">
-                
-                <label class="form__table_data-checkbox form__table_data-checkbox-smm" for="profileSMM">Лендинг</label>
-                  <input class="form__table_data-checkbox-input form__table_data-input-smm" value="profile-SMM" name="profile-SMM" id="profileSMM" type="checkbox">
+              <div class="form__table-checkbox-all">
+                <div class="form__table-checkbox">
+                  <label class="form__table_data-checkbox form__table_data-checkbox-landing" for="profileLanding">SMM</label>
+                    <input class="form__table_data-checkbox-input form__table_data-input-landing" value="profile-Landing" name="profile-Landing" id="profileLanding" type="checkbox">
+                  <label class="form__table_data-checkbox form__table_data-checkbox-context" for="profileContext">Контекст</label>
+                    <input class="form__table_data-checkbox-input form__table_data-input-context" value="profile-Context" name="profile-Context" id="profileContext" type="checkbox">
+                </div>
+
+                <div class="form__table-checkbox">
+                  <label class="form__table_data-checkbox form__table_data-checkbox-target" for="profileTarget">Таргетинг</label>
+                    <input class="form__table_data-checkbox-input form__table_data-input-target" value="profile-Target" name="profile-Target" id="profileTarget" type="checkbox">
+                  <label class="form__table_data-checkbox form__table_data-checkbox-smm" for="profileSMM">Лендинг</label>
+                    <input class="form__table_data-checkbox-input form__table_data-input-smm" value="profile-SMM" name="profile-SMM" id="profileSMM" type="checkbox">
+                </div>
                 
               </div>
             </fieldset>
 
             <label class="form__table_textarea" for="text">Расскажите о проекте
-              <textarea class="form__table_input_about" name="profile-AboutCompany" id="profileAboutCompany" name="conctips" id="profileInformation" cols="50" rows="10" minlength="1" maxlength="500" type="text" placeholder="Опишите ваш бизнес, цели, какой результат ожидаете. Чем подробнее - тем точнее смогу просчмтать стоимость!" autocomplete="off" required></textarea>
+              <textarea class="form__table_input_about" name="profile-AboutCompany" id="profileAboutCompany" name="conctips" id="profileInformation" cols="50" rows="10" minlength="1" maxlength="500" type="text" placeholder="Опишите ваш бизнес, цели, какой результат ожидаете. Чем подробнее - тем точнее смогу просчитать стоимость!" autocomplete="off" required></textarea>
               <span class="form__error" id="error-profileAboutCompany"></span>
             </label>
             <span class="form__table_label_warning">Максимум 500 символов</span>
@@ -356,7 +361,7 @@ h<!DOCTYPE html>
                 class="footer__company_logo-inst"
                 src="./logo-svg/instagram-main-icon.svg"
                 alt="логотип соцсети инстаграм" style="width: 100px;"
-              />
+              /></a>
             </a>
           </div>
         </div>
@@ -385,3 +390,21 @@ h<!DOCTYPE html>
     </footer>
   </body>
 </html>
+
+
+
+<!-- <svg class="icon" fill="white" stroke="white" viewBox="0 0 32 32" href="./logo-svg/ ">
+  <symbol id="clock">
+  <path 
+  d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"/>
+  <path 
+  d="M21.5,22.5a1,1,0,0,1-.71-.29l-5.5-5.5A1,1,0,0,1,15,16V8a1,1,0,0,1,2,0v7.59l5.21,5.2a1,1,0,0,1,0,1.42A1,1,0,0,1,21.5,22.5Z" />
+</symbol>
+<style>
+  .icon {
+    fill: white;
+    stroke: white;
+  }
+</style>
+</svg>
+ -->

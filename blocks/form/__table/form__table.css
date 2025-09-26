@@ -1,9 +1,44 @@
 .form__table {
-    padding: 48px;
+    padding: 40px;
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #eff6ff, #faf5ff);
     border-radius: 20px;
+    max-width: 850px;
+    border: 1px solid black;
+}
+
+/* @media (max-width: 1279px) {
+    .form__table {
+        width: 60%;
+    }
+} */
+
+@media (max-width: 1023px) {
+    .form__table {
+        padding: 38px;
+        margin: 0;
+        /* width: 70%; */
+    }
+}
+
+@media (max-width: 900px) {
+    .form__table {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .form__table {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .form__table {
+        padding: 15px;
+        width: 80%;
+    }
 }

@@ -1,0 +1,17 @@
+.form__table-checkbox-all {
+    display: flex; 
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+@media (max-width: 750px) {
+    .form__table-checkbox-all {
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

@@ -1,8 +1,14 @@
 .form__table-checkbox {
     display: flex; 
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-start;
-    gap: 8px;
-    padding-left: 12px;
+    gap: 10px;
+    /* padding-left: 12px; */
+}
+
+@media (max-width: 600px) {
+    .form__table-checkbox {
+        padding-left: 10px;
+    }
 }

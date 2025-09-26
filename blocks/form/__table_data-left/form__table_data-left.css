@@ -6,3 +6,10 @@
     gap: 30px;
     border: none;
 }
+
+@media (max-width: 767px) {
+    .form__table_data-left {
+        flex-direction: column;
+        width: 100%;
+    }
+}

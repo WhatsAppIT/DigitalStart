@@ -6,3 +6,9 @@
     align-items: center;
     border: 1px solid red;
 }
+
+@media (max-width: 767px) {
+    .services {
+        padding: 20px;
+    }
+}

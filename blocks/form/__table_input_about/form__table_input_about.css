@@ -7,7 +7,7 @@
     margin-top: 15px;
     padding: 16px 24px;
     width: 100%;
-
+    box-sizing: border-box;
     border-radius: 10px;
     /* запрет на растягивание */
     resize: none;
