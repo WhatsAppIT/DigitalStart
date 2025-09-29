@@ -6,6 +6,12 @@ window.addEventListener('load', () => {
     }, 10);
 });
 
+
+
+
+
+
+
 // // Меняет цвет хедера при прокрутке
 // const header = document.querySelector('header');
 // window.addEventListener('scroll', () => {
@@ -15,6 +21,11 @@ window.addEventListener('load', () => {
 //         header.classList.remove('scrolled');
 //     }
 // });
+
+
+
+
+
 
 
 // Функция для запуска эффекта при появлении в области видимости
@@ -37,6 +48,10 @@ function initTypeWriterOnScroll() {
 document.addEventListener('DOMContentLoaded', initTypeWriterOnScroll);
 
 
+
+
+
+
 // Плавное перемещение по якорным ссылкам
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -51,12 +66,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+
+
+
 // Плавная анимация при прокрутке
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -68,6 +86,9 @@ const observer = new IntersectionObserver((entries) => {
  document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
+
+
+
 
 // Еффект печатания строки h1 title
 function typeWriter(element, text, speed = 100) {
@@ -84,12 +105,18 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
+
+
+
 // Инициализация эффекта набора текста при загрузке страницы
 // setTimeout(() => {
 //     const heroTitle = document.querySelector('.services__title');
 //     const originalText = heroTitle.textContent;
 //     typeWriter(heroTitle, originalText, 50);
 // }, 1500);
+
+
+
 
 // Добавить индикатор прокрутки
 const scrollIndicator = document.createElement('div');
@@ -108,6 +135,9 @@ window.addEventListener('scroll', () => {
     const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     scrollIndicator.style.width = scrollPercent + '%';
 });
+
+
+
 
 // Добавить анимацию щелчков к кнопкам
 document.querySelectorAll('.form__button').forEach(button => {
@@ -136,7 +166,6 @@ document.querySelectorAll('.form__button').forEach(button => {
         }, 600);
     });
 });
-
 const rippleStyle = document.createElement('style');
 rippleStyle.textContent = `
     @keyframes ripple {
@@ -149,12 +178,12 @@ rippleStyle.textContent = `
 document.head.appendChild(rippleStyle);
 
 
+
+
 // Увеличение карточек при попадании в область видимости и возвращение обратно
 function initCardAnimation() {
     const cards = document.querySelectorAll('.card');
-    
     if (cards.length === 0) return;
-    
     // Проверяем, что это мобильное устройство
     const isMobile = window.innerWidth <= 768;
     
@@ -163,46 +192,36 @@ function initCardAnimation() {
         cards.forEach(card => card.classList.add('visible'));
         return;
     }
-    
     // Создаем Map для отслеживания состояния анимации карточек
     const cardAnimationState = new Map();
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const card = entry.target;
-            
             if (entry.isIntersecting) {
                 // Карточка появляется в области видимости
-                
                 // Проверяем, была ли уже запущена анимация для этой карточки
                 if (cardAnimationState.has(card)) {
                     // Отменяем предыдущий таймаут, если он есть
                     clearTimeout(cardAnimationState.get(card));
                 }
-                
                 // Добавляем класс с небольшой задержкой для плавности
                 const timeoutId = setTimeout(() => {
                     card.classList.add('visible');
                     cardAnimationState.delete(card); // Удаляем из Map после выполнения
                 }, 100);
-                
                 cardAnimationState.set(card, timeoutId);
-                
             } else {
                 // Карточка уходит из области видимости
-                
                 // Отменяем анимацию появления, если она еще не выполнилась
                 if (cardAnimationState.has(card)) {
                     clearTimeout(cardAnimationState.get(card));
                     cardAnimationState.delete(card);
                 }
-                
                 // Убираем класс visible с небольшой задержкой
                 const timeoutId = setTimeout(() => {
                     card.classList.remove('visible');
                     cardAnimationState.delete(card);
                 }, 50);
-                
                 cardAnimationState.set(card, timeoutId);
             }
         });
@@ -210,55 +229,45 @@ function initCardAnimation() {
         threshold: 0.2, // Запускать когда 20% карточкивидно
         rootMargin: '0px 0px -50px 0px' // Небольшой отступ снизу
     });
-    
     cards.forEach(card => observer.observe(card));
-    
     // Возвращаем observer для возможности его отключения
     return observer;
 }
-
-
-
 // Сохраняем ссылку на observer для возможности очистки
 let cardObserver = null;
-
 // Инициализация при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     cardObserver = initCardAnimation();
 });
-
 // Переинициализация при изменении размера окна
 window.addEventListener('resize', () => {
     // Отключаем старый observer
     if (cardObserver) {
         cardObserver.disconnect();
     }
-    
     // Удаляем все классы visible
     document.querySelectorAll('.card').forEach(card => {
         card.classList.remove('visible');
     });
-    
     // Заново инициализируем с небольшой задержкой
     setTimeout(() => {
         cardObserver = initCardAnimation();
     }, 100);
 });
-
-
 // Инициализация при загрузке
 document.addEventListener('DOMContentLoaded', initCardAnimation);
-
 // Переинициализация при изменении размера окна
 window.addEventListener('resize', () => {
     // Удаляем старые классы
     document.querySelectorAll('.card').forEach(card => {
         card.classList.remove('visible');
     });
-    
     // Заново инициализируем
     setTimeout(initCardAnimation, 100);
 });
+
+
+
 
 
 // Сайт успешно загружен
