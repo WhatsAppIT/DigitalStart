@@ -3,13 +3,7 @@
     padding: 0 0 24px 0;
     font-weight: 600; 
     font-size: clamp(1.875rem, 1.5179rem + 1.7857vw, 3.125rem);
-    line-height: 50px; 
+    line-height: 100%; 
     text-align: center;
     color: white;
 }
-
-@media (max-width: 1029px) {
-  .advantages__title {
-    /* padding: 40px 50px 15px; */
-  }
-} 
