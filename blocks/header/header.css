@@ -9,8 +9,26 @@
     width: 99,7%;
     z-index: 1;
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid red;
+    animation: fadeInUp 1s ease 0.4s both;
+    /* border: 1px solid red; */
 }
+
+header.scrolled {
+    background: rgba(102, 126, 234, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 @media (max-width: 767px) {
     .header {

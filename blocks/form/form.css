@@ -8,7 +8,7 @@
     background-color: #f6f4f4;
     max-width: 1440px;
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 @media (max-width: 1279px) {
@@ -16,15 +16,3 @@
         padding: 70px 0 70px;
     }
 }
-
-/* @media (max-width: 1023px) {
-    .form {
-        padding: 40px;
-    }
-}
-
-@media (max-width: 767px) {
-    .form {
-        padding: 20px;
-    }
-} */

@@ -2,6 +2,7 @@
     margin: 0 0 32px;
     font-weight: 400; 
     font-size: clamp(0.8125rem, 0.6875rem + 0.625vw, 1.25rem);
+    animation: fadeInUp 1s ease 0.2s both;
     line-height: 25px; 
     color: #374151;
 }

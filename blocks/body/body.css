@@ -18,21 +18,36 @@ html {
   color: #000000;
   background-color: #f2f2f2;
 }
-/* @media (min-width: 768px) {
-  .body
-   {
-    min-width: 320px;
-  }
+/* 
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
 }
-@media (min-width: 1024px) {
-  .body
-  {
-    min-width: 768px;
-  }
-} 
-@media (min-width: 1280px) {
-  .body 
-  {
-    max-width: 1024px;
-  }
+
+.loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 } */

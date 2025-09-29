@@ -5,6 +5,7 @@
     line-height: 100%;
     letter-spacing: -0,5em;
     font-size: clamp(2.1875rem, 1.8304rem + 1.7857vw, 3.4375rem);
+    animation: fadeInUp 1s ease;
 }
 
 .landing__title::after {

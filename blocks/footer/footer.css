@@ -13,7 +13,7 @@
     line-height: 25px; 
     color: #9CA3AF;
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 @media (max-width: 1279px) {
