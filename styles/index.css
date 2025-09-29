@@ -49,6 +49,7 @@
 
 
 @import url(../blocks/services/services.css);
+@import url(../blocks/services/card/card.css);
 @import url(../blocks/services/__title/services__title.css);
 @import url(../blocks/services/__table/services__table.css);
 @import url(../blocks/services/__table_title/services__table_title.css);

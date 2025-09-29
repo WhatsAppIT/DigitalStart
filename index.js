@@ -148,5 +148,53 @@ rippleStyle.textContent = `
 `;
 document.head.appendChild(rippleStyle);
 
+// Увеличение карточек при попадании в область видимости
+
+function initCardAnimation() {
+    const cards = document.querySelectorAll('.card');
+    
+    if (cards.length === 0) return;
+    
+    // Проверяем, что это мобильное устройство
+    const isMobile = window.innerWidth <= 768;
+    
+    if (!isMobile) {
+        // На десктопе сразу показываем все карточки
+        cards.forEach(card => card.classList.add('visible'));
+        return;
+    }
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Добавляем класс с небольшой задержкой для плавности
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, 100);
+            }
+        });
+    }, {
+        threshold: 0.2, // Запускать когда 20% карточки видно
+        rootMargin: '0px 0px -50px 0px' // Небольшой отступ
+    });
+    
+    cards.forEach(card => observer.observe(card));
+}
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', initCardAnimation);
+
+// Переинициализация при изменении размера окна
+window.addEventListener('resize', () => {
+    // Удаляем старые классы
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('visible');
+    });
+    
+    // Заново инициализируем
+    setTimeout(initCardAnimation, 100);
+});
+
+
 // Сайт успешно загружен
 console.log('DigitalStart сайт успешно загружен! 🚀');
