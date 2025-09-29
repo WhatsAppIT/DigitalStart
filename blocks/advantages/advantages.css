@@ -1,16 +1,36 @@
 .advantages {
+    padding: 96px 0 96px;
     display: flex; 
     flex-direction: column;
     justify-content: start;
     align-items: center;
     min-height: 500px; 
     background: linear-gradient(to right, #515dfc, #8a4acd);
-    border: 1px solid red;
     box-sizing: border-box;
+    border: 1px solid red;
 }
+
+@media (max-width: 1279px) {
+    .advantages {
+        padding: 70px 0 70px;
+    }
+}
+
+/* @media (max-width: 1023px) {
+    .advantages {
+        padding: 50px 60px 50px;
+    }
+}
+
+@media (max-width: 903px) {
+    .advantages {
+        padding: 50px 96px 50px;
+    }
+} */
+
 
 @media (max-width: 767px) {
     .advantages {
-        padding: 20px;
+        padding: 70px 15px 70px;
     }
 }

@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
     />
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/index.css" /> <!-- За подключение стилей и JS отвечает Webpack -->
     <link rel="icon" href="./favicon/favicon.jpg" />
     <!-- // сделаать favcon в svg и ico !!!!!!!!!!
     <link rel="icon" href="./favicon/favicon.ico" sizes="any" />
@@ -33,16 +33,16 @@
   <body class="body">
 
     <header class="header">
-      <a class="header__logo" href="#"><img class="header__logo_img" src="./logo-svg/logo-main-logo.svg" alt="фирменный логотип" /></a>
+      <a class="header__logo" href="#"><img class="header__logo_img" src="./image/DS_maibn (2).png" alt="фирменный логотип" /></a>
       <div class="header-main">
         <nav class="header__nav">
-          <a class="header__nav_menu" href="#services">Услуги</a>
-          <a class="header__nav_menu" href="#advantages">Преимуества</a>
-          <a class="header__nav_menu" href="#about">Обо мне</a>
+          <a class="header__nav_menu header__nav_menu-services" href="#services">Услуги</a>
+          <a class="header__nav_menu header__nav_menu-advantages" href="#advantages">Преимуества</a>
+          <a class="header__nav_menu header__nav_menu-about" href="#about">Обо мне</a>
         </nav>
         <a class="header__link" href="#form">Заказать</a>
       </div>
-
+      <img class="header__bar" src="./logo-svg/bar_icon.svg">
     </header>
 <!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
     <main class="main">
@@ -68,18 +68,18 @@
 
           <div class="landing__info">
             <div class="landing__info_about">
-              <p class="landing__info_landing_price">от 15000₽</p>
-              <p class="landing__info_landing_target">Лендинг</p>
+              <p class="landing__info_price landing__info_landing_price">от 15000₽</p>
+              <p class="landing__info_text">Лендинг</p>
             </div>
 
             <div class="landing__info_about">
-              <p class="landing__info_customization-price">от 8000₽</p>
-              <p class="landing__info_customization-target">Настройка реклам</p>
+              <p class="landing__info_price landing__info_customization-price">от 8000₽</p>
+              <p class="landing__info_text">Реклама</p>
             </div>
 
             <div class="landing__info_about">
-              <p class="landing__info_smm-price">от 6000₽</p>
-              <p class="landing__info_smm-target">SMM продвижение</p>
+              <p class="landing__info_price landing__info_smm-price">от 6000₽</p>
+              <p class="landing__info_text">SMM</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
 
         <div class="images">
           <p class="images__upspan">100%<br></p>
-          <img class="images__picture" src="./image/main_page.png" alt="Мое фото на рабочем месте" />
+          <img class="images__picture" src="./image/maiiiin.jpg" alt="Мое фото на рабочем месте" />
           <p class="images__lowspan">Честные цены<br></p>
         </div>
       </section>
@@ -106,7 +106,8 @@
             <div class="services__table_img services__table_img-landing">
               <img class="services__table_logo services__table_logo-landing" src="./logo-svg/landing-icon.svg" alt="логотип доллара">
             </div>
-            <h3 class="services__table_title-landing">Создание лендингов</h3>
+            <p class="services__table_title-landing">от 15000₽</p>
+            <h3 class="services__table_title">Создание лендингов</h3>
             <p class="services__table_description">
               Разрабатываю продающие лендинги с высокой конверсией.
               Адаптивная верстка, быстрая загрузка, SEO-оптимизация. 
@@ -117,12 +118,13 @@
               <li  class="services__list-content">Оптимизация скорости загрузки</li>
             </ul>
           </a>
-
+          
           <a href="#" class="services__all services__table_context">
             <div class="services__table_img services__table_img-context">
               <img class="services__table_logo services__table_logo-context" src="./logo-svg/context-icon.svg" alt="логотип доллара">
             </div>
-            <h3 class="services__table_title-context">Контекстная реклама</h3>
+            <p class="services__table_title-landing">от 8000₽</p>
+            <h3 class="services__table_title">Контекстная реклама</h3>
             <p class="services__table_description">
               Настройка Google Ads и Яндекс.Директ с грамотным подбором ключевых слов и оптимизацией бюджета.
             </p>
@@ -132,12 +134,13 @@
               <li  class="services__list-content">Еженедельные отчеты и оптимизация</li>
             </ul>
           </a>
-
+          
           <a href="#" class="services__all services__table_target">
             <div class="services__table_img services__table_img-target">
               <img class="services__table_logo services__table_logo-target" src="./logo-svg/target-icon.svg" alt="логотип доллара">
             </div>
-            <h3 class="services__table_title-target">Таргетинговая реклама</h3>
+            <p class="services__table_title-landing">от 8000₽</p>
+            <h3 class="services__table_title">Таргетинговая реклама</h3>
             <p class="services__table_description">
               Настройка рекламы в ВКонтакте, Одноклассниках и Telegram с точным таргетингом на вашу аудиторию.
             </p>
@@ -147,12 +150,13 @@
               <li  class="services__list-content">А/В тестирование объявлений</li>
             </ul>
           </a>
-
+          
           <a href="#" class="services__all services__table_smm">
             <div class="services__table_img services__table_img-smm">
               <img class="services__table_logo services__table_logo-smm" src="./logo-svg/smm-logo.svg" alt="логотип доллара">
             </div>
-            <h3 class="services__table_title-smm">SMM продвижение</h3>
+            <p class="services__table_title-landing">от 6000₽</p>
+            <h3 class="services__table_title">SMM продвижение</h3>
             <p class="services__table_description">
               Ведение соцсетей, создание контент-плана, оформление профилей и увеличение живой аудитории.
             </p>
@@ -213,38 +217,38 @@
       <!-- 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 -->
 
       <section class="about" id="about">
-        <img class="about__foto" src="./image/main_page.png" alt="моя фотография на рабочем месте">
+        <img class="about__foto" src="./image/DigitalStart_main.jpg" alt="моя фотография на рабочем месте">
         <div class="about__me">
 
-          <h2 class="about__title">Привет! Меня зовут Денис</h2>
-          <p class="about__text">Интернет-маркетолог и Веб-разработчик, специализируюсь на создании эффективных решений для бизнеса. Знаю как сделать продающий сайт с выводом его в топ-10 поисковой выдачи. Настрою качественно контекстную и таргетинговую рекламу.</p>
+          <h2 class="about__title">Наша команда для вашего онлайн успеха</h2>
+          <p class="about__text">Предлагаем комплексное продвижение брендов в цифровой среде — разработка уникального веб‑сайта, SEO-оптимизация, контент-маркетинг, таргетированная реклама, SMM. Оптимизация каждого этапа обеспечивает высокие позиции в поисковой выдаче, узнаваемость бренда и доверие клиентов.</p>
           
           <div class="about__table about__table-desigion">
-            <img class="about__table_logo about__table_logo-desigion" src="" alt="логотип современных решений">
+            <img class="about__table_logo about__table_logo-desigion" src="./logo-svg/trungul_svg.svg" alt="логотип современных решений">
             <h3 class="about__table_title">Современные решения</h3>
             <p class="about__table_text">Использую актуальные инструменты и тренды</p>
           </div>
 
           <div class="about__table about__table-result">
-            <img class="about__table_logo about__table_logo-result" src="" alt="логотип результата">
+            <img class="about__table_logo about__table_logo-result" src="./logo-svg/trungul_svg.svg" alt="логотип результата">
             <h3 class="about__table_title">Фокус на результат</h3>
             <p class="about__table_text">Каждый проект направлен на остижение целей</p>
           </div>
 
           <div class="about__table about__table-person">
-            <img class="about__table_logo about__table_logo-person" src="" alt="логотип персонального подхода">
+            <img class="about__table_logo about__table_logo-person" src="./logo-svg/trungul_svg.svg" alt="логотип персонального подхода">
             <h3 class="about__table_title">Песональный подход</h3>
             <p class="about__table_text">Индивидуальные решения под каждый бизнес</p>
           </div>
 
           <div class="about__table about__table-garant">
-            <img class="about__table_logo about__table_logo-garant" src="" alt="логотип гарантий качества">
+            <img class="about__table_logo about__table_logo-garant" src="./logo-svg/trungul_svg.svg" alt="логотип гарантий качества">
             <h3 class="about__table_title">Гарантия качества</h3>
             <p class="about__table_text">Работаю до полного соответствия требованиям</p>
           </div>
 
           <div class="about__me_mission">
-            <h3 class="about__me_title">Моя миссия</h3>
+            <h3 class="about__me_title">Наша миссия</h3>
             <p class="about__me_text">Помогать бизнесу эффективно развиваться в цифровой среде, создавая качественные решения по честным ценам. Каждый проект - возможность показать профессионализм и пренести реальную пользу клиенту.</p>
           </div>
        
@@ -321,7 +325,7 @@
             </label>
             <span class="form__table_label_warning">Максимум 500 символов</span>
             <button class="form__button" type="submit">Отправить заявку</button>
-            <span class="form__table_label_warning form__table_label_warning-submit">Отвечаю в течение 2 часов в будни</span>
+            <span class="form__table_label_warning form__table_label_warning-submit">Отвечаем в течение 2 часов</span>
           </div>
         </form>
       </section>
@@ -334,31 +338,30 @@
         <div class="footer__company">
           <img
             class="footer__company_logo"
-            src="./image/footer-logotip.png"
+            src="./image/DS_maibn (2).png"
             alt="логотип"
           />
           <p class="footer__company_about">
-            Начинающий интернет-маркетолог, который поможет вашему бизнесу выйти в
-            онлайн по честным ценам.
+            Работая с нами, вы получаете прозрачные результаты, детальную аналитику и персональные решения, которые помогают выделиться на фоне конкурентов и достигать устойчивого роста.
           </p>
           <div class="footer__company_logotips">
             <a class="footer__company_logo-social" href="#">
               <img
-                class="footer__company_logo-tlg"
+                class="footer__company_logo-icon"
                 src="./logo-svg/telegram_chat_icon.svg"
                 alt="логотип соцсети телеграм" style="width: 100px;"
               />
             </a>
             <a class="footer__company_logo-social" href="#">
               <img
-                class="footer__company_logo-vk"
+                class="footer__company_logo-icon"
                 src="./logo-svg/vk-main-icon.svg"
                 alt="логотип соцсети ВК" style="width: 100px;"
               />
             </a>
             <a class="footer__company_logo-social" href="#">
               <img
-                class="footer__company_logo-inst"
+                class="footer__company_logo-icon"
                 src="./logo-svg/instagram-main-icon.svg"
                 alt="логотип соцсети инстаграм" style="width: 100px;"
               /></a>
@@ -385,7 +388,7 @@
         </div>
       </div>
       <div class="footer__line">
-        <p class="footer__wots">2024 GigiStart. Все права защищены и т д</p>
+        <p class="footer__wots">2024 GigiStart. Все права защищены</p>
       </div>
     </footer>
   </body>

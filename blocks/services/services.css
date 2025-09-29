@@ -4,11 +4,18 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    box-sizing: border-box;
     border: 1px solid red;
+}
+
+@media (max-width: 1279px) {
+    .services {
+        padding: 70px 0 70px;
+    }
 }
 
 @media (max-width: 767px) {
     .services {
-        padding: 20px;
+        padding: 70px 15px 70px;
     }
 }

@@ -1,11 +1,12 @@
 .services__all {
     padding: 32px 32px 32px 120px;
     text-decoration: none;
-    min-width: 330px;
-    max-width: 350px;
+    min-width: 290px;
+    width: 520px;
     min-height: 200px;
     border-radius: 20px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .services__all:hover {
@@ -14,24 +15,49 @@
     box-shadow: 1px 1px 1px 1px rgba(0, 255, 255, .2);
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1151px) {
     .services__all {
-        padding: 32px 32px 32px 150px;
-        min-width: 520px;
-        min-height: 200px;
+        padding: 30px 30px 30px 90px;
+        width: 450px;
+}
+}
+
+@media (max-width: 1011px) {
+    .services__all {
+        width: 400px;
+        min-height: 320px;
+}
+}
+@media (max-width: 911px) {
+    .services__all {
+        padding: 30px;
+        width: 350px;
+        min-height: 375px;
 }
 
 }
-@media (max-width: 768px) {
+@media (max-width: 811px) {
     .services__all {
-        padding: 20px 20px 20px 80px;
-        min-width: 330px;
+        padding: 30px 30px 30px 90px;
+        width: 80%;
         min-height: 200px;
 }
 }
-@media (max-width: 500px) {
+
+@media (max-width: 600px) {
     .services__all {
-        max-width: 330px;
-        min-height: 200px;
+        width: 90%;
+}
+}
+
+@media (max-width: 480px) {
+    .services__all {
+        padding: 30px;
+}
+}
+
+@media (max-width: 450px) {
+    .services__all {
+        padding: 30px;
 }
 }

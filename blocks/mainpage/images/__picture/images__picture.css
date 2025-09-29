@@ -4,3 +4,15 @@
       width: 100%;
       max-height: auto;
 }
+
+@media (max-width: 1082px) {
+  .images__picture {
+      max-width: 350px;
+}
+}
+
+@media (max-width: 903px) {
+  .images__picture {
+      max-width: 550px;
+}
+}

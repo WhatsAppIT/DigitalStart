@@ -3,3 +3,9 @@
     width: 15px;
     height: 15px;
 }
+
+@media (max-width: 399px) {
+    .landing__description_logo {
+    margin-right: 2px;
+    } 
+}

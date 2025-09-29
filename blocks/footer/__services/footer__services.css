@@ -4,5 +4,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 5px;
-    min-width: 240px;
+    width: 25%;
+}
+
+@media (max-width: 920px) {
+    .footer__services {
+        width: 30%;
+    }
+}
+
+@media (max-width: 730px) {
+    .footer__services {
+        width: 100%;
+    }
 }

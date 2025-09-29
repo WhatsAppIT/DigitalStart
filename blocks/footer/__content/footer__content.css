@@ -3,14 +3,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
-    gap: 30px;
+    width: 85%;
+
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 730px) {
     .footer__content {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        gap: 30px;
     }
 }

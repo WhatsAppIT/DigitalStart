@@ -4,25 +4,44 @@
     justify-content: space-between;
     align-items: center;
     min-height: 300px; 
-    min-width: 330px;
     max-width: 1440px;
     background-color: #111827;
     margin: 0; 
-    padding: 64px 143px 64px;
+    padding: 96px 70px 96px;
     font-weight: 400; 
     font-size: 16px; 
     line-height: 25px; 
     color: #9CA3AF;
+    box-sizing: border-box;
     border: 1px solid red;
+}
+
+@media (max-width: 1279px) {
+    .footer {
+        padding: 70px 96px 70px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        padding: 70px 60px 70px;
+    }
 }
 
 @media (max-width: 1023px) {
     .footer {
-        padding: 32px 60px 32px;
+        padding: 50px 60px 50px;
+        align-items: center;
     }
 }
 @media (max-width: 767px) {
     .footer {
-        padding: 20px;
+        padding: 70px 60px 70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        padding: 70px 15px 70px;
     }
 }

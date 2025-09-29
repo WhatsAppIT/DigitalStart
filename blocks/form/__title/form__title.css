@@ -1,8 +1,9 @@
 .form__title {
     margin: 0; 
-    padding: 0 0 24px 0;
+    padding: 0 24px 30px;
     font-weight: 600; 
-    font-size: 48px; 
-    line-height: 50px; 
+    font-size: clamp(1.875rem, 1.5179rem + 1.7857vw, 3.125rem);
+    line-height: 100%; 
+    text-align: center;
     color: #374151;
 }

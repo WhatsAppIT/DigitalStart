@@ -1,15 +1,15 @@
 .advantages__title {
     margin: 0; 
-    padding: 80px 50px 15px;
+    padding: 0 0 24px 0;
     font-weight: 600; 
-    font-size: 30px; 
-    line-height: 35px; 
+    font-size: clamp(1.875rem, 1.5179rem + 1.7857vw, 3.125rem);
+    line-height: 50px; 
     text-align: center;
     color: white;
 }
 
 @media (max-width: 1029px) {
   .advantages__title {
-    padding: 40px 50px 15px;
+    /* padding: 40px 50px 15px; */
   }
 } 

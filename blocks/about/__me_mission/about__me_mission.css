@@ -4,5 +4,12 @@
     flex-direction: column;
     border-radius: 10px;
     background: #EFF6FF;
-    max-width: 600px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 903px) {
+    .about__me_mission {
+        width: 100%;
+    }
 }

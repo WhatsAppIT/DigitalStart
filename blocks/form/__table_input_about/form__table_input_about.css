@@ -16,7 +16,7 @@
 
 .form__table_input_about::placeholder {
     font-weight: 400; 
-    font-size: 18px; 
+    font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
     line-height: 30px; 
     text-align: left;
     color: #c6c6c6;
