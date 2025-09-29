@@ -18,14 +18,14 @@ html {
   color: #000000;
   background-color: #f2f2f2;
 }
-/* 
+
 .loading {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #1e0ff4 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,4 +50,4 @@ html {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-} */
+}
