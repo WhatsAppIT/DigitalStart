@@ -5,3 +5,10 @@
     line-height: 25px; 
     color: #374151;
 }
+
+@media (max-width: 767px) {
+    .header__nav_menu {
+        color: white;
+    }
+
+}

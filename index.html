@@ -29,13 +29,14 @@
     />
     <meta name="author" content="Интернет маркетолог Криволапов" />
   </head>
-<!-- 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 -->
   <body class="body">
+
+<!-- header section -->
     <div class="loading" id="loading">
         <div class="spinner"></div>
     </div>
 
-    <header class="header" id="header">
+    <!-- <header class="header" id="header">
       <a class="header__logo" href="#landing"><img class="header__logo_img" src="./image/DS_maibn (2).png" alt="фирменный логотип" /></a>
       <div class="header-main">
         <nav class="header__nav">
@@ -47,8 +48,26 @@
       </div>
       <img class="header__bar" src="./logo-svg/bar_icon.svg">
     </header>
-<!-- 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
-    <main class="main">
+    <main class="main"> -->
+
+    <header class="header" id="header">
+      <nav class="header__nav">
+        <a class="header__logo" href="#landing"><img class="header__logo_img" src="./image/DS_maibn (2).png" alt="фирменный логотип" /></a>
+        <ul class="header__nav-links" id="navLinks">
+          <li><a class="header__nav_menu header__nav_menu-services" href="#services">Услуги</a></li>
+          <li><a class="header__nav_menu header__nav_menu-advantages" href="#advantages">Преимуества</a></li>
+          <li><a class="header__nav_menu header__nav_menu-about" href="#about">Обо мне</a>
+          <li><a class="header__link" href="#form">Заказать</a></li>
+        </ul>
+      </nav>
+      <div class="header__burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+<!-- mainpage section -->
       <section class="mainpage" id="landing">
         <div class="landing">
 
@@ -95,7 +114,7 @@
         </div>
       </section>
 
-<!-- 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 -->
+<!-- services section -->
 
       <section class="services" id="services">
         <h2 class="services__title">Цифровые решения для вашего бизнеса</h2>
@@ -172,7 +191,7 @@
         </div>
       </section>
 
-<!-- 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
+<!-- advantages section -->
 
       <section class="advantages" id="advantages">
         <h2 class="advantages__title">Почему выбирают нас</h2>
@@ -198,9 +217,6 @@
           <div class="advantages__table-element advantages__table_fast">
             <div class="advantages__table_img advantages__table_img-fast">
               <img class="advantages__table_logo advantages__table_logo-fast" src="./logo-svg/clock-icon.svg" alt="логотип вашего времени">
-<!--               <svg viewBox="0 0 32 32">
-                <use href="#clock">
-              </svg> -->
             </div>
             <h4 class="advantages__table_title advantages__table_fast-title">Быстро</h4>
             <p class="advantages__table_subtitle advantages__table_fast-subtitle">Соблюдение сроков без потери качества</p>
@@ -217,8 +233,7 @@
         </div>
       </section>
 
-      <!-- 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 -->
-
+<!-- about section -->
       <section class="about" id="about">
         <img class="about__foto" src="./image/DigitalStart_main.jpg" alt="моя фотография на рабочем месте">
         <div class="about__me">
@@ -259,8 +274,7 @@
         </div>
       </section>
 
-      <!-- 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 -->
-
+<!-- form section -->
       <section class="form" id="form">
         <h2 class="form__title">Свяжитесь с нами</h2>
         <p class="form__text">Расскажите о своем проекте и я предложу оптимальное решение</p>
@@ -334,8 +348,7 @@
       </section>
     </main>
 
-    <!-- 6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666 -->
-
+<!-- footer section -->
     <footer class="footer">
       <div class="footer__content">
         <div class="footer__company">
@@ -397,21 +410,3 @@
     <script src="./index.js"></script>
   </body>
 </html>
-
-
-
-<!-- <svg class="icon" fill="white" stroke="white" viewBox="0 0 32 32" href="./logo-svg/ ">
-  <symbol id="clock">
-  <path 
-  d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"/>
-  <path 
-  d="M21.5,22.5a1,1,0,0,1-.71-.29l-5.5-5.5A1,1,0,0,1,15,16V8a1,1,0,0,1,2,0v7.59l5.21,5.2a1,1,0,0,1,0,1.42A1,1,0,0,1,21.5,22.5Z" />
-</symbol>
-<style>
-  .icon {
-    fill: white;
-    stroke: white;
-  }
-</style>
-</svg>
- -->

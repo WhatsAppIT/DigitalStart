@@ -1,3 +1,25 @@
+// Мобильное меню бургер
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    burger.classList.toggle('active');
+});
+
+// Закрытие мобильного меню
+document.querySelectorAll('.header__nav-links').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        burger.classList.remove('active');
+    });
+});
+
+
+
+
+
+
 // Включается лоадер 
 window.addEventListener('load', () => {
     const loading = document.getElementById('loading');

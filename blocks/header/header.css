@@ -1,10 +1,9 @@
 .header {
     padding: 5px 50px 5px;
     display: flex;
-    justify-content: space-between;
+    justify-self: space-between;
     align-items: center;
     position: sticky;
-    /* gap: 600px; */
     top: 0;
     width: 99,7%;
     z-index: 1;
@@ -32,8 +31,8 @@ header.scrolled {
 
 @media (max-width: 767px) {
     .header {
-        padding: 5px 20px 5px;
-        align-items: center;
+        display: flex;
         justify-content: space-between;
+        padding: 5px 20px 5px;
     }
 }
