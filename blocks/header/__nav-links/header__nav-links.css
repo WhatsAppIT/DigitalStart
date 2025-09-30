@@ -24,7 +24,7 @@
         height: calc(100vh - 70px);
         background: rgba(102, 126, 234, 0.95);
         flex-direction: column;
-        justify-content: start;
+        justify-content: center;
         padding-top: 2rem;
         transition: right 0.3s ease;
         display: none;

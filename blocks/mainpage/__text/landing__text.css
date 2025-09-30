@@ -9,6 +9,7 @@
 
 @media (max-width: 767px) {
     .landing__text {
+        margin: 0 0 16px;
         flex-basis: auto;
     }
 }
