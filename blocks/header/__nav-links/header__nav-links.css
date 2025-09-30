@@ -18,13 +18,13 @@
 @media (max-width: 768px) {
     .header__nav-links {
         position: fixed;
-        top: 70px;
+        top: 45px;
         right: -100%;
         width: 100%;
         height: calc(100vh - 70px);
         background: rgba(102, 126, 234, 0.95);
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
         padding-top: 2rem;
         transition: right 0.3s ease;
         display: none;
