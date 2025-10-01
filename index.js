@@ -288,9 +288,79 @@ window.addEventListener('resize', () => {
     setTimeout(initCardAnimation, 100);
 });
 
+//////////////////////////////////////////////////////////////////////////////////////
+// Отправка формы
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const messageDiv = document.getElementById('formMessage');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Показываем индикатор загрузки
+        const submitBtn = form.querySelector('.form__submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Отправка...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Собираем данные формы
+            const formData = new FormData(form);
+            
+            // Преобразуем FormData в обычный объект для JSON
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Отправляем запрос на сервер
+            const response = await fetch('http://127.0.0.1:5500', {
+                method: 'POST',
+                         headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            // Показываем сообщение
+            messageDiv.style.display = 'block';
+            
+            if (result.status === 'success') {
+                messageDiv.style.backgroundColor = '#d4edda';
+                messageDiv.style.color = '#155724';
+                messageDiv.style.border = '1px solid #c3e6cb';
+                messageDiv.textContent = result.message;
+                form.reset(); // Очищаем форму
+            } else {
+                messageDiv.style.backgroundColor = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.style.border = '1px solid #f5c6cb';
+                messageDiv.textContent = result.message;
+            }
+            
+        } catch (error) {
+            console.error('Error:', error);
+            messageDiv.style.display = 'block';
+            messageDiv.style.backgroundColor = '#f8d7da';
+            messageDiv.style.color = '#721c24';
+            messageDiv.style.border = '1px solid #f5c6cb';
+            messageDiv.textContent = 'Произошла ошибка при отправке формы';
+        } finally {
+            // Восстанавливаем кнопку
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // Скрываем сообщение через 5 секунд
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+    });
+});
 
 
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Сайт успешно загружен
 console.log('DigitalStart сайт успешно загружен! 🚀');
