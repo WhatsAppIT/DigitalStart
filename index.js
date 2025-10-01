@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Отправляем запрос на сервер
-            const response = await fetch('http://127.0.0.1:5500', {
+            const response = await fetch('http://localhost:3000/', {
                 method: 'POST',
                          headers: {
                     'Content-Type': 'application/json',
