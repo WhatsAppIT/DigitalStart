@@ -8,7 +8,8 @@
     background-color: #dcfce7 ;
     text-align: left;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    max-width: 320px;
 }
 
 @media (max-width: 399px) {
