@@ -1,0 +1,68 @@
+<!-- form section -->
+      <section class="form" id="form">
+    <h2 class="form__title">Свяжитесь с нами</h2>
+    <p class="form__text">Расскажите о своем проекте и я предложу оптимальное решение</p>
+    
+    <form class="form__table" id="contactForm">
+        <div class="form__table_data">
+
+            <fieldset class="form__table_data-left">
+                <label class="form__table_data-label" for="profileName">Как вас зовут?
+                    <input class="form__table_data-input" name="profile-Name" id="profileName" type="text" placeholder="Введите ваше имя" autocomplete="off" required>
+                    <span class="form__error" id="error-profileName"></span>
+                </label>
+                <label class="form__table_data-label" for="profileNumber">Контакт для связи
+                    <input class="form__table_data-input" name="profile-Number" id="profileNumber" type="tel" placeholder="Контакт для связи" autocomplete="off" inputmode="numeric" required>
+                    <span class="form__error" id="error-profileNumber"></span>
+                </label>
+            </fieldset>
+            
+            <fieldset class="form__table_data-right">
+                <label class="form__table_data-label" for="profileCompany">Название компании
+                    <input class="form__table_data-input" name="profile-Company" id="profileCompany" type="text" placeholder="Название компании" autocomplete="off">
+                    <span class="form__error" id="error-profileCompany"></span>
+                </label>
+                <label class="form__table_data-label" for="profileMoney">Примерный бюджет
+                    <select class="form__table_data-input" name="profile-Money" id="profileMoney" autocomplete="off" required>
+                        <option value="">Сумма</option>
+                        <option value="5000 рублей">5000 рублей</option>
+                        <option value="10 000 рублей">10 000 рублей</option>
+                        <option value="15 000 рублей">15 000 рублей</option>
+                              <option value="20 000 рублей">20 000 рублей</option>
+                        <option value="25 000 рублей">25 000 рублей</option>
+                        <option value="30 000 рублей">30 000 рублей</option>
+                    </select>
+                    <span class="form__error" id="error-profileMoney"></span>
+                </label>
+            </fieldset>
+
+            <fieldset class="form__table_data-checkbox">
+                <p class="form__table_data-checkbox-description">Какие услуги нужны?</p>
+                <div class="form__table-checkbox-all">
+                    <div class="form__table-checkbox">
+                        <label class="form__table_data-checkbox" for="profileLanding">
+                            <input class="form__table_data-checkbox-input" name="profile-Landing" id="profileLanding" type="checkbox" value="SMM">
+                            SMM
+                        </label>
+                        
+                        <label class="form__table_data-checkbox" for="profileContext">
+                            <input class="form__table_data-checkbox-input" name="profile-Context" id="profileContext" type="checkbox" value="Контекст">
+                            Контекст
+                        </label>
+                        
+                        <label class="form__table_data-checkbox" for="profileTarget">
+                            <input class="form__table_data-checkbox-input" name="profile-Target" id="profileTarget" type="checkbox" value="Таргетинг">
+                            Таргетинг
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="form__submit-btn">Отправить заявку</button>
+            
+        </div>
+    </form>
+    
+    <!-- Сообщение об отправке -->
+    <div id="formMessage" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px;"></div>
+</section>

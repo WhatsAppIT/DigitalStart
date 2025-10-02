@@ -289,7 +289,7 @@ window.addEventListener('resize', () => {
 });
 
 //////////////////////////////////////////////////////////////////////////////////////
-// Отправка формы
+/* // Отправка формы
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
     const messageDiv = document.getElementById('formMessage');
@@ -299,9 +299,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Показываем индикатор загрузки
         const submitBtn = form.querySelector('.form__submit-btn');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Отправка...';
-        submitBtn.disabled = true;
+        // const originalText = submitBtn.textContent;
+        // submitBtn.textContent = 'Отправка...';
+        // submitBtn.disabled = true;
         
         try {
             // Собираем данные формы
@@ -349,8 +349,8 @@ document.addEventListener('DOMContentLoaded', function() {
             messageDiv.textContent = 'Произошла ошибка при отправке формы';
         } finally {
             // Восстанавливаем кнопку
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+            // submitBtn.textContent = originalText;
+            // submitBtn.disabled = false;
             
             // Скрываем сообщение через 5 секунд
             setTimeout(() => {
@@ -359,6 +359,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+ */
+
+
+
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
