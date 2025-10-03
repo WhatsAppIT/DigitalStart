@@ -35,30 +35,19 @@
     <div class="loading" id="loading">
         <div class="spinner"></div>
     </div>
-
-    <!-- <header class="header" id="header">
-      <a class="header__logo" href="#landing"><img class="header__logo_img" src="./image/DS_maibn (2).png" alt="фирменный логотип" /></a>
-      <div class="header-main">
-        <nav class="header__nav">
-          <a class="header__nav_menu header__nav_menu-services" href="#services">Услуги</a>
-          <a class="header__nav_menu header__nav_menu-advantages" href="#advantages">Преимуества</a>
-          <a class="header__nav_menu header__nav_menu-about" href="#about">Обо мне</a>
-        </nav>
-        <a class="header__link" href="#form">Заказать</a>
-      </div>
-      <img class="header__bar" src="./logo-svg/bar_icon.svg">
-    </header>
-    <main class="main"> -->
-
     <header class="header" id="header">
       <a class="header__logo" href="#landing"><img class="header__logo_img" src="./image/DS_maibn (2).png" alt="фирменный логотип" /></a>
-      <nav class="header__nav">
-        <ul class="header__nav-links" id="navLinks">
-          <li><a class="header__nav_menu header__nav_menu-services" href="#services">Услуги</a></li>
-          <li><a class="header__nav_menu header__nav_menu-advantages" href="#advantages">Преимуества</a></li>
-          <li><a class="header__nav_menu header__nav_menu-about" href="#about">Обо мне</a>
-          <li><a class="header__link" href="#form">Заказать</a></li>
-        </ul>
+      <nav class="header__nav header__nav-links" id="navLinks">
+        <a class="header__nav_menu header__nav_menu-services" href="#services">Услуги</a>
+        <a class="header__nav_menu header__nav_menu-advantages" href="#advantages">Преимуества</a>
+        <a class="header__nav_menu header__nav_menu-about" href="#about">О нас</a>
+        
+        <a class="header__nav_menu header__nav_menu-burger" href="#services">Сайт под ключ</a>
+        <a class="header__nav_menu header__nav_menu-burger" href="#services">Контекстная реклама</a>
+        <a class="header__nav_menu header__nav_menu-burger" href="#services">Таргетинговая реклама</a>
+        <a class="header__nav_menu header__nav_menu-burger" href="#services">SMM продвижение</a>
+
+        <a class="header__link" href="#form">Заказать</a>
       </nav>
       <div class="header__burger" id="burger">
         <span></span>
@@ -332,20 +321,16 @@
                   <label class="form__table_data-checkbox form__table_data-checkbox-smm" for="profileSMM">Лендинг</label>
                     <input class="form__table_data-checkbox-input form__table_data-input-smm" value="profile-SMM" name="profile-SMM" id="profileSMM" type="checkbox">
                 </div>
-                
               </div>
-            </fieldset>
 
+            </fieldset>
             <label class="form__table_textarea" for="text">Расскажите о проекте
               <textarea class="form__table_input_about" name="profile-AboutCompany" id="profileAboutCompany" name="conctips" id="profileInformation" cols="50" rows="10" minlength="1" maxlength="500" type="text" placeholder="Опишите ваш бизнес, цели, какой результат ожидаете. Чем подробнее - тем точнее смогу просчитать стоимость!" autocomplete="off"></textarea>
               <span class="form__error" id="error-profileAboutCompany"></span>
             </label>
             <span class="form__table_label_warning">Максимум 500 символов</span>
-            
             <button type="submit" class="form__button form__submit-button">Отправить заявку</button>
-
-            <!-- <button type="submit" class="form__button form__submit-button" type="submit">Отправить заявку</button> -->
-            <span class="form__table_label_warning form__table_label_warning-submit">Отвечаем в течение 2 часов</span>
+            <span class="form__table_label_warning form__table_label_warning-submit">Отвечаем в течение 2 часов в будни</span>
           </div>
         </form>
         <div id="formMessage" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px;"></div>
@@ -364,29 +349,7 @@
           <p class="footer__company_about">
             Работая с нами, вы получаете прозрачные результаты, детальную аналитику и персональные решения, которые помогают выделиться на фоне конкурентов и достигать устойчивого роста.
           </p>
-          <div class="footer__company_logotips">
-            <a class="footer__company_logo-social" href="#">
-              <img
-                class="footer__company_logo-icon"
-                src="./logo-svg/telegram_chat_icon.svg"
-                alt="логотип соцсети телеграм" style="width: 100px;"
-              />
-            </a>
-            <a class="footer__company_logo-social" href="#">
-              <img
-                class="footer__company_logo-icon"
-                src="./logo-svg/vk-main-icon.svg"
-                alt="логотип соцсети ВК" style="width: 100px;"
-              />
-            </a>
-            <a class="footer__company_logo-social" href="#">
-              <img
-                class="footer__company_logo-icon"
-                src="./logo-svg/instagram-main-icon.svg"
-                alt="логотип соцсети инстаграм" style="width: 100px;"
-              /></a>
-            </a>
-          </div>
+
         </div>
   
         <div class="footer__services">
@@ -401,17 +364,52 @@
         <div class="footer__contacts">
           <h3 class="footer__services_title">Контакты</h3>
           <ul class="footer__contacts_table">
-            <li class="footer__contacts_table-email"></li>
-            <li class="footer__contacts_table-number"></li>
-            <li class="footer__contacts_table-day"></li>
+            <!-- <li class="footer__contacts_table-email"></li> -->
+            <div class="footer__contacts_table-number"> ☎ +7(999)-123-45-67</div>
+
+            <div class="footer__contacts_table-day"><svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+              <!-- Часы -->
+              <circle cx="25" cy="30" r="12" fill="none" stroke="white" stroke-width="2"/>
+              <!-- Стрелки часов -->
+              <line x1="25" y1="30" x2="25" y2="22" stroke="white" stroke-width="2"/>
+              <line x1="25" y1="30" x2="30" y2="30" stroke="white" stroke-width="1.5"/>
+              <!-- Центр часов -->
+              <circle cx="25" cy="30" r="1.5" fill="#9CA3AF"/>
+              <!-- Текст -->
+              <text x="50" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#9CA3AF">
+                Пн-Пт: 9:00-18:00
+              </text>
+            </svg></div>
           </ul>
+          <div class="footer__company_logotips">
+            <a class="footer__company_logo-social" href="https://t.me/tellesell">
+              <img
+                class="footer__company_logo-icon"
+                src="./logo-svg/telegram_tile_logo_icon_169640.svg"
+                alt="логотип соцсети телеграм и ссылка для связи на наш аккаунт" 
+              />
+            </a>
+            <a class="footer__company_logo-social" href="https://wa.me/message/4Y4AQPKNPLRMG1">
+              <img
+                class="footer__company_logo-icon"
+                src="./logo-svg/whatsapp_tile_logo_icon_169898.svg"
+                alt="логотип соцсети вотсап и ссылка для связи на наш аккаунт"
+              />
+            </a>
+            <!-- <a class="footer__company_logo-social" href="#">
+              <img
+                class="footer__company_logo-icon"
+                src="./logo-svg/instagram-main-icon.svg"
+                alt="логотип соцсети инстаграм" style="width: 100px;"
+              />
+            </a> -->
+          </div>
         </div>
       </div>
       <div class="footer__line">
         <p class="footer__wots">2025 GigiStart. Все права защищены</p>
       </div>
     </footer>
-    <script src="./index.js"></script>
-    <script src="./form.js"></script>
+    <script type="module" src="../scripts/index.js"></script>
   </body>
 </html>

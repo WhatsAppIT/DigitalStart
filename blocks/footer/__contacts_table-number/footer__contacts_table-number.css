@@ -1,13 +1,12 @@
-.footer__contacts_table-number {
-    background-image: url(../../../logo-svg/trungul_svg.svg);
+/* .footer__contacts_table-number {
+    background-image: url(../../../logo-svg/phone-call-auricular-symbol-in-black_icon-icons.com_56483.svg);
     background-size: cover;
     width: 17px;
     height: 17px;
-}
+    filter: invert(1);
+} */
 
-.footer__contacts_table-number::after {
-    margin-left: 30px;
-    content: "+7_(999)_123_45_67";
+.footer__contacts_table-number {
     font-weight: 400; 
     font-size: 16px; 
     line-height: 25px; 

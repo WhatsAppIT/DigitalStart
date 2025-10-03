@@ -1,13 +1,12 @@
-.footer__contacts_table-day {
-    background-image: url(../../../logo-svg/trungul_svg.svg);
+/* .footer__contacts_table-day {
+    background-image: url(../../../logo-svg/business_schedule_calendar_briefcase_workdays_work_days_icon_188681.svg);
     background-size: cover;
     width: 17px;
     height: 17px;
-}
+    filter: invert(1);
+} */
 
-.footer__contacts_table-day::after {
-    margin-left: 30px;
-    content: "Пн_Пт_9:00_20:00";
+.footer__contacts_table-day {
     font-weight: 400; 
     font-size: 16px; 
     line-height: 25px; 

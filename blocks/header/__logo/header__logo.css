@@ -1,5 +1,5 @@
 .header__logo {
     display: flex;
-    justify-content: flex-start;
+    justify-self: flex-start;
     align-items: flex-start;
 }

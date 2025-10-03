@@ -8,6 +8,7 @@
 @import url(../blocks/header/__nav_menu-services/header__nav_menu-services.css);
 @import url(../blocks/header/__nav_menu-advantages/header__nav_menu-advantages.css);
 @import url(../blocks/header/__nav_menu-about/header__nav_menu-about.css);
+@import url(../blocks/header/__nav_menu-burger/header__nav_menu-burger.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__logo_img/header__logo_img.css);
 @import url(../blocks/header/__bar/header__bar.css);
