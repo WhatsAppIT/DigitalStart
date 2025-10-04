@@ -268,10 +268,10 @@
         <h2 class="form__title">Свяжитесь с нами</h2>
         <p class="form__text">Расскажите о своем проекте и я предложу оптимальное решение</p>
         <!-- атрибут action нужно указать адрес куда отправлять форму - путь до скрипта, который обработает введённые пользователем данные -->
-        <form class="form__table" id="contactForm" action=""> <!-- //danav02041987@gmail.com -->
+        <form class="form__table" id="contactForm" action="" novalidate> <!-- //danav02041987@gmail.com -->
           <div class="form__table_data">
 
-            <fieldset class="form__table_data-left">
+            <fieldset class="form__table_data-left form__field-container">
               <!-- <legend>Контактные данные</legend> -->
               <label class="form__table_data-label" for="profileName">Как вас зовут?
                 <input class="form__table_data-input" name="profile-Name" id="profileName" type="text" placeholder="Введите ваше имя" autocomplete="off" required>
@@ -283,7 +283,7 @@
               </label>
             </fieldset>
             
-            <fieldset class="form__table_data-right">
+            <fieldset class="form__table_data-right form__field-container">
               <!-- legend для помощи скринридерам, вставляется в каждый fieldset -->
               <!-- <legend>Информация об организации и бюджете на рекламу</legend> -->
               <label class="form__table_data-label" for="profileCompany">Название компании
@@ -304,7 +304,7 @@
               </label>
             </fieldset>
 <!-- С чек боксами доразобраться по их объединению в группу -->
-            <fieldset class="form__table_data-checkbox">
+            <fieldset class="form__table_data-checkbox form__field-container">
               <!-- <legend>Выбор одной или нескольких услуг</legend> -->
               <p class="form__table_data-checkbox-description">Какие услуги нужны?</p>
               <div class="form__table-checkbox-all">
@@ -324,12 +324,15 @@
               </div>
 
             </fieldset>
-            <label class="form__table_textarea" for="text">Расскажите о проекте
+            <label class="form__table_textarea form__field-container" for="text">Расскажите о проекте
               <textarea class="form__table_input_about" name="profile-AboutCompany" id="profileAboutCompany" name="conctips" id="profileInformation" cols="50" rows="10" minlength="1" maxlength="500" type="text" placeholder="Опишите ваш бизнес, цели, какой результат ожидаете. Чем подробнее - тем точнее смогу просчитать стоимость!" autocomplete="off"></textarea>
+              <div class="form__char-counter">
+                /500<span id="charCount">0</span>
+                <span class="form__table_label_warning">Максимум 500 символов</span>
+              </div>
               <span class="form__error" id="error-profileAboutCompany"></span>
             </label>
-            <span class="form__table_label_warning">Максимум 500 символов</span>
-            <button type="submit" class="form__button form__submit-button">Отправить заявку</button>
+            <button type="submit" class="form__button form__submit-button" disabled>Отправить заявку</button>
             <span class="form__table_label_warning form__table_label_warning-submit">Отвечаем в течение 2 часов в будни</span>
           </div>
         </form>

@@ -1,0 +1,266 @@
+
+// Отправка формы
+class ContactForm {
+    constructor() {
+        this.form = document.getElementById('contactForm');
+        this.submitButton = null;
+        this.originalButtonText = '';
+        this.serverUrl = 'http://localhost:3000'; // URL вашего backend сервера
+        this.requiredFields = ['profileName', 'profileNumber']; // Обязательные поля
+        
+        this.init();
+    }
+
+    init() {
+        if (!this.form) {
+            console.error('Форма с ID "contactForm" не найдена');
+            return;
+        }
+
+        this.setupSubmitButton();
+        this.bindEvents();
+        this.setupValidation();
+        this.checkFormValidity(); // Проверяем форму при инициализации
+    }
+
+    setupSubmitButton() {
+        // Ищем кнопку отправки или создаем её
+        this.submitButton = this.form.querySelector('button[type="submit"]') || 
+                           this.form.querySelector('input[type="submit"]');
+        
+        if (!this.submitButton) {
+            // Если кнопки нет, создаем её
+            this.submitButton = document.createElement('button');
+            this.submitButton.type = 'submit';
+            this.submitButton.textContent = 'Отправить заявку';
+            this.submitButton.className = 'form__submit-button';
+            this.form.appendChild(this.submitButton);
+        }
+
+        this.originalButtonText = this.submitButton.textContent;
+    }
+
+    bindEvents() {
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        
+        // Добавляем валидацию в реальном времени
+        const inputs = this.form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => this.validateField(input));
+            input.addEventListener('input', () => {
+                this.clearError(input);
+                this.checkFormValidity(); // Проверяем форму при каждом изменении
+            });
+            input.addEventListener('change', () => {
+                this.checkFormValidity(); // Для select и других элементов
+            });
+        });
+    }
+
+    setupValidation() {
+        // Настройка валидации для телефона
+        const phoneInput = document.getElementById('profileNumber');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
+                // Оставляем только цифры, +, -, (, ), пробелы
+                e.target.value = e.target.value.replace(/[^\d\+\-\(\)\s]/g, '');
+                this.checkFormValidity(); // Проверяем форму после форматирования
+            });
+        }
+    }
+
+    // Новый метод для проверки валидности формы
+    checkFormValidity() {
+        const isValid = this.areRequiredFieldsFilled();
+        this.toggleSubmitButton(isValid);
+    }
+
+    // Проверяем заполнены ли все обязательные поля
+    areRequiredFieldsFilled() {
+        return this.requiredFields.every(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (!field) return false;
+            
+            const value = field.value.trim();
+            
+            // Дополнительная проверка для телефона
+            if (fieldId === 'profileNumber') {
+                return value.l
+                ength >= 10; // Минимум 10 символов для телефона
+            }
+            
+            return value.length > 0;
+        });
+    }
+
+    // Включаем/выключаем кнопку отправки
+    toggleSubmitButton(isEnabled) {
+        if (!this.submitButton) return;
+
+        this.submitButton.disabled = !isEnabled;
+        
+        if (isEnabled) {
+            this.submitButton.style.backgroundColor = '';
+            this.submitButton.style.color = '';
+            this.submitButton.style.cursor = '';
+            this.submitButton.style.opacity = '';
+        } else {
+            this.submitButton.style.backgroundColor = '#cccccc';
+            this.submitButton.style.color = '#666666';
+            this.submitButton.style.cursor = 'not-allowed';
+            this.submitButton.style.opacity = '0.6';
+        }
+    }
+
+    async handleSubmit(e) {
+        e.preventDefault();
+
+        // Дополнительная проверка перед отправкой
+        if (!this.areRequiredFieldsFilled()) {
+            this.showNotification('Пожалуйста, заполните все обязательные поля', 'error');
+            return;
+        }
+
+        if (!this.validateForm()) {
+            this.showNotification('Пожалуйста, исправьте ошибки в форме', 'error');
+            return;
+        }
+
+        const formData = this.collectFormData();
+        console.log('Отправляем данные:', formData); // Для отладки
+        
+        try {
+            this.setLoadingState(true);
+            await this.sendFormData(formData);
+            this.handleSuccess();
+        } catch (error) {
+            this.handleError(error);
+        } finally {
+            this.setLoadingState(false);
+        }
+    }
+
+    collectFormData() {
+        const data = {
+            name: this.getFieldValue('profileName'),
+            phone: this.getFieldValue('profileNumber'),
+            company: this.getFieldValue('profileCompany'),
+            budget: this.getSelectText('profileMoney'),
+            services: this.getSelectedServices(),
+            message: this.generateMessage()
+        };
+
+        // Используем телефон как email если email не указан отдельно
+        data.email = this.getFieldValue('profileEmail') || data.phone + '@temp.com';
+
+        return data;
+    }
+
+    getFieldValue(fieldId) {
+        const field = document.getElementById(fieldId);
+        return field ? field.value.trim() : '';
+    }
+
+    getSelectText(selectId) {
+        const select = document.getElementById(selectId);
+        if (!select || !select.value) return '';
+        
+        const selectedOption = select.options[select.selectedIndex];
+        return selectedOption ? selectedOption.textContent : '';
+    }
+
+    getSelectedServices() {
+        const services = [];
+        const checkboxes = this.form.querySelectorAll('input[type="checkbox"]:checked');
+        
+        checkboxes.forEach(checkbox => {
+            const label = this.form.querySelector(`label[for="${checkbox.id}"]`);
+            if (label) {
+                services.push(label.textContent.trim());
+            }
+        });
+        
+        return services;
+    }
+
+    // Дополнительные методы (заглушки - добавьте свою реализацию)
+    validateForm() {
+        // Ваша логика валидации
+        return true;
+    }
+
+    validateField(field) {
+        // Ваша логика валидации поля
+        this.checkFormValidity(); // Проверяем форму после валидации поля
+    }
+
+    clearError(field) {
+        // Ваша логика очистки ошибок
+    }
+
+    setLoadingState(isLoading) {
+        if (isLoading) {
+            this.submit
+            Button.textContent = 'Отправка...';
+            this.submitButton.disabled = true;
+        } else {
+            this.submitButton.textContent = this.originalButtonText;
+            this.checkFormValidity(); // Восстанавливаем состояние кнопки
+        }
+    }
+
+    generateMessage() {
+        // Ваша логика генерации сообщения
+        return '';
+    }
+
+    showNotification(message, type) {
+        // Ваша логика показа уведомлений
+        console.log(`${type}: ${message}`);
+    }
+
+    async sendFormData(data) {
+        // Ваша логика отправки данных
+        return new Promise(resolve => setTimeout(resolve, 1000));
+    }
+
+    handleSuccess() {
+        this.showNotification('Заявка успешно отправлена!', 'success');
+        this.form.reset();
+        this.checkFormValidity(); // Проверяем форму после сброса
+    }
+
+    handleError(error) {
+        this.showNotification('Ошибка при отправке заявки', 'error');
+        console.error(error);
+    }
+}
+
+// Дополнительные CSS стили для неактивной кнопки (добавьте в ваш CSS файл)
+const additionalStyles = `
+.form__submit-button:disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+    transition: all 0.3s ease;
+}
+
+.form__submit-button:disabled:hover {
+    background-color: #cccccc !important;
+    transform: none !important;
+}
+`;
+
+// Добавляем стили на страницу
+if (!document.getElementById('form-validation-styles')) {
+    const styleElement = document.createElement('style');
+    styleElement.id = 'form-validation-styles';
+    styleElement.textContent = additionalStyles;
+    document.head.appendChild(styleElement);
+}
+
+// Инициализация формы
+document.addEventListener('DOMContentLoaded', () => {
+    new ContactForm();
+});

@@ -11,5 +11,6 @@
     .form__table_data-left {
         flex-direction: column;
         width: 100%;
+        gap: 1px;
     }
 }

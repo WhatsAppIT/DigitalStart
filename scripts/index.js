@@ -277,6 +277,7 @@ window.addEventListener('resize', () => {
 });
 
 //////////////////////////////////////////////////////////////////////////////////////
+
 // Отправка формы
 class ContactForm {
     constructor() {
@@ -296,7 +297,7 @@ class ContactForm {
 
         this.setupSubmitButton();
         this.bindEvents();
-        this.setupValidation();
+        this.setupCharCounter();
     }
 
     setupSubmitButton() {
@@ -318,33 +319,56 @@ class ContactForm {
 
     bindEvents() {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        
-        // Добавляем валидацию в реальном времени
-        const inputs = this.form.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', () => this.validateField(input));
-            input.addEventListener('input', () => this.clearError(input));
-        });
     }
 
-    setupValidation() {
-        // Настройка валидации для телефона
-        const phoneInput = document.getElementById('profileNumber');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', (e) => {
-                // Оставляем только цифры, +, -, (, ), пробелы
-                e.target.value = e.target.value.replace(/[^\d\+\-\(\)\s]/g, '');
+    setupCharCounter() {
+        // Ищем textarea и счетчик
+        const textarea = this.form.querySelector('textarea');
+        const charCount = document.getElementById('charCount');
+        
+        if (textarea && charCount) {
+            // Устанавливаем начальное значение
+            this.updateCharCount(textarea, charCount);
+            
+            // Добавляем обработчики событий
+            textarea.addEventListener('input', () => {
+                this.updateCharCount(textarea, charCount);
             });
+            
+            textarea.addEventListener('keyup', () => {
+                this.updateCharCount(textarea, charCount);
+            });
+            
+            textarea.addEventListener('paste', () => {
+                // Небольшая задержка для paste события
+                setTimeout(() => {
+                    this.updateCharCount(textarea, charCount);
+                }, 10);
+            });
+        }
+    }
+
+    updateCharCount(textarea, charCountElement) {
+        const currentLength = textarea.value.length;
+        charCountElement.textContent = currentLength;
+        
+        // Можно добавить визуальную индикацию при приближении к лимиту
+        const maxLength = 500;
+        const parentCounter = charCountElement.closest('.form__char-counter');
+        
+        if (parentCounter) {
+            if (currentLength > maxLength * 0.9) { // 90% от лимита
+                parentCounter.style.color = '#ff6b6b';
+            } else if (currentLength > maxLength * 0.7) { // 70% от лимита
+                parentCounter.style.color = '#ffa500';
+            } else {
+                parentCounter.style.color = '#666';
+            }
         }
     }
 
     async handleSubmit(e) {
         e.preventDefault();
-
-        if (!this.validateForm()) {
-            this.showNotification('Пожалуйста, исправьте ошибки в форме', 'error');
-            return;
-        }
 
         const formData = this.collectFormData();
         console.log('Отправляем данные:', formData); // Для отладки
@@ -367,7 +391,8 @@ class ContactForm {
             company: this.getFieldValue('profileCompany'),
             budget: this.getSelectText('profileMoney'),
             services: this.getSelectedServices(),
-            message: this.generateMessage()
+            message: this.generateMessage(),
+            aboutCompany: this.getFieldValue('profileAboutCompany')
         };
 
         // Используем телефон как email если email не указан отдельно
@@ -378,7 +403,7 @@ class ContactForm {
 
     getFieldValue(fieldId) {
         const field = document.getElementById(fieldId);
-              return field ? field.value.trim() : '';
+        return field ? field.value.trim() : '';
     }
 
     getSelectText(selectId) {
@@ -399,32 +424,28 @@ class ContactForm {
                 services.push(label.textContent.trim());
             }
         });
-
+        
         return services;
     }
 
     generateMessage() {
         const name = this.getFieldValue('profileName');
+        const description = this.getFieldValue('profileAboutCompany');
         const company = this.getFieldValue('profileCompany');
+        const phone = this.getFieldValue('profileNumber');
         const budget = this.getSelectText('profileMoney');
         const services = this.getSelectedServices();
 
-        let message = `Заявка от ${name}`;
-        
-        if (company) {
-            message += ` из компании "${company}"`;
-        }
-
-        if (budget) {
-            message += `\n\nБюджет: ${budget}`;
-        }
-
+        let message = `Новая заявка с сайта:\n\n`;
+        if (name) message += `Имя: ${name}\n`;
+        if (company) message += `Компания: ${company}\n`;
+        if (phone) message += `Телефон: ${phone}\n`;
+        if (budget) message += `Бюджет: ${budget}\n`;
         if (services.length > 0) {
-            message += `\n\nИнтересующие услуги: ${services.join(', ')}`;
+            message += `Услуги: ${services.join(', ')}\n`;
         }
-
-        message += `\n\nДата подачи заявки: ${new Date().toLocaleString('ru-RU')}`;
-
+        if (description) message += `О проекте: ${description}\n`;
+        
         return message;
     }
 
@@ -438,268 +459,339 @@ class ContactForm {
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Ошибка отправки формы');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         return await response.json();
     }
 
-    validateForm() {
-        let isValid = true;
-        
-        // Обязательные поля
-        const requiredFields = [
-            { id: 'profileName', name: 'Имя' },
-            { id: 'profileNumber', name: 'Контакт' },
-            { id: 'profileMoney', name: 'Бюджет' }
-        ];
-
-        requiredFields.forEach(field => {
-            const fieldElement = document.getElementById(field.id);
-            if (fieldElement && !this.validateField(fieldElement)) {
-                isValid = false;
-            }
-        });
-
-        return isValid;
-    }
-
-    validateField(field) {
-        if (!field) return true;
-
-        const value = field.value.trim();
-        let errorMessage = '';
-
-        // Проверка обязательных полей
-        if (field.hasAttribute('required') && !value) {
-            errorMessage = 'Это поле обязательно для заполнения';
-        }
-        
-        // Специфичная валидация
-        else if (field.id === 'profileName' && value.length < 2) {
-            errorMessage = 'Имя должно содержать минимум 2 символа';
-        }
-        
-        else if (field.id === 'profileNumber' && value && !this.isValidPhone(value)) {
-            errorMessage = 'Введите корректный номер телефона';
-        }
-
-        this.showFieldError(field, errorMessage);
-        return !errorMessage;
-    }
-
-    isValidPhone(phone) {
-        // Простая проверка телефона (минимум 10 цифр)
-        const digitsOnly = phone.replace(/\D/g, '');
-        return digitsOnly.length >= 10;
-    }
-
-    showFieldError(field, message) {
-        const errorElement = document.getElementById(`error-${field.id}`);
-        
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.style.display = message ? 'block' : 'none';
-        }
-
-        // Добавляем/убираем класс ошибки
-        if (field && field.classList) {
-            field.classList.toggle('error', !!message);
-        }
-    }
-
-    clearError(field) {
-        this.showFieldError(field, '');
-    }
-
     setLoadingState(isLoading) {
-        if (this.submitButton) {
-            this.submitButton.disabled = isLoading;
-            this.submitButton.textContent = isLoading ? 'Отправка...' : this.originalButtonText;
-        }
+        if (!this.submitButton) return;
 
-        // Блокируем все поля формы
-        const formElements = this.form.querySelectorAll('input, select, textarea, button');
-        formElements.forEach(element => {
-            element.disabled = isLoading;
-        });
+        if (isLoading) {
+            this.submitButton.disabled = true;
+            this.submitButton.textContent = 'Отправка...';
+        } else {
+            this.submitButton.disabled = false;
+            this.submitButton.textContent = this.originalButtonText;
+        }
     }
 
     handleSuccess() {
-        this.showNotification('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.', 'success');
+        this.showNotification('Заявка успешно отправлена!', 'success');
         this.form.reset();
-        this.clearAllErrors();
+        
+        // Сбрасываем счетчик символов
+        const charCount = document.getElementById('charCount');
+        if (charCount) {
+            charCount.textContent = '0';
+            const parentCounter = charCount.closest('.form__char-counter');
+            if (parentCounter) {
+                parentCounter.style.color = '#666';
+            }
+        }
     }
 
     handleError(error) {
         console.error('Ошибка отправки формы:', error);
-        this.showNotification(
-            error.message || 'Произошла ошибка при отправке заявки. Попробуйте еще раз.', 
-            'error'
-        );
-    }
-
-    clearAllErrors() {
-        const errorElements = this.form.querySelectorAll('[id^="error-"]');
-        errorElements.forEach(element => {
-            element.textContent = '';
-            element.style.display = 'none';
-        });
-
-        const fields = this.form.querySelectorAll('.error');
-        fields.forEach(field => field.classList.remove('error'));
+        this.showNotification('Произошла ошибка при отправке. Попробуйте еще раз.', 'error');
+        
     }
 
     showNotification(message, type = 'info') {
-        // Удаляем предыдущие уведомления
-        const existingNotifications = document.querySelectorAll('.notification');
-        existingNotifications.forEach(notification => notification.remove());
-
         // Создаем уведомление
         const notification = document.createElement('div');
         notification.className = `notification notification--${type}`;
-        notification.innerHTML = `
-            <div class="notification__content">
-                <span class="notification__message">${message}</span>
-                <button class="notification__close">&times;</button>
-            </div>
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+            color: white;
+            border-radius: 4px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
         `;
 
-        // Добавляем стили если их нет
-        this.ensureNotificationStyles();
-
-        // Добавляем в DOM
         document.body.appendChild(notification);
-
-        // Обработчик закрытия
-        const closeBtn = notification.querySelector('.notification__close');
-        closeBtn.addEventListener('click', () => {
-            notification.remove();
-        });
-
-        // Автоматическое скрытие через 5 секунд
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
-            }
-        }, 5000);
 
         // Анимация появления
         setTimeout(() => {
-            notification.classList.add('notification--show');
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
         }, 100);
+
+        // Удаление через 5 секунд
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 5000);
     }
+}
 
-    ensureNotificationStyles() {
-        if (document.getElementById('notification-styles')) return;
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    new ContactForm();
+});
 
-        const styles = document.createElement('style');
-        styles.id = 'notification-styles';
-        styles.textContent = `
-            .notification {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 10000;
-                max-width: 400px;
-                opacity: 0;
-                transform: translateX(100%);
-                transition: all 0.3s ease;
-            }
-            
-            .notification--show {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            
-            .notification__content {
-                padding: 16px 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-family: inherit;
-            }
-            
-            .notification--success .notification__content {
-                background: #4CAF50;
-                color: white;
-            }
-            
-            .notification--error .notification__content {
-                background: #f44336;
-                color: white;
-            }
-            
-            .notification--info .notification__content {
-                background: #2196F3;
-                color: white;
-            }
-            
-            .notification__message {
-                margin-right: 12px;
-                line-height: 1.4;
-            }
-            
-            .notification__close {
-                background: none;
-                border: none;
-                color: inherit;
-                font-size: 20px;
-                cursor: pointer;
-                padding: 0;
-                width: 24px;
-                height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                transition: background-color 0.2s ease;
-            }
-            
-            .notification__close:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-            
-            .form__table_data-input.error {
-                border-color: #f44336 !important;
-                box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2) !important;
-            }
-            
-            .form__error {
-                display: none;
-                color: #f44336;
-                font-size: 12px;
-                margin-top: 4px;
-            }
-        `;
+
+
+
+/////////////////////////////////////////////////////////////////////
+// Валидация полей формы
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitButton = document.querySelector('.form__submit-button');
+    const charCountSpan = document.getElementById('charCount');
+    const charCountContainer = document.querySelector('.form__char-counter');
+    
+    // Объект с правилами валидации
+    const validationRules = {
+        profileName: {
+            required: true,
+            minLength: 2,
+            maxLength: 40, // Добавлено ограничение в 40 символов
+            pattern: /^[а-яА-Яa-zA-Z\s]+$/,
+            errorMessage: 'От 2 до 40 символов'
+        },
+        profileNumber: {
+            required: true,
+            pattern: /^[\+]?[0-9\s\-\(\)]{10,15}$/,
+            errorMessage: 'Введите корректный номер телефона'
+        },
+        profileCompany: {
+            required: false,
+            minLength: 2,
+            maxLength: 40, // Добавлено ограничение в 40 символов
+            errorMessage: 'От 2 до 40 символов'
+        },
+        profileMoney: {
+            required: true,
+            errorMessage: 'Выберите примерный бюджет'
+        },
+        profileAbout: {
+            required: true,
+            minLength: 10,
+            maxLength: 500,
+            errorMessage: 'Описание проекта должно быть от 10 до 500 символов'
+        }
+    };
+
+    // Объект для отслеживания состояния полей
+    const fieldStates = {};
+
+    // Функция сброса формы в исходное состояние
+    function resetFormToInitialState() {
+        const formFields = form.querySelectorAll('input, select, textarea');
         
-        document.head.appendChild(styles);
+        formFields.forEach(field => {
+            const fieldName = field.id;
+            const errorSpan = document.getElementById(`error-${fieldName}`);
+            
+            // Сбрасываем значения
+            field.value = '';
+            
+            // Убираем все классы состояний
+            field.classList.remove('typing', 'invalid', 'valid');
+            
+            // Скрываем ошибки
+            if (errorSpan) {
+                errorSpan.textContent = '';
+                errorSpan.classList.remove('show');
+            }
+            
+            // Сбрасываем состояние поля
+            fieldStates[fieldName] = {
+                hasStartedTyping: false,
+                isEmpty: true
+            };
+        });
+
+        // Сбрасываем счетчик символов
+        if (charCountSpan) {
+            charCountSpan.textContent = '0';
+            charCountContainer.classList.remove('over-limit');
+        }
+
+        // Блокируем кнопку
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
     }
-}
 
-// Инициализация формы
-export default function initContactForm() {
-    if (document.getElementById('contactForm')) {
-        new ContactForm();
+    // Функция валидации отдельного поля
+    function validateField(field) {
+        const fieldName = field.id;
+        const rules = validationRules[fieldName];
+        const value = field.value.trim();
+
+        if (!rules) return { isValid: true, errorMessage: '', hasValue: value.length > 0 };
+
+        let isValid = true;
+        let errorMessage = '';
+
+        // Проверка обязательности
+        if (rules.required && !value) {
+                  isValid = false;
+            errorMessage = 'Это поле обязательно для заполнения';
+        }
+        // Проверка минимальной длины
+        else if (rules.minLength && value.length > 0 && value.length < rules.minLength) {
+            isValid = false;
+            errorMessage = rules.errorMessage;
+        }
+        // Проверка максимальной длины
+        else if (rules.maxLength && value.length > rules.maxLength) {
+            isValid = false;
+            errorMessage = rules.errorMessage;
+        }
+        // Проверка паттерна
+        else if (rules.pattern && value.length > 0 && !rules.pattern.test(value)) {
+            isValid = false;
+            errorMessage = rules.errorMessage;
+        }
+        // Для select проверяем выбранное значение
+        else if (field.tagName === 'SELECT' && rules.required && !value) {
+            isValid = false;
+            errorMessage = rules.errorMessage;
+        }
+
+        return { isValid, errorMessage, hasValue: value.length > 0 };
     }
-}
 
-// Инициализация после загрузки DOM
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initContactForm);
-} else {
-    initContactForm();
-}
+    // Функция обновления визуального состояния поля
+    function updateFieldState(field, validationResult) {
+        const fieldName = field.id;
+        const errorSpan = document.getElementById(`error-${fieldName}`);
+        const state = fieldStates[fieldName];
 
+        // Обновляем классы поля
+        field.classList.remove('invalid', 'valid', 'typing');
 
+        if (state.hasStartedTyping) {
+            if (!state.isEmpty) {
+                if (validationResult.isValid) {
+                    field.classList.add('valid');
+                } else {
+                    field.classList.add('invalid');
+                }
+            }
+        }
 
+        // Обновляем сообщение об ошибке
+        if (errorSpan) {
+            if (state.hasStartedTyping && !validationResult.isValid && !state.isEmpty) {
+                errorSpan.textContent = validationResult.errorMessage;
+                errorSpan.classList.add('show');
+            } else {
+                errorSpan.textContent = '';
+                errorSpan.classList.remove('show');
+            }
+        }
+    }
 
+    // Функция проверки валидности всей формы
+    function checkFormValidity() {
+        const formFields = form.querySelectorAll('input, select, textarea');
+        let isFormValid = true;
 
+        formFields.forEach(field => {
+            const validation = validateField(field);
+            if (!validation.isValid && validationRules[field.id]?.required) {
+                isFormValid = false;
+            }
+        });
 
+        if (submitButton) {
+            submitButton.disabled = !isFormValid;
+        }
 
+        return isFormValid;
+    }
+
+    // Инициализация обработчиков событий
+    function initEventListeners() {
+        const formFields = form.querySelectorAll('input, select, textarea');
+
+        formFields.forEach(field => {
+            const fieldName = field.id;
+            
+            // Инициализируем состояние поля
+            fieldStates[fieldName] = {
+                hasStartedTyping: false,
+                isEmpty: true
+            };
+
+            // Обработчик ввода
+            field.addEventListener('input', function() {
+                const state = fieldStates[fieldName];
+                state.hasStartedTyping = true;
+                state.isEmpty = this.value.trim().length === 0;
+
+                // Валидируем поле
+                const validation = validateField(this);
+                updateFieldState(this, validation);
+                   // Проверяем валидность формы
+                checkFormValidity();
+            });
+
+            // Обработчик потери фокуса
+            field.addEventListener('blur', function() {
+                const state = fieldStates[fieldName];
+                if (state.hasStartedTyping) {
+                    const validation = validateField(this);
+                    updateFieldState(this, validation);
+                }
+            });
+
+            // Обработчик для select
+            if (field.tagName === 'SELECT') {
+                field.addEventListener('change', function() {
+                    const state = fieldStates[fieldName];
+                    state.hasStartedTyping = true;
+                    state.isEmpty = !this.value;
+
+                    const validation = validateField(this);
+                    updateFieldState(this, validation);
+                    checkFormValidity();
+                });
+            }
+        });
+
+        // Обработчик отправки формы
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (checkFormValidity()) {
+                    // Здесь код отправки формы
+                    console.log('Форма валидна, можно отправлять');
+                    // resetFormToInitialState(); // Раскомментировать после успешной отправки
+                }
+            });
+        }
+    }
+
+    // Инициализация
+    initEventListeners();
+    checkFormValidity(); // Проверяем начальное состояние формы
+});
+
+            
+    
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
