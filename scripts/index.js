@@ -779,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (checkFormValidity()) {
                     // Здесь код отправки формы
                     console.log('Форма валидна, можно отправлять');
-                    // resetFormToInitialState(); // Раскомментировать после успешной отправки
+                    resetFormToInitialState(); // Раскомментировать после успешной отправки
                 }
             });
         }
