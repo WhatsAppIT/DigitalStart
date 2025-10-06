@@ -1,5 +1,7 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/Inter/InterWeb/inter.css);
+
+
 @import url(../blocks/body/body.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/header-main/header-main.css);
@@ -37,16 +39,10 @@
 @import url(../blocks/mainpage/landing__info_landing_price/landing__info_landing_price.css);
 @import url(../blocks/mainpage/landing__info_customization-price/landing__info_customization-price.css);
 @import url(../blocks/mainpage/landing__info_smm-price/landing__info_smm-price.css);
-
-
-
 @import url(../blocks/mainpage/images/images.css);
 @import url(../blocks/mainpage/images/__lowspan/images__lowspan.css);
 @import url(../blocks/mainpage/images/__picture/images__picture.css);
 @import url(../blocks/mainpage/images/__upspan/images__upspan.css);
-
-
-
 @import url(../blocks/mainpage/landing/__info/landing__info.css);
 
 
@@ -59,8 +55,7 @@
 @import url(../blocks/services/__table_title/services__table_title.css);
 @import url(../blocks/services/__subtitle/services__subtitle.css);
 @import url(../blocks/services/__table_title-landing/services__table_title-landing.css);
-
-
+@import url(../blocks/services/__table_logo-link/services__table_logo-link.css);
 @import url(../blocks/services/__table_landing/services__table_landing.css);
 @import url(../blocks/services/__table_context/services__table_context.css);
 @import url(../blocks/services/__table_smm/services__table_smm.css);
