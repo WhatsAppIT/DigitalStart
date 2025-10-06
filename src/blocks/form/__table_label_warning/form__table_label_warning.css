@@ -1,0 +1,9 @@
+.form__table_label_warning {
+  width: 97%;
+  /* padding: 7px 12px 0; */
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 25px;
+  text-align: left;
+  color: #a7abb4;
+}

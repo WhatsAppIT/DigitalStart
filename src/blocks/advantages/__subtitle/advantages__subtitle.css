@@ -1,0 +1,9 @@
+.advantages__subtitle {
+  margin: 0;
+  padding: 0 0 24px 0;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+  line-height: 25px;
+  text-align: center;
+  color: white;
+}

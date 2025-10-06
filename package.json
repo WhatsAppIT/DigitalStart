@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.html",
-    "dev": "nodemon index.html"
+    "test": "echo 'Привет!'",
+    "check": "prettier --check './src/**/*.{html,css,js}'",
+    "format": "prettier --write './src/**/*.{html,css,js}'",
+    "lint": "stylelint './src/**/*.css'",
+    "lintfix": "stylelint './src/**/*.css' --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run format && npm run lintfix"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,13 @@
   },
   "homepage": "https://github.com/WhatsAppIT/DigitalStart#readme",
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "browser-sync": "^3.0.4",
+    "del": "^6.0.0",
+    "gulp": "^5.0.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-plumber": "^1.2.1",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0"
   }
 }

@@ -1,0 +1,30 @@
+.landing__info_price {
+  /* width: 112px; */
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+@media (max-width: 1023px) {
+  .landing__info_price {
+    /* width: 112px; */
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .landing__info_price {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 355px) {
+  .landing__info_price {
+    font-size: 12px;
+  }
+}

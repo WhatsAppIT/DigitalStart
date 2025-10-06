@@ -1,0 +1,13 @@
+.landing__info_text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  max-width: 132px;
+}
+
+@media (max-width: 1023px) {
+  .landing__info_text {
+    font-size: 14px;
+  }
+}

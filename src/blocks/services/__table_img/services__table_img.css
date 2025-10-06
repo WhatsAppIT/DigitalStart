@@ -1,0 +1,39 @@
+.services__table_img {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+}
+
+@media (max-width: 1151px) {
+  .services__table_img {
+    left: 15px;
+    top: 30px;
+  }
+}
+/* 
+@media (max-width: 911px) {
+    .services__table_img {
+        width: 350px;
+}
+
+}
+@media (max-width: 811px) {
+    .services__table_img {
+        width: 80%;
+}
+}
+
+@media (max-width: 600px) {
+    .services__table_img {
+        width: 90%;
+}
+}
+
+@media (max-width: 500px) {
+    .services__table_img {
+        padding: 15px 15px 15px 45px;
+}
+} */

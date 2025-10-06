@@ -1,0 +1,14 @@
+.services__table_description {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .services__table_description {
+    font-size: 14px;
+  }
+}

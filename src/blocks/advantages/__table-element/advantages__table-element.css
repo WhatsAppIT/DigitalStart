@@ -1,0 +1,36 @@
+.advantages__table-element {
+  width: 210px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1029px) {
+  .advantages__table-element {
+    min-width: 290px;
+    min-height: 190px;
+  }
+}
+
+/* @media (max-width: 705px) {
+  .advantages__table-element {
+        min-width: 520px;
+        min-height: 190px;
+  }
+}  */
+
+@media (max-width: 636px) {
+  .advantages__table-element {
+    width: 85%;
+  }
+}
+
+/* @media (max-width: 636px) {
+  .advantages__table-element {
+    min-width: 390px;
+  }
+}  */

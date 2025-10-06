@@ -1,0 +1,14 @@
+.footer__company {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+  width: 30%;
+}
+
+@media (max-width: 730px) {
+  .footer__company {
+    width: 100%;
+  }
+}

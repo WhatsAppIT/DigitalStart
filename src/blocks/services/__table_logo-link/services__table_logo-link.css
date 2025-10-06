@@ -1,0 +1,6 @@
+.services__table_logo-link {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  filter: invert(1);
+}

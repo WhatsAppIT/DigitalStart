@@ -1,9 +1,0 @@
-.header__nav_menu-burger {
-    display: none;
-}
-
-@media (max-width: 767px) {
-    .header__nav_menu-burger {
-        display: flex;
-    }
-}

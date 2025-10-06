@@ -1,0 +1,19 @@
+.landing__description {
+  margin: 0;
+  padding: 4px;
+  font-weight: 400;
+  font-size: clamp(0.625rem, 0.5536rem + 0.3571vw, 0.875rem);
+  line-height: 100%;
+  border-radius: 30px;
+  background-color: #dcfce7;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  max-width: 320px;
+}
+
+@media (max-width: 399px) {
+  .landing__description {
+    padding: 4px 8px 4px;
+  }
+}

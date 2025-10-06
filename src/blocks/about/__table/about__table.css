@@ -1,0 +1,6 @@
+.about__table {
+  padding: 0 0 15px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}

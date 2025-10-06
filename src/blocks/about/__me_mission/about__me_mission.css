@@ -1,0 +1,15 @@
+.about__me_mission {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #eff6ff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 903px) {
+  .about__me_mission {
+    width: 100%;
+  }
+}
