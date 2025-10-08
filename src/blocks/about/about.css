@@ -2,12 +2,11 @@
   padding: 96px 70px 96px;
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  justify-content: center;
   gap: 60px;
   background: #ffffff;
-  max-width: 1440px;
+  width: 100%;
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 
 @media (max-width: 1279px) {
@@ -19,18 +18,19 @@
 @media (max-width: 1200px) {
   .about {
     padding: 70px 60px 70px;
+    gap: 40px;
   }
 }
 
 @media (max-width: 1023px) {
   .about {
-    padding: 50px 60px 50px;
+    padding: 50px 30px 50px;
   }
 }
 
 @media (max-width: 903px) {
   .about {
-    padding: 50px 60px 50px;
+    padding: 50px 30px 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -44,15 +44,3 @@
     padding: 70px 15px 70px;
   }
 }
-
-/* @media (max-width: 600px) {
-    .about {
-        padding: 30px;
-    }
-} */
-/* 
-@media (max-width: 593px) {
-    .about {
-      width: 90%;
-    }
-} */

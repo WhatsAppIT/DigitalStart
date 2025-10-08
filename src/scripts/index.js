@@ -264,7 +264,8 @@ class ContactForm {
     this.form = document.getElementById("contactForm");
     this.submitButton = null;
     this.originalButtonText = "";
-    this.serverUrl = "/api/"; // URL вашего backend сервера
+    //this.serverUrl = "/api"; // URL вашего backend сервера
+    this.serverUrl = "http://localhost:3000"; // URL вашего backend сервера
 
     this.init();
   }
@@ -782,5 +783,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Функция замена текста в h2 каждые 2 секунды покругу .landing__title
+
+
+function initTextSlider() {
+  const titleElement = document.querySelector('.landing__title');
+  
+  if (!titleElement) {
+    return;
+  }
+
+  const texts = [
+    'Контекстная реклама',
+    'Таргетинговая реклама', 
+    'SMM-продвижение',
+    'SEO-продвижение'
+  ];
+
+  let currentIndex = 0;
+
+  // Создаем все элементы сразу
+  titleElement.innerHTML = '';
+  texts.forEach((text, index) => {
+    const span = document.createElement('span');
+    span.className = `text-slide ${index === 0 ? 'active' : ''}`;
+    span.textContent = text;
+    titleElement.appendChild(span);
+  });
+
+  function changeText() {
+    
+    const currentSpan = titleElement.children[currentIndex];
+    const nextIndex = (currentIndex + 1) % texts.length;
+    const nextSpan = titleElement.children[nextIndex];
+    
+    // Анимация текущего элемента (уход)
+    currentSpan.classList.add('slide-out-up');
+    currentSpan.classList.remove('active');
+    
+    // Подготавливаем следующий элемент
+    nextSpan.classList.add('slide-in-down');
+    
+    setTimeout(() => {
+      // Завершаем анимацию
+      currentSpan.classList.remove('slide-out-up');
+      nextSpan.classList.remove('slide-in-down');
+      nextSpan.classList.add('active');
+      
+      currentIndex = nextIndex;
+   
+    }, 300);
+  }
+
+  // Запускаем смену текста каждые 2 секунды
+  setInterval(changeText, 2000);
+}
+
+
+
+// Запускаем после загрузки DOM
+document.addEventListener('DOMContentLoaded', initTextSlider);
+
+////////////////////////////////////////////////////////////////////////////
+
 // Сайт успешно загружен
 console.log("DigitalStart сайт успешно загружен! 🚀");

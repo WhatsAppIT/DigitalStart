@@ -6,11 +6,10 @@
   align-items: center;
   position: sticky;
   top: 0;
-  width: 99, 7%;
+  max-width: 99, 7%;
   z-index: 1;
   background: rgba(255, 255, 255, 0.95);
   animation: fadeInUp 1s ease 0.4s both;
-  /* border: 1px solid red; */
 }
 
 .header:first-child {

@@ -33,7 +33,6 @@
   .services__all {
     padding: 30px;
     width: 350px;
-    min-height: 375px;
   }
 }
 @media (max-width: 811px) {

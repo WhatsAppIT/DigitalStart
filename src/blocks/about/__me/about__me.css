@@ -1,29 +1,5 @@
 .about__me {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 880px;
 }
-
-/* @media (max-width: 1023px) {
-    .about__me {
-        width: 100%; 
-    }
-}
-
-@media (max-width: 903px) {
-    .about__me {
-        width: 100%;   
-    }
-}
-
-@media (max-width: 767px) {
-    .about__me {
-        width: 100%; 
-    }
-} */
-
-/* @media (max-width: 320px) {
-    .about__me {
-        max-width: 760px;   
-    }
-} */

@@ -1,11 +1,29 @@
 .services {
-  padding: 96px 0 96px;
+  padding: 96px 70px 96px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   box-sizing: border-box;
   /* border: 1px solid red; */
+}
+
+@media (max-width: 2309px) {
+  .services {
+    padding: 70px 500px 70px;
+  }
+}
+
+@media (max-width: 2069px) {
+  .services {
+    padding: 70px 300px 70px;
+  }
+}
+
+@media (max-width: 1669px) {
+  .services {
+    padding: 70px 100px 70px;
+  }
 }
 
 @media (max-width: 1279px) {
