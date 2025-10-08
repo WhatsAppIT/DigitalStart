@@ -18,7 +18,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .landing__btn {
     flex-direction: row;
     align-items: center;
@@ -28,7 +28,7 @@
     padding: 0;
     width: 90%;
   }
-}
+} */
 @media (max-width: 903px) {
   .landing__btn {
     flex-direction: row;

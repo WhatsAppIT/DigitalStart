@@ -1,10 +1,9 @@
 .landing__title-main {
   margin: 48px 0 0;
   font-weight: 600;
-  font-size: 60px;
   line-height: 100%;
   letter-spacing: -0, 5em;
-font-size: clamp(1.875rem, 1.3393rem + 2.6786vw, 3.75rem);
+  font-size: clamp(1.875rem, 1.3393rem + 2.6786vw, 3.75rem);
   animation: fadeInUp 1s ease;
 }
 

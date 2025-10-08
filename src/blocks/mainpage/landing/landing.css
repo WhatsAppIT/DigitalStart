@@ -1,12 +1,9 @@
 .landing {
   box-sizing: border-box;
+  /* max-width: 1000px; */
+  width: 50%;
 }
 
-@media (max-width: 1440px) {
-  .landing {
-    max-width: 1000px;
-  }
-}
 
 @media (max-width: 903px) {
   .landing {

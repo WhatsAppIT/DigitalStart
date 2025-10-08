@@ -1,5 +1,5 @@
 .landing__btn_price {
-  padding: 16px 32px;
+  padding: 16px 28px;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 400;
@@ -27,7 +27,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 903px) {
   .landing__btn_price {
     padding: 8px 16px;
     min-width: 230px;

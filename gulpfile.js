@@ -47,7 +47,7 @@ function logo() {
 }
 
 function vendor() {
-    return gulp.src('src/vendor/**/*.{jpg,png,svg,gif,ico,woff2,woff,webp,avif}')
+    return gulp.src('src/vendor/**/*.{jpg,png,svg,gif,ico,woff2,woff,webp,avif,css}')
     .pipe(gulp.dest('dist/vendor'))
     .pipe(browserSync.reload({stream: true}));
 }
