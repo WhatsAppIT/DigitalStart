@@ -8,15 +8,13 @@
       href="https://code.s3.yandex.net/web-code/fonts/fonts.css"
     />
     <link rel="stylesheet" href="./bundle.css" />
-    <!-- За подключение стилей и JS отвечает Webpack -->
     <link rel="icon" href="./favicon/logo_title.jpg" />
-    <!-- // сделаать favcon в svg и ico !!!!!!!!!!
-    <link rel="icon" href="./favicon/favicon.ico" sizes="any" />
-    <link rel="icon" href="./favicon/icon.svg" type="image/svg+xml" /> -->
+    <link rel="icon" href="./favicon/logo_title.ico" sizes="any" />
+    <link rel="icon" href="./favicon/logo_title.svg" type="image/svg+xml" /> 
     <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
     <meta property="og:title" content="Сайты Реклама Продвижение" />
     <!-- // вставить адресс когда будет -->
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="http://xn-----6kcbannefajxcdrqszntnik0a.xn--p1ai/" />
     <meta property="og:image" content="./favicon/og.jpg" />
     <meta property="twitter:card" content="summary_large_image" />
     <title>Сайты Реклама Продвижение</title>
@@ -594,6 +592,15 @@
               </div>
               <span class="form__error" id="error-profileAboutCompany"></span>
             </label>
+            <label class="privacy-agreement" for="profilePrivacy">
+              <input class="invalid" type="checkbox" name="profile-Privacy" id="profilePrivacy" required />
+              Я согласен с
+              <a href="./privacy/privacy.html" target="_blank"
+                >Политикой конфиденциальности</a
+              >
+              и даю согласие на обработку персональных данных
+              <span class="form__error" id="error-profilePrivacy"></span>
+            </label>
             <button
               type="submit"
               class="form__button form__submit-button"
@@ -702,7 +709,10 @@
         </div>
       </div>
       <div class="footer__line">
-        <p class="footer__wots">2025 GigitalStart. Все права защищены</p>
+        <p class="footer__wots">
+          &copy; 2025 GigitalStart. Все права защищены.
+        </p>
+        <a class="footer__privacy" href="./privacy/privacy.html" target="_blank">Политика конфиденциальности</a>
       </div>
     </footer>
     <script type="module" src="../scripts/index.js"></script>

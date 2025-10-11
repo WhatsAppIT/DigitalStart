@@ -7,7 +7,6 @@
   animation: fadeInUp 1s ease;
 }
 
-
 .landing__title {
   margin: 12px 0 12px;
   color: #2563eb;
@@ -26,7 +25,9 @@
   left: 0;
   width: 100%;
   white-space: nowrap; /* Принудительно в одну строку */
-  transition: transform 0.6s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.6s ease-in-out,
+    opacity 0.3s ease-in-out;
   opacity: 0;
   transform: translateY(100%); /* Начальная позиция снизу */
 }
@@ -46,19 +47,18 @@
   opacity: 0;
 }
 
-
 /* Мобильные устройства */
 @media (max-width: 903px) {
   .landing__title-main {
     margin: 24px 0 12px;
   }
-  
+
   .landing__title {
     font-size: clamp(1.125rem, 4vw, 2rem);
     height: 1.2em; /* Сохраняем фиксированную высоту */
     text-align: left; /* Остается прижатым к левому краю */
   }
-  
+
   .text-slide {
     white-space: nowrap; /* Остается в одну строку */
     overflow: hidden; /* Обрезаем если не помещается */
@@ -66,12 +66,9 @@
   }
 }
 
-
-
 @media (max-width: 480px) {
   .landing__title {
     font-size: clamp(1rem, 5vw, 1.5rem);
     height: 1.2em;
   }
 }
-

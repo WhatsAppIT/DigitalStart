@@ -6,15 +6,14 @@
   align-items: center;
   justify-content: center;
   background-color: #f6f4f4;
-  /* max-width: 1440px; */
   box-sizing: border-box;
   /* border: 1px solid red; */
 }
 
 /* Контейнер для поля ввода и ошибки */
 .form__field-container {
+  padding: 0;
   position: relative;
-  /* margin-bottom: 10px; Базовый отступ между полями */
 }
 
 /* Исходное состояние - резервируем место для ошибок */

@@ -121,6 +121,7 @@
 @import url(../blocks/form/__table_data-checkbox-smm/form__table_data-checkbox-smm.css);
 @import url(../blocks/form/__table_data-checkbox-target/form__table_data-checkbox-target.css);
 @import url(../blocks/form/__char-counter/form__char-counter.css);
+@import url(../blocks/form/__input-privacy/form__input-privacy.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__content/footer__content.css);
@@ -140,3 +141,7 @@
 @import url(../blocks/footer/__contacts_table-number/footer__contacts_table-number.css);
 @import url(../blocks/footer/__contacts_table-day/footer__contacts_table-day.css);
 @import url(../blocks/footer/__wots/footer__wots.css);
+@import url(../blocks/footer/__privacy/footer__privacy.css);
+
+@import url(../blocks/privacy/privacy-footer.css);
+@import url(../blocks/privacy/privacy-form.css);
