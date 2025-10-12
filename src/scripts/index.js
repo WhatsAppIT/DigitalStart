@@ -571,6 +571,10 @@ document.addEventListener("DOMContentLoaded", function () {
       maxLength: 500,
       errorMessage: "Описание проекта должно быть от 10 до 500 символов",
     },
+    profilePrivacy: {  // замените на ID вашего чекбокса
+      required: true,
+      errorMessage: "Необходимо принять условия",
+  },
   };
 
   // Объект для отслеживания состояния полей
@@ -626,6 +630,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let isValid = true;
     let errorMessage = "";
+
+    // Для чекбокса проверяем checked
+    if (field.type === "checkbox") {
+      if (rules.required && !field.checked) {
+        isValid = false;
+        errorMessage = rules.errorMessage;
+      }
+      return { isValid, errorMessage, hasValue: field.checked };
+    }
 
     // Проверка обязательности
     if (rules.required && !value) {
@@ -727,6 +740,19 @@ document.addEventListener("DOMContentLoaded", function () {
         isEmpty: true,
       };
 
+      // Обработчик для checkbox
+    if (field.type === "checkbox") {
+      field.addEventListener("change", function () {
+        const state = fieldStates[fieldName];
+        state.hasStartedTyping = true;
+        state.isEmpty = !this.checked;
+
+        const validation = validateField(this);
+        updateFieldState(this, validation);
+        checkFormValidity();
+      });
+    }
+
       // Обработчик ввода
       field.addEventListener("input", function () {
         const state = fieldStates[fieldName];
@@ -770,7 +796,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkFormValidity()) {
           // Здесь код отправки формы
-          console.log("Форма валидна, можно отправлять");
+          // console.log("Форма валидна, можно отправлять");
           resetFormToInitialState(); // Раскомментировать после успешной отправки
         }
       });
@@ -847,5 +873,9 @@ document.addEventListener('DOMContentLoaded', initTextSlider);
 
 ////////////////////////////////////////////////////////////////////////////
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Сайт успешно загружен
-console.log("DigitalStart сайт успешно загружен! 🚀");
+// console.log("DigitalStart сайт успешно загружен! 🚀");

@@ -10,6 +10,16 @@
     color: #666;
 }
 
+
+.privacy-agreement.invalid {
+  color: #ff0000;
+}
+
+.privacy-agreement.invalid a {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .privacy-agreement {
       gap: 5px;
