@@ -264,8 +264,8 @@ class ContactForm {
     this.form = document.getElementById("contactForm");
     this.submitButton = null;
     this.originalButtonText = "";
-    //this.serverUrl = "/api"; // URL вашего backend сервера
-    this.serverUrl = "http://localhost:3000"; // URL вашего backend сервера
+    this.serverUrl = "/api"; // URL вашего backend сервера
+    // this.serverUrl = "http://localhost:3000"; // URL вашего backend сервера
 
     this.init();
   }
