@@ -1,0 +1,14 @@
+.production__table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 454px) {
+  .production__table {
+    gap: 40px;
+  }
+}

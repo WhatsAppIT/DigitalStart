@@ -264,8 +264,8 @@ class ContactForm {
     this.form = document.getElementById("contactForm");
     this.submitButton = null;
     this.originalButtonText = "";
-    this.serverUrl = "/api"; // URL вашего backend сервера
-    // this.serverUrl = "http://localhost:3000"; // URL вашего backend сервера
+    // this.serverUrl = "/api"; // URL вашего backend сервера
+    this.serverUrl = "http://localhost:3000"; // URL вашего backend сервера
 
     this.init();
   }
@@ -813,19 +813,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // Функция замена текста в h2 каждые 2 секунды покругу .landing__title
 
 
-function initTextSlider() {
-  const titleElement = document.querySelector('.landing__title');
+
+// Универсальная функция для слайдера текста
+function initTextSlider(selector, texts, interval= 2000) {
+  const titleElement = document.querySelector(selector);
   
   if (!titleElement) {
     return;
   }
-
-  const texts = [
-    'Контекстная реклама',
-    'Таргетинговая реклама', 
-    'SMM-продвижение',
-    'SEO-продвижение'
-  ];
 
   let currentIndex = 0;
 
@@ -839,37 +834,80 @@ function initTextSlider() {
   });
 
   function changeText() {
-    
     const currentSpan = titleElement.children[currentIndex];
     const nextIndex = (currentIndex + 1) % texts.length;
     const nextSpan = titleElement.children[nextIndex];
     
-    // Анимация текущего элемента (уход)
     currentSpan.classList.add('slide-out-up');
     currentSpan.classList.remove('active');
-    
-    // Подготавливаем следующий элемент
     nextSpan.classList.add('slide-in-down');
     
     setTimeout(() => {
-      // Завершаем анимацию
       currentSpan.classList.remove('slide-out-up');
       nextSpan.classList.remove('slide-in-down');
       nextSpan.classList.add('active');
-      
       currentIndex = nextIndex;
-   
     }, 300);
   }
 
-  // Запускаем смену текста каждые 2 секунды
-  setInterval(changeText, 2000);
+  setInterval(changeText, interval);
 }
 
+// Инициализация всех слайдеров
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Главная страница
+  if (document.querySelector('.landing__title')) {
+    initTextSlider('.landing__title', [
+      'Контекстная реклама',
+      'Таргетинговая реклама', 
+      'SMM-продвижение',
+      'SEO-продвижение'
+    ]);
+  }
+  
+  // Страница лендингов
+  if (document.querySelector('.landing__title-websait')) {
+    initTextSlider('.landing__title-websait', [
+      'Лендинги',
+      'Сайт-визитка',
+      'Интернет-магазин',
+      'Квиз',
+    ]);
+  }
+  
+  // Страница context
+  if (document.querySelector('.landing__title-multipage')) {
+    initTextSlider('.landing__title-multipage', [
+      'Многостраничные сайты',
+      'Корпоративные сайты',
+      'Сайты-каталоги',
+      'Бизнес-сайты'
+    ]);
+  }
+  
+  // Страница target
+  if (document.querySelector('.landing__title-shop')) {
+    initTextSlider('.landing__title-shop', [
+      'Интернет-магазины',
+      'E-commerce сайты',
+      'Онлайн-магазины',
+      'Торговые площадки'
+    ]);
+  }
+  
+  // Страница SEO
+  if (document.querySelector('.landing__title-seo')) {
+    initTextSlider('.landing__title-seo', [
+      'SEO-продвижение',
+      'Поисковая оптимизация',
+      'Продвижение в Google',
+      'Рост позиций в поиске'
+    ]);
+  }
+  
+});
 
-
-// Запускаем после загрузки DOM
-document.addEventListener('DOMContentLoaded', initTextSlider);
 
 ////////////////////////////////////////////////////////////////////////////
 

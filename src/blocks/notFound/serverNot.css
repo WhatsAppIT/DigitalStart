@@ -1,0 +1,24 @@
+.body-server {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.h1-server { font-size: 100px; margin: 0; }
+.h2-server { font-size: 32px; margin: 20px 0; }
+.p-server { font-size: 18px; margin-bottom: 30px; }
+.a-server {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #e74c3c;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

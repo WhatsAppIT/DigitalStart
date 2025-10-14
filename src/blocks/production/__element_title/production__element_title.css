@@ -1,0 +1,20 @@
+.production__element_title {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 25px;
+  color: black;
+}
+
+@media (max-width: 1151px) {
+  .production__element_title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .production__element_title {
+    font-size: 18px;
+  }
+}

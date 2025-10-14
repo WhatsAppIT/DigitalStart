@@ -1,6 +1,6 @@
 .landing__title-main {
   margin: 48px 0 0;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 100%;
   letter-spacing: -0, 5em;
   font-size: clamp(1.875rem, 1.3393rem + 2.6786vw, 3.75rem);
@@ -10,6 +10,7 @@
 .landing__title {
   margin: 12px 0 12px;
   color: #2563eb;
+    font-weight: 800;
   line-height: 1.2;
   font-size: clamp(1.25rem, 2.5vw + 0.5rem, 3.125rem);
   position: relative;

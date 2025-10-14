@@ -1,0 +1,9 @@
+.production__element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 200px;
+}

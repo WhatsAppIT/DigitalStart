@@ -1,0 +1,39 @@
+.production {
+    padding: 70px 500px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 24px;
+}
+
+@media (max-width: 2309px) {
+  .production {
+    padding: 70px 500px 70px;
+  }
+}
+
+@media (max-width: 2069px) {
+  .production {
+    padding: 70px 300px 70px;
+  }
+}
+
+@media (max-width: 1669px) {
+  .production {
+    padding: 70px 100px 70px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .production {
+    padding: 70px 30px 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .production {
+    padding: 70px 15px 70px;
+  }
+}

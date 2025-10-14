@@ -10,6 +10,23 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
+/* карточки для страницы websait */
+.services__all-websait {
+  padding: 110px 32px 32px 32px;
+  width: 360px;
+  min-height: 310px;
+}
+@media (max-width: 1151px) {
+  .services__all-websait {
+    min-height: 200px;
+  }
+}
+@media (max-width: 1011px) {
+  .services__all-websait {
+    min-height: 200px;
+  }
+}
+
 
 .services__all:hover {
   transform: translateY(-10px);

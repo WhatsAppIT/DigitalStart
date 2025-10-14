@@ -1,0 +1,149 @@
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.error-container {
+    max-width: 600px;
+}
+
+.error-code {
+    font-size: 150px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    animation: glitch 1s infinite;
+}
+
+.error-title {
+    font-size: 32px;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.error-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.error-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #667eea;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.search-box {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.helpful-links {
+    margin-top: 50px;
+}
+
+.helpful-links h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.helpful-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.helpful-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.helpful-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 100px;
+    }
+    
+    .error-title {
+        font-size: 24px;
+    }
+    
+    .error-description {
+        font-size: 16px;
+    }
+}
