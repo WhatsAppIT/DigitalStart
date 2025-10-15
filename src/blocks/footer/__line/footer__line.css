@@ -13,7 +13,7 @@
 @media (max-width: 627px) {
   .footer__line {
     flex-direction: column-reverse;
-      gap: 5px;
+    gap: 5px;
   }
 }
 @media (max-width: 1580px) {

@@ -1,15 +1,14 @@
 .privacy-agreement {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
-    color: #666;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+  color: #666;
 }
-
 
 .privacy-agreement.invalid {
   color: #ff0000;
@@ -22,16 +21,16 @@
 
 @media (max-width: 900px) {
   .privacy-agreement {
-      gap: 5px;
+    gap: 5px;
   }
 }
 
 .privacy-agreement input[type="checkbox"] {
-    margin-top: 3px;
-    flex-shrink: 0;
+  margin-top: 3px;
+  flex-shrink: 0;
 }
 
 .privacy-agreement a {
-    color: #4CAF50;
-    text-decoration: underline;
+  color: #4caf50;
+  text-decoration: underline;
 }

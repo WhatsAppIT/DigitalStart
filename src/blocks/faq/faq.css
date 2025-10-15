@@ -1,62 +1,62 @@
 .faq {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 30px;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 30px;
 }
 
 .faq__title {
-    text-align: left;
-    font-size: 32px;
-    margin-bottom: 25px;
-    font-weight: 700;
-    color: #222;
+  text-align: left;
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #222;
 }
 
 .faq__item {
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
 }
 
 .faq__question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s;
-    padding-left: 15px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  padding-left: 15px;
 }
 
 .faq__question::after {
-    content: '+';
-    position: absolute;
-    right: 10px;
-    font-size: 20px;
-    transition: transform 0.3s;
+  content: "+";
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  transition: transform 0.3s;
 }
 
 .faq__item.active .faq__question::after {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .faq__question:hover {
-    color: #0078ff;
+  color: #0078ff;
 }
 
 .faq__answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    padding-left: 30px;
-    font-size: 16px;
-    color: #555;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding-left: 30px;
+  font-size: 16px;
+  color: #555;
 }
 
 .faq__item.active .faq__answer {
-    max-height: 300px;
-    margin-top: 10px;
+  max-height: 300px;
+  margin-top: 10px;
 }

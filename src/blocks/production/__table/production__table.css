@@ -1,10 +1,10 @@
 .production__table {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    gap: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 454px) {

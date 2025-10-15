@@ -46,7 +46,6 @@
 @import url(../blocks/mainpage/mainpage-websait.css);
 @import url(../blocks/mainpage/landing__description-websait/landing__description-websait.css);
 
-
 @import url(../blocks/services/services.css);
 @import url(../blocks/services/card/card.css);
 @import url(../blocks/services/__title/services__title.css);
@@ -71,8 +70,6 @@
 @import url(../blocks/services/__list/services__list.css);
 @import url(../blocks/services/__list-content/services__list-content.css);
 
-
-
 @import url(../blocks/services/__table_img-seo/services__table_img-seo.css);
 @import url(../blocks/services/__table_img-secure/services__table_img-secure.css);
 @import url(../blocks/services/__table_seo/services__table_seo.css);
@@ -81,10 +78,6 @@
 @import url(../blocks/services/services-website.css);
 @import url(../blocks/services/__table_title-websait/services__table_title-websait.css);
 @import url(../blocks/services/__table_img-websait/services__table_img-websait.css);
-
-
-
-
 
 @import url(../blocks/advantages/advantages.css);
 @import url(../blocks/advantages/__title/advantages__title.css);
@@ -168,7 +161,6 @@
 @import url(../blocks/privacy/privacy-footer.css);
 @import url(../blocks/privacy/privacy-form.css);
 
-
 @import url(../blocks/production/production.css);
 @import url(../blocks/production/__title/production__title.css);
 @import url(../blocks/production/__text/production__text.css);
@@ -182,7 +174,6 @@
 @import url(../blocks/production/__element_number-dis/production__element_number-dis.css);
 @import url(../blocks/production/__element_number-prod/production__element_number-prod.css);
 @import url(../blocks/production/__element_number-raketa/production__element_number-raketa.css);
-
 
 @import url(../blocks/faq/faq.css);
 @import url(../blocks/cookies/cookies.css);
