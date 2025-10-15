@@ -5,10 +5,12 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 const build = gulp.series(clean, gulp.parallel(html, css, image, favicon, logo, vendor, scripts));
 const watchapp = gulp.parallel(build, watchFiles, serve);
+const replace = require('gulp-replace');
 
 function html() {
     return gulp.src('src/**/*.html')
     .pipe(plumber())
+    .pipe(replace(/<!--[\s\S]*?-->/g, ''))  // Удаляет HTML комментарии
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
 }
@@ -16,6 +18,7 @@ function html() {
 function scripts() {
     return gulp.src('src/**/*.js')
     .pipe(plumber())
+    .pipe(replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, ''))  // Удаляет JS комментарии
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
 }
@@ -23,6 +26,7 @@ function scripts() {
 function css() {
     return gulp.src('src/blocks/**/*.css')
     .pipe(plumber())
+    .pipe(replace(/\/\*[\s\S]*?\*\//g, ''))  // Удаляет CSS комментарии
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
@@ -61,6 +65,8 @@ function watchFiles() {
   gulp.watch(['src/**/*.js'], scripts);
   gulp.watch(['src/blocks/**/*.css'], css);
   gulp.watch(['src/image/**/*.{jpg,png,svg,gif,ico,webp,avif}'], image);
+  gulp.watch(['src/logo-svg/**/*.{jpg,png,svg,gif,ico,webp,avif}'], logo);
+  gulp.watch(['src/favicon/**/*.{jpg,png,svg,gif,ico,webp,avif}'], favicon);
 }
 
 function serve() {

@@ -1,4 +1,4 @@
-.services__table_img {
+.services__table_img-websait {
   position: absolute;
   left: 32px;
   top: 32px;
@@ -8,8 +8,8 @@
 }
 
 @media (max-width: 1151px) {
-  .services__table_img {
-    left: 15px;
-    top: 30px;
+  .services__table_img-websait {
+  left: 32px !important;
+  top: 32px !important;
   }
 }
