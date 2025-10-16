@@ -10,6 +10,13 @@
   /* border: 1px solid red; */
 }
 
+.form-message {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* Контейнер для поля ввода и ошибки */
 .form__field-container {
   padding: 0;

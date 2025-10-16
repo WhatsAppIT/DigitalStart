@@ -175,5 +175,7 @@
 @import url(../blocks/production/__element_number-prod/production__element_number-prod.css);
 @import url(../blocks/production/__element_number-raketa/production__element_number-raketa.css);
 
+@import url(../blocks/website-prices/website-prices.css);
+
 @import url(../blocks/faq/faq.css);
 @import url(../blocks/cookies/cookies.css);

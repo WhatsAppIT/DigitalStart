@@ -9,8 +9,15 @@
     min-height: 200px;
   }
 }
+
 @media (max-width: 1011px) {
   .services__all-websait {
     min-height: 200px;
+  }
+}
+
+@media (max-width: 450px) {
+  .services__all-websait {
+    width: 80%;
   }
 }

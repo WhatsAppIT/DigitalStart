@@ -948,7 +948,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initTextSlider(".landing__title-websait", [
       "Лендинг",
       "Сайт-визитка",
-      "Интернет-магазин",
       "Квиз",
       "Многостраничный сайт",
       "Информационный сайт",
@@ -1045,31 +1044,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 // секция FAQ ответы на вопросы - открытие
 
-document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq__item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq__question');
-        
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Закрываем все элементы
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-            });
-            
-            // Если элемент не был активным, открываем его
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq__item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq__question");
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      // Закрываем все элементы
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+      });
+
+      // Если элемент не был активным, открываем его
+      if (!isActive) {
+        item.classList.add("active");
+      }
     });
+  });
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// Обработка кликов по кнопкам
+document.querySelectorAll(".btn-order").forEach((button) => {
+  button.addEventListener("click", function () {
+    const card = this.closest(".pricing-card");
+    const planName = card.querySelector(".card-title").textContent;
+    const price = card.querySelector(".card-price").textContent;
+
+    alert(`Вы выбрали план: ${planName}\nЦена: ${price}`);
+
+    // Здесь можно добавить:
+    // - Открытие модального окна
+    // - Переход на страницу оформления заказа
+    // - Отправку данных на сервер
+
+    console.log("Выбран тариф:", planName);
+  });
+});
+
+// Анимация появления карточек при скролле
+// const observerOptions = {
+//     threshold: 0.1,
+//     rootMargin: '0px 0px -50px 0px'
+// };
+
+// const observer = new IntersectionObserver(function(entries) {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.style.opacity = '0';
+//             entry.target.style.transform = 'translateY(20px)';
+
+//             setTimeout(() => {
+//                 entry.target.style.transition = 'all 0.6s ease';
+//                 entry.target.style.opacity = '1';
+//                 entry.target.style.transform = 'translateY(0)';
+//             }, 100);
+
+//             observer.unobserve(entry.target);
+//         }
+//     });
+// }, observerOptions);
+
+document.querySelectorAll(".pricing-card").forEach((card) => {
+  observer.observe(card);
+});
 
 // Сайт успешно загружен
 // console.log("DigitalStart сайт успешно загружен! 🚀");
