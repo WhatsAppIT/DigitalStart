@@ -1088,6 +1088,287 @@ document.querySelectorAll(".btn-order").forEach((button) => {
   });
 });
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// EXAMPLE SECTION
+
+// Переключение между категориями лендингов
+document.addEventListener("DOMContentLoaded", function () {
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const contentContainers = document.querySelectorAll(".content-container");
+
+  console.log("=== ИНИЦИАЛИЗАЦИЯ ===");
+  console.log("Найдено кнопок:", categoryButtons.length);
+  console.log("Найдено контейнеров:", contentContainers.length);
+
+  // Проверяем все кнопки
+  categoryButtons.forEach((btn, index) => {
+    console.log(`Кнопка ${index}:`, {
+      текст: btn.textContent.trim(),
+      "data-category": btn.getAttribute("data-category"),
+      элемент: btn,
+    });
+  });
+
+  // Проверяем все контейнеры
+  contentContainers.forEach((container, index) => {
+    console.log(`Контейнер ${index}:`, {
+      "data-content": container.getAttribute("data-content"),
+      элемент: container,
+    });
+  });
+
+  // Функция переключения контента
+  function switchCategory(category) {
+    console.log("=== ПЕРЕКЛЮЧЕНИЕ НА:", category, "===");
+
+    // 1. Убираем active у всех кнопок
+    categoryButtons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // 2. Добавляем active к нужной кнопке
+    const activeButton = document.querySelector(
+      `.category-btn[data-category="${category}"]`,
+    );
+    if (activeButton) {
+      activeButton.classList.add("active");
+      console.log("✓ Кнопка активирована:", category);
+    } else {
+      console.error("✗ Кнопка не найдена:", category);
+    }
+
+    // 3. Скрываем все контейнеры
+    contentContainers.forEach((container) => {
+      container.classList.remove("active");
+      container.style.display = "none";
+      console.log("Скрыт контейнер:", container.getAttribute("data-content"));
+    });
+
+    // 4. Показываем нужный контейнер
+    const targetContainer = document.querySelector(
+      `.content-container[data-content="${category}"]`,
+    );
+
+    console.log('Ищем контейнер с data-content="' + category + '"');
+    console.log("Найденный контейнер:", targetContainer);
+
+    if (targetContainer) {
+      targetContainer.classList.add("active");
+      targetContainer.style.display = "grid";
+      console.log("✓ Контейнер показан:", category);
+    } else {
+      console.error("✗ ОШИБКА: Контейнер не найден для категории:", category);
+      console.log("Доступные контейнеры:");
+      contentContainers.forEach((c) => {
+        console.log("  -", c.getAttribute("data-content"));
+      });
+    }
+  }
+
+  // Добавляем обработчики на кнопки
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      const category = this.getAttribute("data-category");
+      console.log("\n>>> КЛИК ПО КНОПКЕ:", category);
+      switchCategory(category);
+    });
+  });
+
+  // Инициализация - показываем первую категорию
+  if (categoryButtons.length > 0) {
+    const firstCategory = categoryButtons[0].getAttribute("data-category");
+    console.log("\n=== НАЧАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ===");
+    switchCategory(firstCategory);
+  }
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// Данные для разных категорий лендингов
+const landingData = {
+  ecommerce: {
+    title: "Лендинги для интернет-магазинов",
+    description:
+      "Страницы, ориентированные на товары, разработанные для стимулирования продаж с убедительными презентациями товаров, отзывами клиентов и упрощенным процессом оформления заказа.",
+    features: [
+      "Витрина товаров с качественными изображениями",
+      "Отзывы и рецензии клиентов",
+      "Значки доверия и индикаторы безопасности",
+      "Упрощенный процесс покупки",
+      "Элементы срочности и дефицита",
+    ],
+    idealFor:
+      "Запуск товаров, сезонные распродажи, д�опшиппинг, коробки подписок, цифровые товары",
+    image: "",
+  },
+  services: {
+    title: "Лендинги для услуг",
+    description:
+      "Профессиональные страницы для презентации ваших услуг с акцентом на экспертность, результаты работы и простоту связи с клиентами.",
+    features: [
+      "Описание услуг и преимуществ",
+      "Портфолио выполненных проектов",
+      "Отзывы довольных клиентов",
+      "Простая форма заявки",
+      "Калькулятор стоимости услуг",
+    ],
+    idealFor:
+      "Консалтинг, юридические услуги, ремонт, обучение, маркетинговые агентства",
+    image: "",
+  },
+  // saas: {
+  //   title: 'Лендинги для SaaS',
+  //   description: 'Современные страницы для программных продуктов с демонстрацией функционала, тарифных планов и возможностью бесплатного тестирования.',
+  //   features: [
+  //     'Интерактивная демонстрация продукта',
+  //     'Сравнение тарифных планов',
+  //     'Интеграции с другими сервисами',
+  //     'Бесплатный пробный период',
+  //     'Видео-презентация функционала'
+  //   ],
+  //   idealFor: 'Облачные сервисы, CRM-системы, инструменты автоматизации, аналитические платформы',
+  //       image: ''
+  // },
+  events: {
+    title: "Лендинги для мероприятий",
+    description:
+      "Яркие и информативные страницы для продвижения мероприятий с расписанием, информацией о спикерах и удобной регистрацией.",
+    features: [
+      "Таймер обратного отсчета",
+      "Информация о спикерах и программе",
+      "Форма быстрой регистрации",
+      "Карта проезда к месту события",
+      "Галерея прошлых мероприятий",
+    ],
+    idealFor:
+      "Конференции, вебинары, концерты, выставки, корпоративные мероприятия",
+    image: "./image/2366e356d88b71b6d77794281e247b5d.jpg",
+  },
+};
+
+// Инициализация при загрузке страницы
+document.addEventListener("DOMContentLoaded", function () {
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const contentCard = document.querySelector(".content-card");
+
+  // Добавляем классы для идентификации
+  categoryButtons.forEach((btn, index) => {
+    const categories = ["ecommerce", "services", "events"];
+    btn.setAttribute("data-category", categories[index]);
+  });
+
+  // Обработчик клика на кнопки категорий
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const category = this.getAttribute("data-category");
+
+      // Убираем активный класс со всех кнопок
+      categoryButtons.forEach((btn) => {
+        btn.classList.remove("active", "bg-blue-600", "text-white");
+        btn.classList.add("text-gray-600", "hover:bg-gray-100");
+      });
+
+      // Добавляем активный класс к текущей кнопке
+      this.classList.add("active", "bg-blue-600", "text-white");
+      this.classList.remove("text-gray-600", "hover:bg-gray-100");
+
+      // Обновляем контент
+      updateContent(category);
+    });
+  });
+
+  // Функция обновления контента
+  function updateContent(category) {
+    const data = landingData[category];
+    const contentCard = document.querySelector(".content-card");
+
+    setTimeout(() => {
+      // Обновляем заголовок
+      const title = contentCard.querySelector("h3");
+      title.textContent = data.title;
+
+      // Обновляем описание
+      const description = contentCard.querySelector("p.text-lg");
+      description.textContent = data.description;
+
+      // Обновляем список функций
+      const featuresList = contentCard.querySelector(".space-y-4");
+      featuresList.innerHTML = "";
+      data.features.forEach((feature, index) => {
+        const featureItem = document.createElement("div");
+        featureItem.className = "flex items-center space-x-3 checklist-item";
+        featureItem.innerHTML = `
+          <i class="ri-check-line text-green-500 check-icon"></i>
+          <span>${feature}</span>
+        `;
+        featuresList.appendChild(featureItem);
+      });
+
+      // Обновляем блок "Идеально для"
+      const idealForText = contentCard.querySelector(".bg-blue-50 p");
+      idealForText.textContent = data.idealFor;
+
+      // Обновляем изображение
+      const image = contentCard.querySelector("img");
+      image.src = data.image;
+      image.alt = data.title;
+
+      // Добавляем анимацию появления
+      contentCard.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      contentCard.style.opacity = "1";
+      contentCard.style.transform = "translateY(0)";
+    }, 300);
+  }
+
+  // Добавляем классы для анимации
+  const contentCardElement = document.querySelector(".bg-white.rounded-3xl");
+  if (contentCardElement) {
+    contentCardElement.classList.add("content-card");
+  }
+
+  // Добавляем классы к чек-листу
+  const checklistItems = document.querySelectorAll(".space-y-4 > div");
+  checklistItems.forEach((item) => {
+    item.classList.add("checklist-item");
+  });
+
+  // Добавляем класс к блоку "Идеально для"
+  const idealForBlock = document.querySelector(".bg-blue-50");
+  if (idealForBlock) {
+    idealForBlock.classList.add("ideal-for-block");
+  }
+
+  // Добавляем класс к �зображению
+  const image = document.querySelector(".rounded-2xl.shadow-lg.w-full");
+  if (image) {
+    image.classList.add("landing-image");
+  }
+
+  // Intersection Observer для анимации при скролле
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+      }
+    });
+  }, observerOptions);
+
+  // Наблюдаем за секцией
+  const section = document.querySelector(".landing-examples");
+  if (section) {
+    observer.observe(section);
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // Анимация появления карточек при скролле
 // const observerOptions = {
 //     threshold: 0.1,

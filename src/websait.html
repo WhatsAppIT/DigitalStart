@@ -61,7 +61,7 @@
       <div class="spinner"></div>
     </div>
     <header class="header" id="header">
-      <a class="header__logo" href="./index.html#landing"
+      <a class="header__logo" href="#landing"
         ><img
           class="header__logo_img"
           src="./image/DS_maibn.png"
@@ -71,13 +71,13 @@
         <a
           class="header__nav_menu header__nav_menu-services"
           href="./index.html#services"
-          >Услуги</a
+          >Главная</a
         >
         <a class="header__nav_menu header__nav_menu-advantages" href="#services"
           >Преимуества</a
         >
-        <a class="header__nav_menu header__nav_menu-about" href="#about"
-          >О нас</a
+        <a class="header__nav_menu header__nav_menu-about" href="#price-website"
+          >Цены</a
         >
 
         <a class="header__nav_menu header__nav_menu-burger" href="#landing"
@@ -130,7 +130,7 @@
 
           <div class="landing__btn">
             <a class="landing__btn_project" href="#form">Заказать сайт</a>
-            <a class="landing__btn_price" href="#form">Посмотреть пример</a>
+            <a class="landing__btn_price" href="#price-website">Посмотреть цены</a>
           </div>
 
           <div class="landing__info">
@@ -458,9 +458,203 @@
         </div>
       </section>
 
+      <!-- EXAMPLE SECTION -->
+
+      <section class="landing-examples">
+        <div class="landing-examples-container">
+          <!-- Заголовок -->
+          <h2>Примеры лендингов</h2>
+
+          <!-- Подзаголовок -->
+          <p class="landing-examples-subtitle">
+            Посмотрите, что мы можем создать для разных отраслей
+          </p>
+
+          <!-- Переключатель категорий -->
+          <div class="category-switcher-wrapper">
+            <div class="category-switcher">
+              <button class="category-btn active" data-category="ecommerce">
+                <span>Интернет-магазин</span>
+              </button>
+              <button class="category-btn" data-category="services">
+                <span>Услуги</span>
+              </button>
+              <button class="category-btn" data-category="events">
+                <span>Мероприятия</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Контент для Интернет-магазин -->
+          <div class="content-container active" data-content="ecommerce">
+            <div class="content-left">
+              <h3 class="content-title">Лендинги для интернет-магазинов</h3>
+
+              <p class="content-description">
+                Страницы, ориентированные на товары, разработанные для
+                стимулирования продаж с убедительными презентациями товаров,
+                отзывами клиентов и упрощенным процессом оформления заказа.
+              </p>
+
+              <div class="features-list">
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text"
+                    >Витрина товаров с качественными изображениями</span
+                  >
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Отзывы и рецензии клиентов</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text"
+                    >Значки доверия и индикаторы безопасности</span
+                  >
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Упрощенный процесс покупки</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text"
+                    >Элементы срочности и дефицита</span
+                  >
+                </div>
+              </div>
+
+              <div class="ideal-for-block-im">
+                <h4 class="ideal-for-title">Идеально для:</h4>
+                <p class="ideal-for-text">
+                  Запуск товаров, сезонные распродажи, дропшиппинг, коробки
+                  подписок, цифровые товары
+                </p>
+              </div>
+            </div>
+
+            <div class="content-right">
+              <div class="image-wrapper">
+                <img
+                  alt="Лендинг интернет-магазина"
+                  class="landing-image"
+                  src="./image/2366e356d88b71b6d77794281e247b5d.jpg"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Контент для Услуги -->
+          <div class="content-container" data-content="services">
+            <div class="content-left">
+              <h3 class="content-title">Лендинги для услуг</h3>
+
+              <p class="content-description">
+                Профессиональные страницы для сервисного бизнеса с четкими ценностными предложениями, объяснением процессов и удобными формами обратной связи.
+              </p>
+
+              <div class="features-list">
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Четкие описания услуг и преимуществ</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Временная линия процесса и методология</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Кейсы и образцы портфолио</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Квалификация команды и опыт</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Простые формы бронирования консультаций</span>
+                </div>
+              </div>
+
+              <div class="ideal-for-block-us">
+                <h4 class="ideal-for-title">Идеально для:</h4>
+                <p class="ideal-for-text">
+                  Консалтинг, юридические услуги, медицинские клиники, домашние услуги, профессиональные услуги
+                </p>
+              </div>
+            </div>
+
+            <div class="content-right">
+              <div class="image-wrapper">
+                <img
+                  alt="Лендинг для услуг"
+                  class="landing-image"
+                  src="./image/a41ffc65c59ffff32bbdf82038513a29.jpg"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Контент для Мероприятия -->
+          <div class="content-container" data-content="events">
+            <div class="content-left">
+              <h3 class="content-title">Лендинги для мероприятий</h3>
+
+              <p class="content-description">
+                Привлекательные страницы для конференций, семинаров и вебинаров с информацией о спикерах, программой и формами регистрации.
+              </p>
+
+              <div class="features-list">
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text"
+                    >Детали мероприятия и программа</span
+                  >
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Профили спикеров и биографии</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Информация о месте проведения и направления</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Цены на билеты и регистрация</span>
+                </div>
+                <div class="feature-item">
+                  <div class="check-icon"></div>
+                  <span class="feature-text">Таймер обратного отсчета</span>
+                </div>
+              </div>
+
+              <div class="ideal-for-block-me">
+                <h4 class="ideal-for-title">Идеально для:</h4>
+                <p class="ideal-for-text">
+                  Конференции, вебинары, фестивали, семинары, корпоративные
+                  события
+                </p>
+              </div>
+            </div>
+
+            <div class="content-right">
+              <div class="image-wrapper">
+                <img
+                  alt="Лендинг для мероприятий"
+                  class="landing-image"
+                  src="./image/4e8fc9f414b0d92f195069935bf79eac.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- PRICE SECTION -->
 
-      <section class="pricing-section">
+      <section class="pricing-section" id="price-website">
         <div class="container">
           <h2 class="section-title">Цены на лендинги</h2>
           <p class="section-subtitle">Прозрачные цены для любого бизнеса</p>
@@ -476,23 +670,23 @@
 
               <ul class="features-list">
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Дизайн одной страницы</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Адаптивная верстка</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Интеграция формы обратной связи</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Базовая SEO оптимизация</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Сдача за 7-14 дней</span>
                 </li>
               </ul>
@@ -511,23 +705,23 @@
 
               <ul class="features-list">
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Индивидуальный дизайн и копирайтинг</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Продвинутые анимации</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Несколько форм и интеграций</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Аналитика и отслеживание конверсий</span>
                 </li>
                 <li class="feature-item">
-                  <i class="ri-check-line"></i>
+                  <span class="check-icon">✓</span>
                   <span>Сдача за 14-30 дней</span>
                 </li>
               </ul>
@@ -885,22 +1079,22 @@
           > -->
           <a
             class="footer__services_title-link footer__services_context"
-            href="#services"
+            href="./index.html#services"
             >Контекстная реклама</a
           >
           <a
             class="footer__services_title-link footer__services_target"
-            href="#services"
+            href="./index.html#services"
             >Таргетинг</a
           >
           <a
             class="footer__services_title-link footer__services_smm"
-            href="#services"
+            href="./index.html#services"
             >SMM продвижение</a
           >
           <a
             class="footer__services_title-link footer__services_consalt"
-            href="#services"
+            href="./index.html#services"
             >Консультация</a
           >
         </div>
@@ -909,7 +1103,7 @@
           <h3 class="footer__services_title">Контакты</h3>
           <ul class="footer__contacts_table">
             <!-- <li class="footer__contacts_table-email"></li> -->
-            <li class="footer__contacts_table-number">☎ +7(988)-547-48-13</li>
+            <!-- <li class="footer__contacts_table-number">☎ +7(988)-547-48-13</li> -->
 
             <li class="footer__contacts_table-day">📋 Пн-Пт: 9:00-18:00</li>
           </ul>

@@ -3,7 +3,7 @@
   padding: 0 24px 40px;
   font-weight: 600;
   font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
-  line-height: 25px;
+  line-height: 1.2;
   text-align: center;
   color: #374151;
 }
