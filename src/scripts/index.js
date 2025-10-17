@@ -435,7 +435,7 @@ class ContactForm {
     e.preventDefault();
 
     const formData = this.collectFormData();
-    console.log("Отправляем данные:", formData); // Для отладки
+    // console.log("Отправляем данные:", formData); // Для отладки
 
     try {
       this.setLoadingState(true);
@@ -1084,7 +1084,7 @@ document.querySelectorAll(".btn-order").forEach((button) => {
     // - Переход на страницу оформления заказа
     // - Отправку данных на сервер
 
-    console.log("Выбран тариф:", planName);
+    // console.log("Выбран тариф:", planName);
   });
 });
 
@@ -1097,30 +1097,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const categoryButtons = document.querySelectorAll(".category-btn");
   const contentContainers = document.querySelectorAll(".content-container");
 
-  console.log("=== ИНИЦИАЛИЗАЦИЯ ===");
-  console.log("Найдено кнопок:", categoryButtons.length);
-  console.log("Найдено контейнеров:", contentContainers.length);
+  // console.log("=== ИНИЦИАЛИЗАЦИЯ ===");
+  // console.log("Найдено кнопок:", categoryButtons.length);
+  // console.log("Найдено контейнеров:", contentContainers.length);
 
-  // Проверяем все кнопки
-  categoryButtons.forEach((btn, index) => {
-    console.log(`Кнопка ${index}:`, {
-      текст: btn.textContent.trim(),
-      "data-category": btn.getAttribute("data-category"),
-      элемент: btn,
-    });
-  });
+  // // Проверяем все кнопки
+  // categoryButtons.forEach((btn, index) => {
+  //   console.log(`Кнопка ${index}:`, {
+  //     текст: btn.textContent.trim(),
+  //     "data-category": btn.getAttribute("data-category"),
+  //     элемент: btn,
+  //   });
+  // });
 
-  // Проверяем все контейнеры
-  contentContainers.forEach((container, index) => {
-    console.log(`Контейнер ${index}:`, {
-      "data-content": container.getAttribute("data-content"),
-      элемент: container,
-    });
-  });
+  // // Проверяем все контейнеры
+  // contentContainers.forEach((container, index) => {
+  //   console.log(`Контейнер ${index}:`, {
+  //     "data-content": container.getAttribute("data-content"),
+  //     элемент: container,
+  //   });
+  // });
 
   // Функция переключения контента
   function switchCategory(category) {
-    console.log("=== ПЕРЕКЛЮЧЕНИЕ НА:", category, "===");
+    // console.log("=== ПЕРЕКЛЮЧЕНИЕ НА:", category, "===");
 
     // 1. Убираем active у всех кнопок
     categoryButtons.forEach((btn) => {
@@ -1133,7 +1133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     if (activeButton) {
       activeButton.classList.add("active");
-      console.log("✓ Кнопка активирована:", category);
+      // console.log("✓ Кнопка активирована:", category);
     } else {
       console.error("✗ Кнопка не найдена:", category);
     }
@@ -1142,7 +1142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     contentContainers.forEach((container) => {
       container.classList.remove("active");
       container.style.display = "none";
-      console.log("Скрыт контейнер:", container.getAttribute("data-content"));
+      // console.log("Скрыт контейнер:", container.getAttribute("data-content"));
     });
 
     // 4. Показываем нужный контейнер
@@ -1150,16 +1150,16 @@ document.addEventListener("DOMContentLoaded", function () {
       `.content-container[data-content="${category}"]`,
     );
 
-    console.log('Ищем контейнер с data-content="' + category + '"');
-    console.log("Найденный контейнер:", targetContainer);
+    // console.log('Ищем контейнер с data-content="' + category + '"');
+    // console.log("Найденный контейнер:", targetContainer);
 
     if (targetContainer) {
       targetContainer.classList.add("active");
       targetContainer.style.display = "grid";
-      console.log("✓ Контейнер показан:", category);
+      // console.log("✓ Контейнер показан:", category);
     } else {
-      console.error("✗ ОШИБКА: Контейнер не найден для категории:", category);
-      console.log("Доступные контейнеры:");
+      // console.error("✗ ОШИБКА: Контейнер не найден для категории:", category);
+      // console.log("Доступные контейнеры:");
       contentContainers.forEach((c) => {
         console.log("  -", c.getAttribute("data-content"));
       });
@@ -1171,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function (e) {
       e.preventDefault();
       const category = this.getAttribute("data-category");
-      console.log("\n>>> КЛИК ПО КНОПКЕ:", category);
+      // console.log("\n>>> КЛИК ПО КНОПКЕ:", category);
       switchCategory(category);
     });
   });
@@ -1179,7 +1179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Инициализация - показываем первую категорию
   if (categoryButtons.length > 0) {
     const firstCategory = categoryButtons[0].getAttribute("data-category");
-    console.log("\n=== НАЧАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ===");
+    // console.log("\n=== НАЧАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ===");
     switchCategory(firstCategory);
   }
 });
@@ -1284,42 +1284,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = landingData[category];
     const contentCard = document.querySelector(".content-card");
 
-    setTimeout(() => {
+    // setTimeout(() => {
       // Обновляем заголовок
-      const title = contentCard.querySelector("h3");
-      title.textContent = data.title;
+      // const title = contentCard.querySelector("h3");
+      // title.textContent = data.title;
 
       // Обновляем описание
-      const description = contentCard.querySelector("p.text-lg");
-      description.textContent = data.description;
+      // const description = contentCard.querySelector("p.text-lg");
+      // description.textContent = data.description;
 
       // Обновляем список функций
-      const featuresList = contentCard.querySelector(".space-y-4");
-      featuresList.innerHTML = "";
-      data.features.forEach((feature, index) => {
-        const featureItem = document.createElement("div");
-        featureItem.className = "flex items-center space-x-3 checklist-item";
-        featureItem.innerHTML = `
-          <i class="ri-check-line text-green-500 check-icon"></i>
-          <span>${feature}</span>
-        `;
-        featuresList.appendChild(featureItem);
-      });
+      // const featuresList = contentCard.querySelector(".space-y-4");
+      // featuresList.innerHTML = "";
+      // data.features.forEach((feature, index) => {
+      //   const featureItem = document.createElement("div");
+      //   featureItem.className = "flex items-center space-x-3 checklist-item";
+      //   featureItem.innerHTML = `
+      //     <i class="ri-check-line text-green-500 check-icon"></i>
+      //     <span>${feature}</span>
+      //   `;
+      //   featuresList.appendChild(featureItem);
+      // });
 
       // Обновляем блок "Идеально для"
-      const idealForText = contentCard.querySelector(".bg-blue-50 p");
-      idealForText.textContent = data.idealFor;
+      // const idealForText = contentCard.querySelector(".bg-blue-50 p");
+      // idealForText.textContent = data.idealFor;
 
       // Обновляем изображение
-      const image = contentCard.querySelector("img");
-      image.src = data.image;
-      image.alt = data.title;
+      // const image = contentCard.querySelector("img");
+      // image.src = data.image;
+      // image.alt = data.title;
 
       // Добавляем анимацию появления
-      contentCard.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-      contentCard.style.opacity = "1";
-      contentCard.style.transform = "translateY(0)";
-    }, 300);
+    //   contentCard.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    //   contentCard.style.opacity = "1";
+    //   contentCard.style.transform = "translateY(0)";
+    // }, 300);
   }
 
   // Добавляем классы для анимации
