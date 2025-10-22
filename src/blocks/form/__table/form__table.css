@@ -32,13 +32,13 @@
 
 @media (max-width: 767px) {
   .form__table {
-    width: 70%;
+    width: 90%;
   }
 }
 
 @media (max-width: 600px) {
   .form__table {
     padding: 15px;
-    width: 80%;
+    width: 90%;
   }
 }

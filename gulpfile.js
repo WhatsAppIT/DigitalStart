@@ -1,16 +1,15 @@
+
 const gulp = require('gulp');
 const concat = require('gulp-concat-css');
 const plumber = require('gulp-plumber');
 const del = require('del');
 const browserSync = require('browser-sync').create();
-const build = gulp.series(clean, gulp.parallel(html, css, image, favicon, logo, vendor, scripts));
-const watchapp = gulp.parallel(build, watchFiles, serve);
 const replace = require('gulp-replace');
 
 function html() {
     return gulp.src('src/**/*.html')
     .pipe(plumber())
-    .pipe(replace(/<!--[\s\S]*?-->/g, ''))  // Удаляет HTML комментарии
+    .pipe(replace(/<!--[\s\S]*?-->/g, ''))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
 }
@@ -18,7 +17,7 @@ function html() {
 function scripts() {
     return gulp.src('src/**/*.js')
     .pipe(plumber())
-    .pipe(replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, ''))  // Удаляет JS комментарии
+    .pipe(replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, ''))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
 }
@@ -26,7 +25,7 @@ function scripts() {
 function css() {
     return gulp.src('src/blocks/**/*.css')
     .pipe(plumber())
-    .pipe(replace(/\/\*[\s\S]*?\*\//g, ''))  // Удаляет CSS комментарии
+    .pipe(replace(/\/\*[\s\S]*?\*\//g, ''))
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}));
@@ -56,6 +55,14 @@ function vendor() {
     .pipe(browserSync.reload({stream: true}));
 }
 
+// Новая функция для sitemap.xml и robots.txt
+function seo() {
+    return gulp.src('src/*.{xml,txt}')
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.reload({stream: true}));
+}
+
 function clean() {
     return del('dist');
 }
@@ -67,6 +74,7 @@ function watchFiles() {
   gulp.watch(['src/image/**/*.{jpg,png,svg,gif,ico,webp,avif}'], image);
   gulp.watch(['src/logo-svg/**/*.{jpg,png,svg,gif,ico,webp,avif}'], logo);
   gulp.watch(['src/favicon/**/*.{jpg,png,svg,gif,ico,webp,avif}'], favicon);
+  gulp.watch(['src/*.{xml,txt}'], seo); // Добавлено отслеживание
 }
 
 function serve() {
@@ -76,6 +84,10 @@ function serve() {
     }
   });
 }
+
+// Обновленная сборка с добавлением seo
+const build = gulp.series(clean, gulp.parallel(html, css, image, favicon, logo, vendor, scripts, seo));
+const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.watchapp = watchapp;
 exports.build = build;
@@ -87,4 +99,5 @@ exports.logo = logo;
 exports.vendor = vendor; 
 exports.css = css;
 exports.html = html;
+exports.seo = seo; // Экспорт новой задачи
 exports.default = watchapp;

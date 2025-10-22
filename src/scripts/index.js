@@ -101,13 +101,6 @@ function typeWriter(element, text, speed = 100) {
   type();
 }
 
-// Инициализация эффекта набора текста при загрузке страницы
-// setTimeout(() => {
-//     const heroTitle = document.querySelector('.services__title');
-//     const originalText = heroTitle.textContent;
-//     typeWriter(heroTitle, originalText, 50);
-// }, 1500);
-
 // Добавить индикатор прокрутки
 const scrollIndicator = document.createElement("div");
 scrollIndicator.style.cssText = `
@@ -166,95 +159,6 @@ rippleStyle.textContent = `
     }
 `;
 document.head.appendChild(rippleStyle);
-
-// // Увеличение карточек при попадании в область видимости и возвращение обратно
-// function initCardAnimation() {
-//   const cards = document.querySelectorAll(".card");
-//   if (cards.length === 0) return;
-//   // Проверяем, что это мобильное устройство
-//   const isMobile = window.innerWidth <= 768;
-
-//   if (!isMobile) {
-//     // На десктопе сразу показываем все карточки
-//     cards.forEach((card) => card.classList.add("visible"));
-//     return;
-//   }
-//   // Создаем Map для отслеживания состояния анимации карточек
-//   const cardAnimationState = new Map();
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         const card = entry.target;
-//         if (entry.isIntersecting) {
-//           // Карточка появляется в области видимости
-//           // Проверяем, была ли уже запущена анимация для этой карточки
-//           if (cardAnimationState.has(card)) {
-//             // Отменяем предыдущий таймаут, если он есть
-//             clearTimeout(cardAnimationState.get(card));
-//           }
-//           // Добавляем класс с небольшой задержкой для плавности
-//           const timeoutId = setTimeout(() => {
-//             card.classList.add("visible");
-//             cardAnimationState.delete(card); // Удаляем из Map после выполнения
-//           }, 100);
-//           cardAnimationState.set(card, timeoutId);
-//         } else {
-//           // Карточка уходит из области видимости
-//           // Отменяем анимацию появления, если она еще не выполнилась
-//           if (cardAnimationState.has(card)) {
-//             clearTimeout(cardAnimationState.get(card));
-//             cardAnimationState.delete(card);
-//           }
-//           // Убираем класс visible с небольшой задержкой
-//           const timeoutId = setTimeout(() => {
-//             card.classList.remove("visible");
-//             cardAnimationState.delete(card);
-//           }, 50);
-//           cardAnimationState.set(card, timeoutId);
-//         }
-//       });
-//     },
-//     {
-//       threshold: 0.2, // Запускать когда 20% карточкивидно
-//       rootMargin: "0px 0px -50px 0px", // Небольшой отступ снизу
-//     },
-//   );
-//   cards.forEach((card) => observer.observe(card));
-//   // Возвращаем observer для возможности его отключения
-//   return observer;
-// }
-// // Сохраняем ссылку на observer для возможности очистки
-// let cardObserver = null;
-// // Инициализация при загрузке
-// document.addEventListener("DOMContentLoaded", () => {
-//   cardObserver = initCardAnimation();
-// });
-// // Переинициализация при изменении размера окна
-// window.addEventListener("resize", () => {
-//   // Отключаем старый observer
-//   if (cardObserver) {
-//     cardObserver.disconnect();
-//   }
-//   // Удаляем все классы visible
-//   document.querySelectorAll(".card").forEach((card) => {
-//     card.classList.remove("visible");
-//   });
-//   // Заново инициализируем с небольшой задержкой
-//   setTimeout(() => {
-//     cardObserver = initCardAnimation();
-//   }, 100);
-// });
-// // Инициализация при загрузке
-// document.addEventListener("DOMContentLoaded", initCardAnimation);
-// // Переинициализация при изменении размера окна
-// window.addEventListener("resize", () => {
-//   // Удаляем старые классы
-//   document.querySelectorAll(".card").forEach((card) => {
-//     card.classList.remove("visible");
-//   });
-//   // Заново инициализируем
-//   setTimeout(initCardAnimation, 100);
-// });
 
 // Продвинутая версия с настройками
 class CardAnimator {
@@ -435,7 +339,6 @@ class ContactForm {
     e.preventDefault();
 
     const formData = this.collectFormData();
-    // console.log("Отправляем данные:", formData); // Для отладки
 
     try {
       this.setLoadingState(true);
@@ -877,7 +780,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkFormValidity()) {
           // Здесь код отправки формы
-          // console.log("Форма валидна, можно отправлять");
           resetFormToInitialState(); // Раскомментировать после успешной отправки
         }
       });
@@ -1078,13 +980,6 @@ document.querySelectorAll(".btn-order").forEach((button) => {
     const price = card.querySelector(".card-price").textContent;
 
     alert(`Вы выбрали план: ${planName}\nЦена: ${price}`);
-
-    // Здесь можно добавить:
-    // - Открытие модального окна
-    // - Переход на страницу оформления заказа
-    // - Отправку данных на сервер
-
-    // console.log("Выбран тариф:", planName);
   });
 });
 
@@ -1097,30 +992,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const categoryButtons = document.querySelectorAll(".category-btn");
   const contentContainers = document.querySelectorAll(".content-container");
 
-  // console.log("=== ИНИЦИАЛИЗАЦИЯ ===");
-  // console.log("Найдено кнопок:", categoryButtons.length);
-  // console.log("Найдено контейнеров:", contentContainers.length);
-
-  // // Проверяем все кнопки
-  // categoryButtons.forEach((btn, index) => {
-  //   console.log(`Кнопка ${index}:`, {
-  //     текст: btn.textContent.trim(),
-  //     "data-category": btn.getAttribute("data-category"),
-  //     элемент: btn,
-  //   });
-  // });
-
-  // // Проверяем все контейнеры
-  // contentContainers.forEach((container, index) => {
-  //   console.log(`Контейнер ${index}:`, {
-  //     "data-content": container.getAttribute("data-content"),
-  //     элемент: container,
-  //   });
-  // });
-
   // Функция переключения контента
   function switchCategory(category) {
-    // console.log("=== ПЕРЕКЛЮЧЕНИЕ НА:", category, "===");
 
     // 1. Убираем active у всех кнопок
     categoryButtons.forEach((btn) => {
@@ -1133,7 +1006,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     if (activeButton) {
       activeButton.classList.add("active");
-      // console.log("✓ Кнопка активирована:", category);
     } else {
       console.error("✗ Кнопка не найдена:", category);
     }
@@ -1142,7 +1014,6 @@ document.addEventListener("DOMContentLoaded", function () {
     contentContainers.forEach((container) => {
       container.classList.remove("active");
       container.style.display = "none";
-      // console.log("Скрыт контейнер:", container.getAttribute("data-content"));
     });
 
     // 4. Показываем нужный контейнер
@@ -1150,16 +1021,12 @@ document.addEventListener("DOMContentLoaded", function () {
       `.content-container[data-content="${category}"]`,
     );
 
-    // console.log('Ищем контейнер с data-content="' + category + '"');
-    // console.log("Найденный контейнер:", targetContainer);
-
     if (targetContainer) {
       targetContainer.classList.add("active");
       targetContainer.style.display = "grid";
       // console.log("✓ Контейнер показан:", category);
     } else {
       // console.error("✗ ОШИБКА: Контейнер не найден для категории:", category);
-      // console.log("Доступные контейнеры:");
       contentContainers.forEach((c) => {
         console.log("  -", c.getAttribute("data-content"));
       });
@@ -1179,7 +1046,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Инициализация - показываем первую категорию
   if (categoryButtons.length > 0) {
     const firstCategory = categoryButtons[0].getAttribute("data-category");
-    // console.log("\n=== НАЧАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ===");
     switchCategory(firstCategory);
   }
 });
@@ -1218,19 +1084,6 @@ const landingData = {
       "Консалтинг, юридические услуги, ремонт, обучение, маркетинговые агентства",
     image: "",
   },
-  // saas: {
-  //   title: 'Лендинги для SaaS',
-  //   description: 'Современные страницы для программных продуктов с демонстрацией функционала, тарифных планов и возможностью бесплатного тестирования.',
-  //   features: [
-  //     'Интерактивная демонстрация продукта',
-  //     'Сравнение тарифных планов',
-  //     'Интеграции с другими сервисами',
-  //     'Бесплатный пробный период',
-  //     'Видео-презентация функционала'
-  //   ],
-  //   idealFor: 'Облачные сервисы, CRM-системы, инструменты автоматизации, аналитические платформы',
-  //       image: ''
-  // },
   events: {
     title: "Лендинги для мероприятий",
     description:
@@ -1283,43 +1136,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateContent(category) {
     const data = landingData[category];
     const contentCard = document.querySelector(".content-card");
-
-    // setTimeout(() => {
-      // Обновляем заголовок
-      // const title = contentCard.querySelector("h3");
-      // title.textContent = data.title;
-
-      // Обновляем описание
-      // const description = contentCard.querySelector("p.text-lg");
-      // description.textContent = data.description;
-
-      // Обновляем список функций
-      // const featuresList = contentCard.querySelector(".space-y-4");
-      // featuresList.innerHTML = "";
-      // data.features.forEach((feature, index) => {
-      //   const featureItem = document.createElement("div");
-      //   featureItem.className = "flex items-center space-x-3 checklist-item";
-      //   featureItem.innerHTML = `
-      //     <i class="ri-check-line text-green-500 check-icon"></i>
-      //     <span>${feature}</span>
-      //   `;
-      //   featuresList.appendChild(featureItem);
-      // });
-
-      // Обновляем блок "Идеально для"
-      // const idealForText = contentCard.querySelector(".bg-blue-50 p");
-      // idealForText.textContent = data.idealFor;
-
-      // Обновляем изображение
-      // const image = contentCard.querySelector("img");
-      // image.src = data.image;
-      // image.alt = data.title;
-
-      // Добавляем анимацию появления
-    //   contentCard.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    //   contentCard.style.opacity = "1";
-    //   contentCard.style.transform = "translateY(0)";
-    // }, 300);
   }
 
   // Добавляем классы для анимации
@@ -1340,7 +1156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     idealForBlock.classList.add("ideal-for-block");
   }
 
-  // Добавляем класс к �зображению
+  // Добавляем класс к изображению
   const image = document.querySelector(".rounded-2xl.shadow-lg.w-full");
   if (image) {
     image.classList.add("landing-image");
@@ -1370,84 +1186,9 @@ document.addEventListener("DOMContentLoaded", function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Анимация появления карточек при скролле
-// const observerOptions = {
-//     threshold: 0.1,
-//     rootMargin: '0px 0px -50px 0px'
-// };
-
-// const observer = new IntersectionObserver(function(entries) {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.style.opacity = '0';
-//             entry.target.style.transform = 'translateY(20px)';
-
-//             setTimeout(() => {
-//                 entry.target.style.transition = 'all 0.6s ease';
-//                 entry.target.style.opacity = '1';
-//                 entry.target.style.transform = 'translateY(0)';
-//             }, 100);
-
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, observerOptions);
-
 document.querySelectorAll(".pricing-card").forEach((card) => {
   observer.observe(card);
 });
 
 // Сайт успешно загружен
 // console.log("DigitalStart сайт успешно загружен! 🚀");
-
-// Инициализация эффекта набора текста при загрузке страницы
-// setTimeout(() => {
-//     const heroTitle = document.querySelector('.services__title');
-//     const originalText = heroTitle.textContent;
-//     typeWriter(heroTitle, originalText, 50);
-// }, 1500);
-
-// // Меняет цвет хедера при прокрутке
-// const header = document.querySelector('header');
-// window.addEventListener('scroll', () => {
-//     if (window.scrollY > 100) {
-//         header.classList.add('scrolled');
-//     } else {
-//         header.classList.remove('scrolled');
-//     }
-// });
-
-// Функция для запуска эффекта при появлении в области видимости
-// function initTypeWriterOnScroll() {
-//   const heroTitle = document.querySelector(".services__title");
-//   const originalText = heroTitle.textContent;
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           typeWriter(heroTitle, originalText, 50);
-//           observer.unobserve(entry.target);
-//         }
-//       });
-//     },
-//     {
-//       threshold: 0.3, // Запускать когда 30% элемента видно
-//       rootMargin: "0px 0px -50px 0px", // Небольшой отступ снизу
-//     },
-//   );
-//   observer.observe(heroTitle); // Начинаем наблюдение за элементом
-// }
-// document.addEventListener("DOMContentLoaded", initTypeWriterOnScroll);
-
-// // Плавное перемещение по якорным ссылкам
-// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-//   anchor.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const target = document.querySelector(this.getAttribute("href"));
-//     if (target) {
-//       target.scrollIntoView({
-//         behavior: "smooth",
-//         block: "start",
-//       });
-//     }
-//   });
-// });

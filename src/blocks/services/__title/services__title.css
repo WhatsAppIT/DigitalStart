@@ -5,5 +5,5 @@
   font-size: clamp(1.875rem, 1.5179rem + 1.7857vw, 3.125rem);
   line-height: 100%;
   text-align: center;
-  min-height: 80px;
+  min-height: 100px;
 }
