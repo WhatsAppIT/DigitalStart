@@ -1,46 +1,32 @@
 
-# Основные правила для всех роботов
+# Основные правила
 User-agent: *
 Allow: /
 
-# Запрет индексации служебных директорий
+# Запрет служебных директорий
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /admin/
 Disallow: /private/
 
-# Запрет индексации файлов
-Disallow: /*.php$
-Disallow: /*.inc$
-Disallow: /*.log$
+# Запрет файлов
+Disallow: /*.php
+Disallow: /*.inc
+Disallow: /*.log
 
-# Разрешить индексацию изображений
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Disallow: /*.png$
-Allow: /*.gif$
-Allow: /*.webp$
+# Разрешить изображения
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
 
-# Запрет для страниц поиска и фильтров
+# Запрет параметров
 Disallow: /*?s=
 Disallow: /*?search=
 Disallow: /*?filter=
-Disallow: /search/
-
-# Запрет дублей страниц
 Disallow: /*?page=
-Disallow: /*&page=
-
-# Настройки для Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Настройки для Яндекса
-User-agent: Yandex
-Allow: /
-Crawl-delay: 2
-Host: example.com
 
 # Карта сайта
-Sitemap: https://сайт-реклама-продвижение.рф/sitemap.xml
+Sitemap: https://xn-----6kcbannefajxcdrqszntnik0a.xn--p1ai/sitemap.xml
+
