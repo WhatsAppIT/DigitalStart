@@ -6,6 +6,6 @@
   box-sizing: border-box;
   width: 100%;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   max-width: 600px;
 }

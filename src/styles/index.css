@@ -179,3 +179,11 @@
 
 @import url(../blocks/faq/faq.css);
 @import url(../blocks/cookies/cookies.css);
+
+
+
+
+
+@import url(../blocks/mainpage/mainpage-context.css);
+@import url(../blocks/mainpage/__title-context/landing__title-context.css);
+@import url(../blocks/mainpage/__description_logo-context/landing__description_logo-context.css);

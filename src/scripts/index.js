@@ -857,12 +857,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Страница context
-  if (document.querySelector(".landing__title-multipage")) {
+  if (document.querySelector(".landing__title-context")) {
     initTextSlider(".landing__title-multipage", [
-      "Многостраничные сайты",
-      "Корпоративные сайты",
-      "Сайты-каталоги",
-      "Бизнес-сайты",
+      "Яндекс.Директ",
     ]);
   }
 
